@@ -1,3 +1,72 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/******************************大图部分**************************/
+.jumbotron {
+  background-image:url('http://ww3.sinaimg.cn/large/006tNc79ly1ff3w6igludj31hc0u0kbk.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 110px;
+}
+.container-fluid .jumbotron h1 {
+  color: rgba(255,255,255,.8);
+}
+.title:nth-child(odd) {
+  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+  text-align: center;
+  margin-top: 115px;
+  margin-bottom: 80px;
+  margin-left: 350px;
+  float: left;
+  width: 70px;
+}
+.title:nth-child(even){
+  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+  text-align: center;
+  margin-top: 250px;
+  margin-bottom: 80px;
+  margin-left: 50px;
+  float: left;
+  width: 70px;
+}
+.jumbotron p {
+  margin-left: 80px;
+  float: left;
+  margin-top: 400px;
+}
+.slogan {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  text-align: center;
+  color: white;
+  top: 12px;
+}
+
+.lead {
+  margin-bottom: 60px;
+  text-align: center;
+  color: white;
+}
+/***************************网站介绍、定位**************************/
+
+#company .thumbnail{
+  border: 0px;
+}
+.caption {
+  margin: 30px;
+  text-align: center;
+  top: 20px;
+}
+.thumbnail .caption h3{
+  color: rgba(0,0,0,.5);
+}
+.caption .fa{
+  font-size: 60px;
+  color: skyblue;
+}
+
+.thumbnail {
+    border: 0 none;
+    box-shadow: none;
+    margin-top: 60px;
+}
