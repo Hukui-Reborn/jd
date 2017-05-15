@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /******************************大图部分**************************/
 .jumbotron {
-  background-image:url('http://ww3.sinaimg.cn/large/006tNc79ly1ff3w6igludj31hc0u0kbk.jpg');
+  background-image:url('http://d9hhrg4mnvzow.cloudfront.net/unbouncepages.com/mint-3047/b7ebf7b7-mint-template-header.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 110px;
@@ -48,9 +48,76 @@
   color: white;
 }
 /***************************网站介绍、定位**************************/
+#celebrity-online .row{
+  width: 82%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+#celebrity-online .thumbnail{
+  padding: 0;
+  background-color: #49BB8C;
+}
+#celebrity-online .col-sm-12 .thumbnail{
+  background-color: #fff;
+  border: none;
+}
+#celebrity-online .col-sm-12 .thumbnail .caption{
+  color: #000;
+}
+#celebrity-online .thumbnail .caption{
+  padding: 0;
+  margin: 0;
+  color: #fff;
+}
+#celebrity-online .thumbnail .caption p:first-child{
+  margin-top: 20px;
+}
+#celebrity-online .caption .online-log{
+  width: 50px;
+}
+#celebrity-online .caption img {
+    border-radius: 0px;
+    width: 100%;
+}
+/***************************网站介绍、定位**************************/
+#brand-cooperation .row{
+  width: 82%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+#brand-cooperation .thumbnail{
+  background-color: #fff;
+  padding: 0;
+}
+#brand-cooperation .col-sm-12 .thumbnail{
+  background-color: #fff;
+  border: none;
+}
+#brand-cooperation .thumbnail .caption{
+  padding: 0;
+  margin: 0;
+  color: #000;
+  border: none;
+}
+
+#brand-cooperation .caption .online-log{
+  width: 50px;
+}
+#brand-cooperation .caption img {
+    border-radius: 0px;
+    width: 100%;
+}
+/***************************网站介绍、定位**************************/
 
 #company .thumbnail{
   border: 0px;
+  background-color: #49BB8C;
 }
 .caption {
   margin: 30px;
@@ -60,13 +127,41 @@
 .thumbnail .caption h3{
   color: rgba(0,0,0,.5);
 }
-.caption .fa{
-  font-size: 60px;
-  color: skyblue;
+.caption img{
+    border-radius: 70px
 }
 
 .thumbnail {
     border: 0 none;
     box-shadow: none;
     margin-top: 60px;
+
+}
+.row {
+  background-color: #49BB8C;
+}
+/***************************立即预约**************************/
+#make-appointment .row{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #49BB8C;
+}
+#make-appointment .thumbnail{
+  background-color: #49BB8C;
+  padding: 0;
+}
+#make-appointment .col-sm-12 .thumbnail{
+  border: none;
+}
+#make-appointment .thumbnail .caption{
+  padding: 0;
+  margin: 0;
+  color: #fff;
+  border: none;
+}
+
+#make-appointment .caption .online-log{
+  width: 50px;
 }
