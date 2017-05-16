@@ -8,44 +8,58 @@
   background-size: cover;
   padding-bottom: 110px;
 }
-.container-fluid .jumbotron h1 {
-  color: rgba(255,255,255,.8);
+.container-fluid .jumbotron {
+  margin-bottom: 0px;
 }
-.title:nth-child(odd) {
-  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
-  text-align: center;
-  margin-top: 115px;
-  margin-bottom: 80px;
-  margin-left: 350px;
-  float: left;
-  width: 70px;
+ .jumbotron .btn-lg {
+    padding: 10px 50px;
+    font-size: 24px;
+    border-radius: 25px;
 }
-.title:nth-child(even){
-  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
-  text-align: center;
-  margin-top: 250px;
-  margin-bottom: 80px;
-  margin-left: 50px;
-  float: left;
-  width: 70px;
+.container-fluid .jumbotron p {
+  color: #fff;
 }
-.jumbotron p {
-  margin-left: 80px;
-  float: left;
-  margin-top: 400px;
+.container-fluid .jumbotron p:first-child {
+  font-size: 36px;
+  font-weight: 400;
+  margin-bottom: 40px;
 }
-.slogan {
-  margin-top: 10px;
-  margin-bottom: 50px;
-  text-align: center;
-  color: white;
-  top: 12px;
+.jumbotron .row,.jumbotron .row .thumbnail{
+  border: none;
+  background-color:transparent;
 }
-
+.jumbotron .row .thumbnail img{
+  border-radius: 0;
+}
+.jumbotron .row .thumbnail .caption{
+  margin: 0;
+}
+// .jumbotron .row .thumbnail .caption{
+//   color: #fff;
+// }
+// .jumbotron .row .thumbnail .caption p{
+//   font-size: 20px;
+// }
 .lead {
   margin-bottom: 60px;
   text-align: center;
   color: white;
+}
+/***************************轮播图**************************/
+#myCarousel,#myCarousel .row, #myCarousel .row .thumbnail{
+  background-color: #252525;
+}
+#myCarousel .row .thumbnail{
+  border: none;
+}
+#myCarousel .row .thumbnail img{
+  border-radius: 0;
+}
+#myCarousel .row .thumbnail .caption{
+  color: #fff;
+}
+#myCarousel .row .thumbnail .caption p{
+  font-size: 20px;
 }
 /***************************网站介绍、定位**************************/
 #celebrity-online .row{
@@ -105,13 +119,45 @@
   color: #000;
   border: none;
 }
-
+#brand-cooperation .col-sm-3 .thumbnail{
+  border: none;
+}
 #brand-cooperation .caption .online-log{
   width: 50px;
 }
 #brand-cooperation .caption img {
     border-radius: 0px;
     width: 100%;
+}
+#brand-cooperation .col-sm-3 .caption{
+  height: 120px;
+}
+#brand-cooperation .col-sm-3 .sanjieke{
+  width: 134px;
+    height: 85px;
+}
+#brand-cooperation .col-sm-3 .wangyi{
+  width: 277px;
+      height: 78px;
+      left:25px;
+}
+#brand-cooperation .col-sm-3 .luoji{
+  width: 151px;
+      height: 117px;
+          left: 80px;
+}
+#brand-cooperation .col-sm-3 .dedao{
+  width: 89px;
+  height: 88px;
+  left: 25px;
+}
+#brand-cooperation .col-sm-3 {
+  position: relative;
+}
+#brand-cooperation .col-sm-3  img{
+  position: absolute;
+top: 50%;
+transform: translateY(-50%);
 }
 /***************************网站介绍、定位**************************/
 
@@ -145,7 +191,6 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
-  margin-bottom: 20px;
   background-color: #49BB8C;
 }
 #make-appointment .thumbnail{
@@ -164,4 +209,16 @@
 
 #make-appointment .caption .online-log{
   width: 50px;
+}
+#make-appointment .caption span{
+  font-size: 20px;
+}
+#make-appointment .caption p{
+  margin-top: 25px;
+  margin-bottom: 60px;
+}
+#make-appointment .btn-lg {
+    padding: 10px 50px;
+    font-size: 24px;
+    border-radius: 25px;
 }
