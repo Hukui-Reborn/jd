@@ -2,4 +2,124 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*评论区*/
+.users-comments {
+margin-left: 500px;
+margin-top: 650px;
+}
 
+
+/* container */
+/*
+.container {
+    background: #fff;
+}
+
+.container {
+    padding-top:56px
+}
+
+.container {
+    position: relative;
+    z-index: 100;
+    padding-top: 50px;
+    height: 100%;
+}
+
+.lt-ie9 .container {
+    padding-top: 86px
+}
+
+.lt-ie9 .container-top {
+    padding-top: 30
+}
+
+.container-top {
+    padding-top: 0;
+}
+*/
+
+/*详情页顶端大图*/
+/*cover */
+div {
+    display: block;
+}
+
+body,div {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-weight: 400;
+    vertical-align: baseline;
+    background: 0 0;
+    font-weight: 400;
+  line-height: 1.58;
+}
+
+.cover {
+    position: relative;
+    height: 500px;
+
+
+}
+
+/*cover-image*/
+.cover .cover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+
+}
+
+/*圆形肖像*/
+.tutor-full .tutor-avatar img {
+    width: 130px;
+    height: 130px;
+
+}
+
+img{
+  margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-weight: 400;
+    vertical-align: baseline;
+    background: 0 0;
+}
+
+.tutor-full .tutor-full-main {
+
+    text-align: center;
+}
+
+.tutor-full .tutor-avatar {
+    float: none;
+    width: 136px;
+    height: 136px;
+    margin: -110px auto 0;
+    padding: 3px;
+    background: #fff;
+    box-shadow: 0 1px 1px #ccc;
+
+}
+
+ .tutor-full .tutor-avatar, .tutor-full .tutor-avatar img
+  {z-index: auto;
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+span{
+  border: 0;
+font-size: 100%;
+font-weight: 400;
+vertical-align: baseline;
+}

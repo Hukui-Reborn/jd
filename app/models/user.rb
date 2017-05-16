@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_many :goods_dislikes #建立user和喜欢的goods_dislikes之间的关系
   has_many :dislike_goods, through: :goods_dislikes, source: :product
 
+  has_many :comments #建立user和comment之间的对应关系
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   def admin?
