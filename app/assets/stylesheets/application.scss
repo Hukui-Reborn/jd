@@ -16,7 +16,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
-
+//主色调绿色：#49BB8C;
+//Call to action 按钮红色：#D63E4B;
+//Call to action Hover红色：#B4343F;
+//Navbar 灰色背景条：#363636;
+//更深的灰色：#252525;
 
 //搜索功能相关的CSS
 .search-info{            /*搜索返回的说明文字，比如未搜索到相关商品 */
@@ -71,7 +75,7 @@
   padding-left: 5%;
   padding-right: 5%;
   border-radius: 0px;
-  background-color: rgba(255,255,255,0);
+  background-color: #363636;
   position: fixed;
   width: 100%;
   z-index: 10;
@@ -93,18 +97,18 @@
 .navbar-default {
     border-color: rgba(255,255,255,0);
 }
-.navbar-default .navbar-nav > li > a:hover{
-  color: rgb(255,0,0);
-}
-.navbar-default .navbar-nav > .open > a:focus{
-  background-color: transparent;
-}
-.navbar-nav > li > .dropdown-menu {
-    padding-left: 15px;
-}
-.dropdown-menu {
-      min-width: 120px;
-}
+// .navbar-default .navbar-nav > li > a:hover{
+//   color: rgb(255,0,0);
+// }
+// .navbar-default .navbar-nav > .open > a:focus{
+//   background-color: transparent;
+// }
+// .navbar-nav > li > .dropdown-menu {
+//     padding-left: 15px;
+// }
+// .dropdown-menu {
+//       min-width: 120px;
+// }
 .form-control {
   background-color: rgba(255,255,255,0);
   border: 1px solid rgba(255,255,255,0.2);
@@ -122,4 +126,24 @@
   top: 9px;
   left: 10px;
   color: rgba(255,255,255,.7);
+}
+/******************************footer**************************/
+.outsite-footer{
+  background-color: #252525;
+  height: 75px;
+  color: #fff;
+}
+.inside-footer{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.footer-log{
+  margin-left: 20px;
+}
+.design,.copyright{
+  display: inline-block;
+  font-size: 14px;
+  line-height: 75px;
+  margin-left: 30%;
 }
