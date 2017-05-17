@@ -26,8 +26,8 @@
               <p class="f20">
               <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
               </p>
-              <p class="f18 fb col-white"><%= cart_item.product.expertname %> | <span class="f16 fn"><%= cart_item.product.experttitle %></span></p>
-              <p class="f16 col-white"><%= cart_item.product.description %></p>
+              <p class="f18 fb"><%= cart_item.product.expertname %> | <span class="f16 fn"><%= cart_item.product.experttitle %></span></p>
+              <p class="f16"><%= cart_item.product.description %></p>
             </div>
             <div class="col-md-2 f16 cart-item-quantity">
               <%= form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
