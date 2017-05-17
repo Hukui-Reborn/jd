@@ -21,6 +21,13 @@
 //Call to action Hover红色：#B4343F;
 //Navbar 灰色背景条：#363636;
 //更深的灰色：#252525;
+
+//固定整体内容宽度
+.wrapper {
+  width: 1200px;
+  margin: 0 auto;
+}
+
 //搜索功能相关的CSS
 .search-info{            /*搜索返回的说明文字，比如未搜索到相关商品 */
   font-size: 30px;
@@ -70,6 +77,7 @@
 }
 /******************************导航栏**************************/
 .navbar{
+  height: 55px;
   margin-bottom: 0;
   padding-left: 5%;
   padding-right: 5%;
