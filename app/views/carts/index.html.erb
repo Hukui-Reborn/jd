@@ -1,4 +1,7 @@
 <div class="wrapper">
+  <% if current_cart.cart_items.empty? %>
+    <p class="mt500 tc f30">您的购物车是空的，<a href="/products">去逛逛></a></p>
+  <% else %>
   <div class="container tl mt70 mb30">
     <h2> 您的购物车
       <span>
@@ -49,4 +52,5 @@
         <%= link_to("确认结账",checkout_carts_path,method: :post, class:"btn btn-danger pull-right") %>
       </div>
     </div>
+  <% end %>
 </div>
