@@ -86,7 +86,7 @@ $(document).delegate(".toggleBtn", "click", function(e) {
             }
         }),
 
-        $(".shareTopic").each(function(e) {
+        $(".shareTopic").each(function() {
             var t = $(this).attr("data-tag")
               , n = $.trim(R.eq(e).text());
             $(".shareTopic").length > 1 ? U += e + 1 + "." + $.trim(R.eq(e).text()) + "；" : U += $.trim(R.eq(e).text()) + "；",
