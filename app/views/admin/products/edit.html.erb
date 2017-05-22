@@ -4,6 +4,12 @@
     <%= f.input :title %>
   </div>
   <div class="group">
+    <%= f.input :expertname %>
+  </div>
+  <div class="group">
+    <%= f.input :experttitle %>
+  </div>
+  <div class="group">
     <%= f.input :description %>
   </div>
   <div class="group">
@@ -11,6 +17,9 @@
   </div>
   <div class="group">
     <%= f.input :price %>
+  </div>
+  <div class="group">
+    <%= f.input :reply_time %>
   </div>
   <% if @product.image.present? %>
     <span>目前商品图</span><br>

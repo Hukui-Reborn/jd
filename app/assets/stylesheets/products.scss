@@ -4,45 +4,45 @@
 
 /*评论区*/
 .users-comments {
-margin-left: 500px;
-margin-top: 650px;
+margin-left: 20px;
+}
+
+/*点赞和踩*/
+.vote{
+  width:30%;
+  display: inline-block;
+  margin-left: 15px;
+}
+.upvote{
+  float: left;
+
+}
+
+.downvote{
+  float:right;
 }
 
 
-/* container */
-/*
-.container {
-    background: #fff;
+/*网页左右页边距*/
+.tutor-full {
+    margin: 0 0px 0 40px;
+    position:relative;
 }
-
-.container {
-    padding-top:56px
+.topic-list{
+  margin: 0 0px 0 40px;
 }
-
-.container {
-    position: relative;
-    z-index: 100;
-    padding-top: 50px;
-    height: 100%;
-}
-
-.lt-ie9 .container {
-    padding-top: 86px
-}
-
-.lt-ie9 .container-top {
-    padding-top: 30
-}
-
-.container-top {
-    padding-top: 0;
-}
-*/
-
 /*详情页顶端大图*/
 /*cover */
 div {
     display: block;
+}
+body {
+
+    font-family: "Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",Arial,Helvetica,sans-serif;
+
+    color: #343434;
+    line-height: 18px;
+
 }
 
 body,div {
@@ -73,6 +73,8 @@ body,div {
     bottom: 0;
     background-size: cover;
     background-position: center;
+    z-index: inherit;
+    background-image :url('http://ww3.sinaimg.cn/large/006tNbRwgy1ffnd9wk3raj30u00min16.jpg');
     z-index: -1;
 
 }
@@ -92,11 +94,21 @@ img{
     font-weight: 400;
     vertical-align: baseline;
     background: 0 0;
+
+}
+
+.main{
+  float: left;
+/*width: 648px;*/
+width: 64%;/*左边主内容的宽度*/
+margin-right: 32px;
+
 }
 
 .tutor-full .tutor-full-main {
 
     text-align: center;
+
 }
 
 .tutor-full .tutor-avatar {
@@ -118,8 +130,594 @@ img{
 }
 
 span{
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-weight: 400;
+    vertical-align: baseline;
+    background: 0 0;
+}
+
+
+/*专家姓名*/
+.tutor-full .tutor-info .tutor-name {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    margin: 20px 0 5px;
+}
+
+h1 {
+
+    -webkit-margin-before: 0.67em;
+    -webkit-margin-after: 0.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    background: 0 0;
+}
+
+.tutor-full .tutor-info {
+    text-align: center;
+}
+
+/*职位简介*/
+.tutor-full .tutor-info .tutor-title {
+    display: block;
+    font-size: 14px;
+    margin: 10px 0 0;
+    color: #b0b0b0;
+}
+
+p{
+
+padding: 0;
+border: 0;
+font-weight: 400;
+vertical-align: baseline;
+background: 0 0;
+-webkit-margin-before: 1em;
+-webkit-margin-after: 1em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+}
+
+/*约见信息*/
+/*.tutor-full .tutor-info .tutor-detail-more-4 {
+    width: 64%;
+}
+*/
+
+.tutor-full .tutor-info .tutor-detail {
+    text-align: center;
+    width: 100%;
+    margin: 11px auto 4px;
+    white-space: inherit;
+    height: 26px;
+    line-height: 24px;
+    padding: 0;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    overflow: hidden;
+    position: relative;
+    transition: all .5s;
+}
+
+ul {
+
+    border: 0;
+   font-size: 100%;
+   font-weight: 400;
+   vertical-align: baseline;
+   background: 0 0;
+}
+
+.tutor-full .tutor-info .tutor-detail .detail .highlight {
+    color: #D63E4B;
+}
+
+.tutor-full .tutor-info .tutor-detail .detail{
+  text-align: center;
+  display: inline-block;
+    margin: 0 0 0 -2px;
+    padding: 0;
+    width: 24%;
+    line-height: 16px;
+    font-size: 12px;
+    text-align: center;
+   border-left: 1px solid #e5e5e5;
+    transition: all .5s;
+}
+
+.tutor-full .tutor-info .tutor-detail .detail:first-child {
+    border-left: none;
+}
+
+
+/*想见*/
+.tutor-full .tutor-info .tutor-detail .detail-more {
+    //width: auto!important;
+    width:25%;
+    padding: 0 15px;
+    border-left: 1px solid #e5e5e5;
+}
+
+/*图标*/
+.tutor-full .tutor-info .tutor-detail .detail .fa, .tutor-full .tutor-info .tutor-detail .detail .stars {
+
+    color: #D63E4B;
+    vertical-align: bottom;
+    margin-right: 3px;
+    font-size: 16px;
+}
+
+/*地址*/
+.tutor-full .tutor-info .tutor-title .city {
+    color: #666;
+    font-weight: 700;
+    margin: 0 3px;
+    display: inline-block;
+}
+
+
+/*价格和评分*/
+.topic-list .topic-info {
+    margin-bottom: 35px;
+    position: relative;
+}
+
+
+/*评分*/
+.topic-list .rating {
+    position: absolute;
+    top: 3px;
+    right: 0;
+    line-height: 25px;
+    font-size: 20px;
+    color: #343434;
+    cursor: pointer;
+}
+.topic-list .rating .unit {
+    font-size: 12px;
+    vertical-align: baseline;
+}
+
+
+
+li{
   border: 0;
 font-size: 100%;
 font-weight: 400;
 vertical-align: baseline;
 }
+.topic-list li {
+    background: #fcfaf9;
+    border-radius: 8px;
+    padding: 27px 12px 0;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/*价格*/
+.topic-list .topic-price {
+    position: relative;
+    clear: both;
+    float: left;
+    display: block;
+    line-height: 25px;
+    font-size: 14px;
+    color: #343434;
+}
+
+.topic-list .topic-price .yuan {
+    vertical-align: top;
+    font-size: 12px;
+}
+.topic-list .topic-price .price {
+    vertical-align: middle;
+    font-size: 20px;
+}
+
+.topic-list .topic-price .time {
+    vertical-align: sub;
+    font-size: 12px;
+}
+
+/*核心能力*/
+.topic-list li h2 {
+    line-height: 18px;
+    font-size: 18px;
+    margin: 20px 0;
+    display: inherit;
+    margin-top:35px;
+}
+.topic-list li h2{
+  white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+h2 {
+
+    -webkit-margin-before: 0.83em;
+    -webkit-margin-after: 0.83em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.content {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.column, .content {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.tutor-content p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: 22px;
+    font-size: 15px;
+    color: #666;
+}
+
+.topic-list li li {
+    border: 0;
+    margin-left: 30px;
+    padding: 0;
+    margin-bottom: 8px;
+    overflow: visible;
+    color: #666;
+
+}
+
+/*约..小时，几人约过*/
+.topic-list .topic-ft .topic-info {
+    display: inline-block;
+}
+
+.topic-list .topic-info {
+    margin-bottom: 5px;
+}
+.topic-list .topic-info {
+    position: relative;
+
+}
+.topic-list .topic-ft{
+line-height: 18px;
+}
+
+.topic-list .topic-ft {
+    border-top: 1px solid #ddd;
+    height: 50px;
+    line-height: 18px;
+}
+
+.topic-list .topic-ft .topic-info .meet-time {
+    border-right: 1px solid #ddd;
+}
+
+.topic-list .topic-ft .topic-info .meet-num, .topic-list .topic-ft .topic-info .meet-time {
+    display: inline-block;
+    margin: 16px 6px 16px 0;
+    padding-right: 10px;
+}
+
+
+/*分享话题*/
+.topic-list .topic-introduction .info {
+    font-size: 12px;
+}
+
+.topic-list .topic-introduction .info {
+
+    line-height: 100%;
+    margin: 25px 0;
+}
+
+
+.topic-list .topic-introduction .info .fa {
+    display: inline-block;
+    color: #b3b3b3;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-right: 10px;
+    background: #fcfaf9;
+    float: none;
+    font-size: 25px;
+    padding: 0;
+}
+.topic-list .topic-introduction .info .fa:hover{
+  color:#D63E4B;
+
+}
+/*展开按钮*/
+.topic-list .topic-ft .topic-more-btn {
+    float: right;
+    height: 18px;
+    line-height: 16px;
+    border-radius: 9px;
+    border: 1px solid #D63E4B;
+    color: #D63E4B;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    padding: 0 6px;
+    margin-top: 16px;
+}
+a{
+  text-decoration: none;
+  margin: 0;
+
+    font-size: 100%;
+
+    background: 0 0;
+}
+
+.topic-list .topic-ft .topic-more-btn .fa, .topic-list .topic-ft .topic-more-btn .stars {
+    vertical-align: middle;
+    font-size: 26px;
+    color: #D63E4B;
+    margin-top: -4px;
+}
+
+/*关于行家*/
+.tutor-content img {
+    width: 500px;
+    height: auto!important;
+    display: block;
+    margin: 10px auto 17px;
+
+    border-radius: 8px;
+}
+
+
+
+.tutor-content .about-tutor-title {
+    overflow: hidden;
+    margin: 10px 40px 15px;
+}
+
+.tutor-content h2 {
+    margin: 12px 0 9px;
+    font-size: 20px;
+    display: inline-block;
+    font-weight: 700;
+    color: #343434;
+}
+
+h2{
+
+padding: 0;
+border: 0;
+vertical-align: baseline;
+background: 0 0;
+}
+
+.about-tutor-summary{
+  margin: 0 0px 0 40px;
+}
+
+
+/*右侧分享按钮*/
+
+.side{
+  float: left;
+    /*width: 320px;*/
+    width: 32%;/*右边分享区域，推荐区域的宽度*/
+}
+.tutor-booking .tutor-share-list .share-title {
+    font-size: 20px;
+    margin: 0 30px 0 10px;
+    line-height: 30px;
+    float: left;
+}
+
+/*分享区域和推荐区域*/
+.tutor-booking {
+    padding-left: 0!important;
+    padding-right: 0!important;
+    position: relative;
+}
+
+.tutor-booking {
+    /*margin: -202px 0 20px;*//*修改分享区域和推荐区域，支付链接区域的位置*/
+    margin: 0 20px 0 40px;
+    padding: 35px 15px 15px;
+    background: #fff;
+}
+
+.tutor-booking .tutor-share-list .weibo {
+    background: #e6162d; /*微博按钮的背景颜色*/
+
+}
+
+.tutor-booking .tutor-share-list .weibo, .tutor-booking .tutor-share-list .weixin {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    line-height: 30px;
+    text-align: center;
+    vertical-align: bottom;
+    cursor: pointer;
+    padding: 0!important;
+}
+
+.tutor-booking .tutor-share-list .fa, .tutor-booking .tutor-share-list .stars {
+    color: #fff;
+    font-size: 20px;
+}
+
+.tutor-booking .tutor-share-list .weixin {
+    background: #5bbc0c;/*微信按钮的背景颜色*/
+}
+.bdshare-button-style0-16 {
+    zoom: 1;
+}
+
+
+/*右侧营销区域*/
+.tutor-booking .about-jianxing {
+    width: 100%;
+    background: #f1efee;
+    border-radius: 8px;
+    margin: 25px 0 0;
+    padding: 25px 0 20px 20px;
+    overflow: hidden;
+}
+
+.tutor-booking .about-jianxing .about-title {
+    font-size: 20px;
+}
+.tutor-booking .about-jianxing .about-title .keynote {
+    font-weight: 700;
+}
+
+/*立即预约*/
+.operation-list a {
+    border-radius: 20px;
+}
+.btn-hg {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+.btn-primary {
+    background: #D63E4B;
+    border: 1px solid #D63E4B;
+    color: #fff;
+    margin-top:25px;
+}
+
+.btn-primary{
+display: inline-block;
+padding: 0;
+background: 0 0;
+font-size: 14px;
+cursor: pointer;
+vertical-align: middle;
+}
+
+/*加入心愿单*/
+.btn-plat {
+    border: 1px solid #ccc;
+    color: #343434;
+    cursor: default;
+}
+
+.btn-plat:hover{
+  color: #D63E4B;
+}
+
+.tutor-booking .follow-btn {
+    margin-top: 12px;
+}
+
+.btn-plat{
+  display: inline-block;
+
+border-radius: 3px;
+padding: 0;
+background: 0 0;
+
+font-size: 14px;
+cursor: pointer;
+vertical-align: middle;
+
+}
+
+
+/*相关行家*/
+.tutor-topic-list .tutor-list-title{
+    font-size: 20px;
+    margin: 40px 0 0;
+    line-height: 30px;
+}
+
+.tutor-topic-list li .tutor-info-left .tutor-pic{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 5px 10px 0 0;
+    float: left;
+
+}
+
+.tutor-topic-list li .tutor-info-left .tutor-pic{
+    background-size: cover;
+    background-position: center;
+}
+
+.tutor-topic-list li .tutor-info-right .tutor-name{
+    color: #939393;
+    font-size: 14px;
+    margin-right: 5px;
+
+}
+
+em{
+  margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font-weight: 400;
+vertical-align: baseline;
+background: 0 0;
+color: #D63E4B;
+
+}
+
+.tutor-topic-list li .tutor-info-right p{
+  white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+        max-width: 100%;
+        color: #343434;
+}
+
+.tutor-topic-list li .tutor-info-right .meet-count{
+  font-size: 12px;
+color: #939393;
+  margin-left: 60px;
+}
+
+.tutor-topic-list li .tutor-info-right{
+  margin: 8px 0 0;
+}
+/*折叠按钮*/
+/*.tutor-full .tutor-info .tutor-detail .icon-back, .tutor-full .tutor-info .tutor-detail .icon-go {
+    padding-bottom: 1px;
+
+    transform: rotate(90deg);
+}
+.tutor-full .tutor-info .tutor-detail .btn-folding {
+    top: auto;
+    bottom: 5px;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    border-radius: 50%;
+    font-size: 12px;
+    background: #b3b3b3;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+
+    right: 0;
+    text-align: center;
+}
+.tutor-full .tutor-info .tutor-detail .icon-go {
+    padding-left: 1px;
+}*/
