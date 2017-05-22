@@ -22,7 +22,7 @@
                 <% end %>
               <% end %>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-6">
               <p class="f20">
               <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
               </p>
@@ -35,7 +35,7 @@
                 <%= f.submit "更新", data: {disable_with: "Submitting..."}%>
               <% end %>
             </div>
-            <div class="col-md-3 tr">
+            <div class="col-md-2 tr">
               <p class="f40">
               <%= cart_item.product.price %>
               <span class="f20">元</span>
