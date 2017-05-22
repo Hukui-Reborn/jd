@@ -122,6 +122,3 @@ $(document).delegate(".toggleBtn", "click", function(e) {
         window._bd_share_config = {
             share: V
         },
-
-
-        

@@ -12,3 +12,10 @@ u.password_confirmation = "111111"
 u.is_admin = true
 u.save
 
+p = Product.new
+p.title = "天天用英语"
+p.expertname = "李笑来"
+p.experttitle = "天天用英语"
+p.description = "英语是拿来用的"
+p.price = 365
+p.quantity = 10
