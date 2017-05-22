@@ -18,7 +18,7 @@
 //= require_tree .
 
 
-$(document).ready(function() {
+/*$(document).ready(function() {
 $(".btn-pref .btn").click(function () {
     $(".btn-pref .btn").removeClass("btn-primary").addClass("btn-default");
     // $(".tab").addClass("active"); // instead of this do the below
@@ -122,6 +122,4 @@ $(document).delegate(".toggleBtn", "click", function(e) {
         window._bd_share_config = {
             share: V
         },
-
-
-        
+        */
