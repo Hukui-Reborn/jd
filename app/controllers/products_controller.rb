@@ -2,6 +2,8 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!, only:[:collect, :remove,:add_to_cart,:upvote, :downvote]
   before_action :validate_search_key, only:[:search]
 
+
+
   def search
     if @query_string.present?
       search_result = Product.ransack(@search_criteria).result(:distinct => true)
@@ -63,6 +65,8 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @comments =@product.comments.recent.paginate(:page => params[:page], :per_page => 5)
+    @comment = Comment.new
   end
 
   def add_to_cart

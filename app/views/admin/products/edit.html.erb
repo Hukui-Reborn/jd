@@ -18,6 +18,9 @@
   <div class="group">
     <%= f.input :price %>
   </div>
+  <div class="group">
+    <%= f.input :reply_time %>
+  </div>
   <% if @product.image.present? %>
     <span>目前商品图</span><br>
     <%= image_tag(@product.image.thumb.url) %>
