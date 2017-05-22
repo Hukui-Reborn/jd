@@ -294,10 +294,11 @@
 
 
     <div class="operation-list operationList">
-
-
-
-
+                    <%= link_to("加入购物车",add_to_cart_product_path(@product),method: :post,style:"text-decoration:none;color:#fff;padding:0 60px;")%>
+                      </div>
+                  <% else %>
+                    已销售一空，无法购买
+                  <% end %>
       <% if @product.quantity.present? && @product.quantity > 0 %>
         <div id="bookingBtn" style="text-decoration:none;background:#D63E4B;border: 1px solid #D63E4B;border-radius:30px;" class="btn-primary btn-hg"  data-user_id="" data-login="false" data-zhugeio_when="booking" data-analyze="Meet:Open:85105378:" data-is_same_city="false">
           <%= link_to("加入购物车",add_to_cart_product_path(@product),method: :post,style:"text-decoration:none;color:#fff")%>
@@ -309,10 +310,18 @@
 
 
 
+                      <% if current_user && current_user.is_collector_of?(@product)%>
+                      <%= link_to("取消收藏",remove_product_path(@product),method: :post,style:"text-decoration:none;color:#343434;padding: 0 60px;")%>
 
+                      <% else %>
+                      <span  style="text-align:center;">
+                        <i class="fa fa-heart" style="color:#D63E4B;margin:0 -60px 0 40px;"></i>
+                      <%= link_to("加入收藏单",collect_product_path(@product),method: :post,style:"text-decoration:none;color:#D63E4B;padding: 0 60px;")%>
 
+                      <% end %>
+                    </span>
+                </div>
 
-      <div class="btn-plat btn-hg follow-btn " style="text-decoration:none;border-radius: 30px;"id="followBtn" href="javascript:void 0;" data-tutor_id="85105378" data-login="false" data-zhugeio_when="follow">
 
         <% if current_user && current_user.is_collector_of?(@product)%>
           <%= link_to("取消收藏",remove_product_path(@product),method: :post,style:"text-decoration:none;color:#343434;")%>
