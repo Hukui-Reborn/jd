@@ -60,8 +60,27 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-sm-3">
+      <div class="row">
+    <!--
+       -<% @products.each do |product|%>
+       -    <div class="col-sm-3">
+       -      <div class="welcome-product-pic">
+       -          <%= link_to product_path(product) do %>
+       -            <% if product.image.present? %>
+       -              <%= image_tag(product.image.thumb.url) %>
+       -            <% else %>
+       -              <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+       -            <% end %>
+       -          <% end %>
+       -        <div class="welcome-product-text">
+       -          <p><%= product.experttitle %></p>
+       -          <p><span>@<span><%= product.expertname %></p>
+       -        </div>
+       -      </div>
+       -    </div>
+       -  <% end %>
+       -->
+          <div class="col-sm-3">
         <div class="thumbnail">
           <div class="caption">
             <img src="http://d9hhrg4mnvzow.cloudfront.net/unbouncepages.com/mint-3047/5e519c44-_06406406405k00000a.jpg" alt="">
@@ -109,57 +128,57 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-3">
-        <div class="thumbnail">
-          <div class="caption">
-            <img src="http://d9hhrg4mnvzow.cloudfront.net/unbouncepages.com/mint-3047/81eca44d-_06406406405k00000a.jpg" alt="">
-          </div>
-          <div class="caption">
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="thumbnail">
+            <div class="caption">
+              <img src="http://d9hhrg4mnvzow.cloudfront.net/unbouncepages.com/mint-3047/81eca44d-_06406406405k00000a.jpg" alt="">
+            </div>
+            <div class="caption">
 
-            <p>计算机科学家，硅谷投资人，《浪潮之巅》《文明之光》作者</p>
-            <p>@吴军</p>
+              <p>计算机科学家，硅谷投资人，《浪潮之巅》《文明之光》作者</p>
+              <p>@吴军</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="thumbnail">
+            <div class="caption">
+              <img src="http://d9hhrg4mnvzow.cloudfront.net/unbouncepages.com/mint-3047/6516161a-_06y05k06405k00f000.jpg" alt="">
+            </div>
+            <div class="caption">
+
+              <p>前《时尚先生》主编，中国最好的商业记者之一。</p>
+              <p>@李翔</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3 ">
+          <div class="thumbnail">
+            <div class="caption">
+              <img src="http://d9hhrg4mnvzow.cloudfront.net/unbouncepages.com/mint-3047/4674a673-_06406406405k00000a.jpg" alt="">
+            </div>
+            <div class="caption">
+
+              <p>前微软公司战略合作总监，润米咨询CEO，最贵的商业顾问之一</p>
+              <p>@刘润</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3 ">
+          <div class="thumbnail">
+            <div class="caption">
+              <img src="http://d9hhrg4mnvzow.cloudfront.net/unbouncepages.com/mint-3047/cd71c086-_06406406405k00000a.png" alt="">
+            </div>
+            <div class="caption">
+
+              <p>著名生涯规划师，高管教练，新精英生涯创始人。</p>
+              <p>@古典</p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-sm-3">
-        <div class="thumbnail">
-          <div class="caption">
-            <img src="http://d9hhrg4mnvzow.cloudfront.net/unbouncepages.com/mint-3047/6516161a-_06y05k06405k00f000.jpg" alt="">
-          </div>
-          <div class="caption">
-
-            <p>前《时尚先生》主编，中国最好的商业记者之一。</p>
-            <p>@李翔</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-3 ">
-        <div class="thumbnail">
-          <div class="caption">
-            <img src="http://d9hhrg4mnvzow.cloudfront.net/unbouncepages.com/mint-3047/4674a673-_06406406405k00000a.jpg" alt="">
-          </div>
-          <div class="caption">
-
-            <p>前微软公司战略合作总监，润米咨询CEO，最贵的商业顾问之一</p>
-            <p>@刘润</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-3 ">
-        <div class="thumbnail">
-          <div class="caption">
-            <img src="http://d9hhrg4mnvzow.cloudfront.net/unbouncepages.com/mint-3047/cd71c086-_06406406405k00000a.png" alt="">
-          </div>
-          <div class="caption">
-
-            <p>著名生涯规划师，高管教练，新精英生涯创始人。</p>
-            <p>@古典</p>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 <!-- ********************三个老外的评语******************** -->
