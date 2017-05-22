@@ -12,7 +12,7 @@
       <span class="tutor-avatar tutorAvatar">
         <!-- <img src="http://ww1.sinaimg.cn/large/006tNbRwgy1ffnd7bd9m3j304g04gaa1.jpg" alt="任良"> -->
         <% if @product.image.present? %>
-          <%= image_tag(@product.image.thumb.url,class:"thumbnail") %>
+          <%= image_tag(@product.image.thumb.url) %>
         <% else %>
           <%= image_tag("http://placehold.it/200x200&text=No Pic",class:"thumbnail") %>
         <% end %>
