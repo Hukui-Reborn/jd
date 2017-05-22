@@ -12,3 +12,20 @@ u.password_confirmation = "111111"
 u.is_admin = true
 u.save
 
+p = Product.new
+p.title = "天天用英语"
+p.expertname = "李笑来"
+p.experttitle = "前新东方名师，终身学习者，天使投资人，比特币亿万富翁。"
+p.description = "英语是拿来用的，只有使用才能精进"
+p.price = 365
+p.quantity = 10
+p.save
+
+p = Product.new
+p.title = "超级行动力"
+p.expertname = "吴明月"
+p.experttitle = "国际品酒师、个体转型跨界专家"
+p.description = "用一年，改变自己！"
+p.price = 599
+p.quantity = 10
+p.save
