@@ -80,8 +80,8 @@ ActiveRecord::Schema.define(version: 20170522020805) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "image"
-    t.string   "experttitle"
     t.string   "expertname"
+    t.string   "experttitle"
     t.string   "reply_time"
   end
 

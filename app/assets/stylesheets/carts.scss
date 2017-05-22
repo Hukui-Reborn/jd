@@ -1,3 +1,23 @@
 // Place all the styles related to the carts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.container.cart-item-bg {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.container.cart-item-bg:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+img.expert-img {
+  height: 120px;
+  border-radius: 50%;
+  border:5px solid white;
+}
+
+.cart-item-quantity {
+  margin-top: 45px;
+}
