@@ -300,7 +300,6 @@
 
       <% if @product.quantity.present? && @product.quantity > 0 %>
         <div id="bookingBtn" style="text-decoration:none;background:#D63E4B;border: 1px solid #D63E4B;border-radius:30px;" class="btn-primary btn-hg"  data-user_id="" data-login="false" data-zhugeio_when="booking" data-analyze="Meet:Open:85105378:" data-is_same_city="false">
-
           <%= link_to("加入购物车",add_to_cart_product_path(@product),method: :post,style:"text-decoration:none;color:#fff")%>
         </div>
       <% else %>
