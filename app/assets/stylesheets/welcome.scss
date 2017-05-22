@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /******************************大图部分**************************/
 .jumbotron {
+  height: 650px;
   background-image:url('http://d9hhrg4mnvzow.cloudfront.net/unbouncepages.com/mint-3047/b7ebf7b7-mint-template-header.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -11,10 +12,10 @@
 .container-fluid .jumbotron {
   margin-bottom: 0px;
 }
- .jumbotron .btn-lg {
-    padding: 10px 50px;
-    font-size: 24px;
-    border-radius: 25px;
+.jumbotron .btn-lg {
+  padding: 10px 50px;
+  font-size: 24px;
+  border-radius: 25px;
 }
 .container-fluid .jumbotron p {
   color: #fff;
@@ -68,14 +69,13 @@
   margin-right: auto;
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color: #fff;
 }
 #celebrity-online .thumbnail{
   padding: 0;
   background-color: #49BB8C;
 }
 #celebrity-online .col-sm-12 .thumbnail{
-  background-color: #fff;
+  background-color: #FAFAFA;
   border: none;
 }
 #celebrity-online .col-sm-12 .thumbnail .caption{
@@ -93,8 +93,8 @@
   width: 50px;
 }
 #celebrity-online .caption img {
-    border-radius: 0px;
-    width: 100%;
+  border-radius: 0px;
+  width: 100%;
 }
 /***************************网站介绍、定位**************************/
 #brand-cooperation .row{
@@ -103,14 +103,14 @@
   margin-right: auto;
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color: #fff;
+  background-color: #FAFAFA;
 }
 #brand-cooperation .thumbnail{
-  background-color: #fff;
+  background-color: #FAFAFA;
   padding: 0;
 }
 #brand-cooperation .col-sm-12 .thumbnail{
-  background-color: #fff;
+  background-color: #FAFAFA;
   border: none;
 }
 #brand-cooperation .thumbnail .caption{
@@ -126,25 +126,25 @@
   width: 50px;
 }
 #brand-cooperation .caption img {
-    border-radius: 0px;
-    width: 100%;
+  border-radius: 0px;
+  width: 100%;
 }
 #brand-cooperation .col-sm-3 .caption{
   height: 120px;
 }
 #brand-cooperation .col-sm-3 .sanjieke{
   width: 134px;
-    height: 85px;
+  height: 85px;
 }
 #brand-cooperation .col-sm-3 .wangyi{
   width: 277px;
-      height: 78px;
-      left:25px;
+  height: 78px;
+  left:25px;
 }
 #brand-cooperation .col-sm-3 .luoji{
   width: 151px;
-      height: 117px;
-          left: 80px;
+  height: 117px;
+  left: 80px;
 }
 #brand-cooperation .col-sm-3 .dedao{
   width: 89px;
@@ -156,8 +156,8 @@
 }
 #brand-cooperation .col-sm-3  img{
   position: absolute;
-top: 50%;
-transform: translateY(-50%);
+  top: 50%;
+  transform: translateY(-50%);
 }
 /***************************网站介绍、定位**************************/
 
@@ -174,16 +174,18 @@ transform: translateY(-50%);
   color: rgba(0,0,0,.5);
 }
 .caption img{
-    border-radius: 70px
+  border-radius: 70px
 }
 
 .thumbnail {
-    border: 0 none;
-    box-shadow: none;
-    margin-top: 60px;
+  border: 0 none;
+  box-shadow: none;
+  margin-top: 60px;
 
 }
 .welcome-bg {
+  padding-top: 50px;
+  padding-bottom: 30px;
   background-color: #49BB8C;
 }
 /***************************立即预约**************************/
@@ -218,7 +220,7 @@ transform: translateY(-50%);
   margin-bottom: 60px;
 }
 #make-appointment .btn-lg {
-    padding: 10px 50px;
-    font-size: 24px;
-    border-radius: 25px;
+  padding: 10px 50px;
+  font-size: 24px;
+  border-radius: 25px;
 }
