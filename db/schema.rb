@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(version: 20170522020805) do
     t.string   "experttitle"
     t.string   "expertname"
     t.string   "reply_time"
+
   end
 
   create_table "relationships", force: :cascade do |t|
