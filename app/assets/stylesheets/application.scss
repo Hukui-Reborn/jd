@@ -50,7 +50,7 @@ body {
     margin-bottom: 4px;
     margin-left: -20px;
     border-width: 2px;
-    border-color: #FF6600;
+    border-color: #B4343F;
     border-style: solid;
     outline: 0;
     font-size: 14px;
@@ -72,7 +72,7 @@ body {
     height: 32px;
     border: none;
     line-height: 1;
-    color: #FF6600;
+    color: #B4343F;
     background: none;
     font-family: "Microsoft YaHei";
     font-size: 16px;
@@ -92,10 +92,6 @@ body {
   width: 100%;
   z-index: 10;
 }
-.navbar > .container-fluid .navbar-brand {
-     margin-left: 0px;
-     color: red;
-}
 .container-fluid {
     padding-left: 0px;
     padding-right: 0px;
@@ -108,6 +104,7 @@ body {
 }
 .navbar-default {
     border-color: rgba(255,255,255,0);
+
 }
 // .navbar-default .navbar-nav > li > a:hover{
 //   color: rgb(255,0,0);
@@ -140,6 +137,28 @@ body {
   left: 10px;
   color: rgba(255,255,255,.7);
 }
+
+  }
+/************控制全局输入框样式************/
+//.form-control {
+  //background-color: rgba(255,255,255,0);
+  //border: 1px solid rgba(255,255,255,0.2);
+  //padding: 6px 30px;
+//}
+//.form-control:focus {
+  //border: 1px solid rgba(255,255,255,0.2);
+  //box-shadow: none;
+//}
+//.navbar-form .form-group{
+  //position: relative;
+//}
+//.form-group .fa{
+  //position: absolute;
+  //top: 9px;
+  //left: 10px;
+  //color: rgba(255,255,255,.7);
+//}
+
 /******************************footer**************************/
 .outsite-footer{
   background-color: #252525;
@@ -154,7 +173,7 @@ body {
 .footer-log{
   margin-left: 20px;
 }
-.design,.copyright{
+.design, .copyright{
   display: inline-block;
   font-size: 14px;
   line-height: 75px;
