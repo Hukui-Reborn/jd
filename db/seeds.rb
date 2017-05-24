@@ -32,7 +32,7 @@ Product.create!(
   price: 599,
   quantity: 10,
   reply_time: 1,
-  image: open("http://olt6cko37.bkt.clouddn.com/20170524149561853037939.jpg")
+  image: open("http://olt6cko37.bkt.clouddn.com/20170524149562030462051.jpg")
 )
 
 #Product.new
