@@ -17,13 +17,15 @@ puts "Admin 账号已建立"
 Product.create!(
   title: "天天用英语",
   expertname: "李笑来",
-  experttitle: "前新东方名师，终身学习者，天使投资人，比特币亿万富翁。",
+  experttitle: "前新东方名师，终身学习者，天使投资人，比特币亿万富翁",
   description: "英语是拿来用的，只有使用才能精进!",
   price: 365,
   quantity: 10,
   reply_time: 1,
   image: open("http://olt6cko37.bkt.clouddn.com/20170524149561848282012.jpg")
 )
+puts "李笑来已建立"
+
 Product.create!(
   title: "超级行动力",
   expertname: "吴明月",
@@ -32,8 +34,9 @@ Product.create!(
   price: 599,
   quantity: 10,
   reply_time: 1,
-  image: open("http://olt6cko37.bkt.clouddn.com/20170524149562030462051.jpg")
+  image: open("http://olt6cko37.bkt.clouddn.com/2017052414956209856562.jpg")
 )
+puts "吴明月已建立"
 
 #Product.new
 #p.title : "认知学习法"
