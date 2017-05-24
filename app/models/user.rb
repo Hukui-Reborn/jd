@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  validates :user_name, presence: {message:"请填入名称"}
   has_many :orders
 
   has_many :relationships #建立user和product之间的多对多关系

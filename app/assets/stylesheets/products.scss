@@ -2,10 +2,123 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 /*评论区*/
-.users-comments {
-margin-left: 20px;
+.comments-bg {
+    position: relative;
+    background: #fcfaf9;
+    top: 80px;
+    clear: both;
 }
+
+.column-comments{
+  margin: 0 auto;
+  width: 95%;
+  margin-left: 40px;
+
+
+
+}
+.comments-main{
+  position: relative;
+   /*background-color: #f1efee;*/
+  float: left;
+    width: 64%;
+    margin-right: 20px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+
+
+}
+
+/*学员点评*/
+.comments-bg .comments-main .comments-switch {
+    margin-top: 35px;
+}
+
+.comments-bg .comments-main .comments-switch .picked {
+    color: #D63E4B;
+    font-size: 20px;
+}
+
+.comments-bg .comments-main .comments-switch .picked span {
+    border-bottom: 2px solid #D63E4B;
+}
+
+.comments-bg .comments {
+    border-top: none;
+
+}
+.comments {
+    padding: 28px 0 40px;
+    margin-top: -20px;
+    overflow: hidden;
+}
+
+.comments .comments-list {
+    overflow: hidden;
+}
+
+.comments-bg .comments .comments-list .comment-all {
+    border-bottom: 1px solid #e5e5e5!important;
+}
+
+.comments .comments-list li {
+    margin-bottom: -1px;
+    padding: 30px 0 15px;
+    overflow: hidden;
+}
+
+/*发表评论*/
+
+.comment-create{
+  margin-top: 40px;
+
+
+}
+.comment-create .form-area{
+  padding:20px 0;
+}
+
+/*用户名称*/
+.comments .comments-list .comment-hd {
+    margin-bottom: 5px;
+    margin-top: 2px;
+    overflow: hidden;
+    float: left;
+    margin-right: 13px;
+    font-weight: 700;
+}
+
+/*留言内容*/
+.comments .comments-list .comment-bd {
+    line-height: 22px;
+    color: #666;
+    clear: left;
+
+}
+
+/*参与话题*/
+.comments .comments-list .comment-topic-name {
+    margin-top: 15px;
+    color: #939393;
+}
+
+/*参与时间*/
+.comments .comments-list .comment-ft {
+    margin-top: 10px;
+    line-height: 16px;
+    color: #939393;
+    font-size: 12px;
+}
+
+/*评论翻页符*/
+.pagination{
+  margin-bottom: 100px;
+  border-radius: 15px ;
+}
+
+
 
 /*点赞和踩*/
 .vote{
@@ -99,6 +212,10 @@ img{
     vertical-align: baseline;
     background: 0 0;
 
+}
+
+.topic-item{
+  background-color: #fcfaf9;
 }
 
 .product-show-main{
@@ -197,7 +314,7 @@ background: 0 0;
 
 .tutor-full .tutor-info .tutor-detail {
     text-align: center;
-    width: 100%;
+    width: 93%;
     margin: 11px auto 4px;
     white-space: inherit;
     height: 26px;
@@ -244,10 +361,12 @@ ul {
 /*想见*/
 .tutor-full .tutor-info .tutor-detail .detail-more {
     //width: auto!important;
-    width:25%;
+    width:23%;
     padding: 0 15px;
     border-left: 1px solid #e5e5e5;
+
 }
+
 
 /*图标*/
 .tutor-full .tutor-info .tutor-detail .detail .fa, .tutor-full .tutor-info .tutor-detail .detail .stars {
@@ -360,10 +479,12 @@ li {
 .content {
     padding-top: 30px;
     padding-bottom: 30px;
+
+
 }
 .column, .content {
     width: 100%;
-    margin: 0 auto;
+    margin: 0  auto;
 }
 
 .tutor-content p {
@@ -385,6 +506,8 @@ li {
 }
 
 /*约..小时，几人约过*/
+
+
 .topic-list .topic-ft .topic-info {
     display: inline-block;
 }
@@ -714,6 +837,7 @@ color: #939393;
 .tutor-topic-list li .tutor-info-right{
   margin: 8px 0 0;
 }
+
 /*折叠按钮*/
 /*.tutor-full .tutor-info .tutor-detail .icon-back, .tutor-full .tutor-info .tutor-detail .icon-go {
     padding-bottom: 1px;

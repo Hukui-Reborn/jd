@@ -39,7 +39,7 @@
           </li>
 
 
-          <li class="detail detail-more"><span class="highlight">高</span>接受率</li>
+          <li class="detail detail-more " ><span class="highlight">高</span>接受率</li>
 
           <li><span class="icon icon-go btn-folding foldingBtn"></span></li>
 
@@ -249,6 +249,8 @@
     </div>
   </div>
 </div>
+
+
 <div class="side">
   <div class="tutor-booking" id="booking">
     <div class="tutor-share-list bdsharebuttonbox hideInZDH bdshare-button-style0-16" id="share" data-tag="shareTutor" data-bd-bind="1494927487177">
@@ -352,33 +354,79 @@
 
 
 
-<!-- <div class="users-comments " >
 
-  <% @comments.each do |comment| %>
-    <div class="comment"  style="display:block;">
-    <%=simple_format(comment.content)%>
-    <%= comment.user.email %>
-    <%= comment.created_at %>
-  <% end %>
-  <div class="text-center">
-  <%= will_paginate @comments %>
-  </div>
-  </div>
-
-  <div class="comment-create">
-
-  <%= simple_form_for [@product,@comment] do |f|%>
-
-    <%= f.text_field :content ,input_html: { class: "form-control",style:"border:2px;"}%>
-
-    <%= f.submit "Submit",disable_with: "Submiting...", class: "btn btn-primary"%>
-  <% end %>
-
-  </div>
-  </div> -->
 
 </div>
-<!-- </div> -->
+</div>
+
+<div class="comments-bg">
+<div class="column-comments">
+
+ <div class="comments-main">
+
+ <div class="comments-switch">
+<h2 class="left-tab picked">
+<span>学员点评</span>
+<!-- 评论按照时间显示 -->
+<!-- <div class="drop-select" id="commentSort">
+<a class="drop-select-default" data-current-sort="latest" href="javascript:void 0;">最新<i class="icon icon-arrow-bottom"></i></a>
+<ul class="drop-select-options hidden">
+<li>
+    <a href="javascript:void 0;" class="reviewsSortBy" data-sort-by="likings_count">热门</a>
+</li>
+
+<li>
+    <a href="javascript:void 0;" class="reviewsSortBy" data-sort-by="latest">最新</a>
+</li>
+</ul>
+</div> -->
+  </h2>
+  <div class="comment-create">
+  <%= simple_form_for [@product,@comment] do |f|%>
+    <%= f.input :content,label: "添加评论",input_html: { class: "form-area"}%>
+    <%= f.submit "发表",disable_with: "Submiting...", class: "btn btn-default"%>
+  <% end %>
+
+  </div>
+   </div>
+ <div class="comments " >
+  <ul class="comments-list">
+   <% @comments.each do |comment| %>
+     <li class="comment-all">
+       <div class="comment">
+
+         <div class="comment-hd">
+         <%= comment.user.user_name %>
+         </div>
+
+         <div class="comment-bd">
+         <%=simple_format(comment.content)%>
+         </div>
+
+
+     <div class="comment-ft">
+     <%= comment.created_at %>
+     </div>
+
+     <div class="comment-topic-name">参与话题:
+       <%= @product.title %>
+     </div>
+
+
+
+   <% end %>
+   </div>
+   </li>
+   </ul>
+   <div class="pagination">
+   <%= will_paginate @comments, renderer: BootstrapPagination::Rails %>
+   </div>
+   </div>
+   </div>
+ </div>
+
+
+   </div>
 <!-- </div> -->
 
 

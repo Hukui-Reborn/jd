@@ -104,7 +104,41 @@ body {
 }
 .navbar-default {
     border-color: rgba(255,255,255,0);
-  }
+
+}
+// .navbar-default .navbar-nav > li > a:hover{
+//   color: rgb(255,0,0);
+// }
+// .navbar-default .navbar-nav > .open > a:focus{
+//   background-color: transparent;
+// }
+// .navbar-nav > li > .dropdown-menu {
+//     padding-left: 15px;
+// }
+// .dropdown-menu {
+//       min-width: 120px;
+// }
+/*.form-control {
+  background-color: #fff;
+  border: 1px solid blue;
+
+}
+.form-control:focus {
+  border: 1px solid red;
+  background-color: yellow;
+  box-shadow: 10px 10px 5px #888888;
+}*/
+.navbar-form .form-group{
+  position: relative;
+}
+.form-group .fa{
+  position: absolute;
+  top: 9px;
+  left: 10px;
+  color: rgba(255,255,255,.7);
+}
+
+  
 /************控制全局输入框样式************/
 //.form-control {
   //background-color: rgba(255,255,255,0);
@@ -124,6 +158,7 @@ body {
   //left: 10px;
   //color: rgba(255,255,255,.7);
 //}
+
 /******************************footer**************************/
 .outsite-footer{
   background-color: #252525;
