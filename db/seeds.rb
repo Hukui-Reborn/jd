@@ -3,29 +3,50 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   movies : Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-u = User.new
-u.email = "admin@test.com"
-u.password = "111111"
-u.password_confirmation = "111111"
-u.is_admin = true
-u.save
+User.create!(
+  user_name: "admin",
+  email: "admin@test.com",
+  password: "111111",
+  password_confirmation: "111111",
+  is_admin: true,
+)
+puts "Admin 账号已建立"
 
-p = Product.new
-p.title = "天天用英语"
-p.expertname = "李笑来"
-p.experttitle = "前新东方名师，终身学习者，天使投资人，比特币亿万富翁。"
-p.description = "英语是拿来用的，只有使用才能精进"
-p.price = 365
-p.quantity = 10
-p.save
+Product.create!(
+  title: "天天用英语",
+  expertname: "李笑来",
+  experttitle: "前新东方名师，终身学习者，天使投资人，比特币亿万富翁",
+  description: "英语是拿来用的，只有使用才能精进!",
+  price: 365,
+  quantity: 10,
+  reply_time: 1,
+  image: open("http://olt6cko37.bkt.clouddn.com/20170524149561848282012.jpg")
+)
+puts "李笑来已建立"
 
-p = Product.new
-p.title = "超级行动力"
-p.expertname = "吴明月"
-p.experttitle = "国际品酒师、个体转型跨界专家"
-p.description = "用一年，改变自己！"
-p.price = 599
-p.quantity = 10
-p.save
+Product.create!(
+  title: "超级行动力",
+  expertname: "吴明月",
+  experttitle: "国际品酒师、个体转型跨界专家",
+  description: "用一年，改变自己！",
+  price: 599,
+  quantity: 10,
+  reply_time: 1,
+  image: open("http://olt6cko37.bkt.clouddn.com/2017052414956209856562.jpg")
+)
+puts "吴明月已建立"
+
+Product.create!(
+  title: "认知学习法",
+  expertname: "千古刘传",
+  experttitle: "创业者，3年营销策划，脑洞文案，齐物论者",
+  description: "从认知科学底层规律带你飞！",
+  price: 799,
+  quantity: 10,
+  reply_time: 1,
+  image: open("http://olt6cko37.bkt.clouddn.com/20170524149561855575382.png")
+)
+puts "刘传已建立"
+
