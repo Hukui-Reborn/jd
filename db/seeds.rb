@@ -38,12 +38,15 @@ Product.create!(
 )
 puts "吴明月已建立"
 
-#Product.new
-#p.title : "认知学习法"
-#p.expertname : "千古刘传"
-#p.experttitle : "创业者，3年营销策划，脑洞文案，齐物论者"
-#p.description : "从认知科学底层规律带你飞！"
-#p.price : 599
-#p.quantity : 10
-#p.reply_time : 1
-#p.save
+Product.create!(
+  title: "认知学习法",
+  expertname: "千古刘传",
+  experttitle: "创业者，3年营销策划，脑洞文案，齐物论者",
+  description: "从认知科学底层规律带你飞！",
+  price: 799,
+  quantity: 10,
+  reply_time: 1,
+  image: open("http://olt6cko37.bkt.clouddn.com/20170524149561855575382.png")
+)
+puts "刘传已建立"
+
