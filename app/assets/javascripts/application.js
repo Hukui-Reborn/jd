@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
-
+//= require local_time
 //= require_tree .
 
 
@@ -124,4 +124,3 @@ $(document).delegate(".toggleBtn", "click", function(e) {
             share: V
         },
         */
-
