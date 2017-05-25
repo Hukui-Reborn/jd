@@ -366,7 +366,7 @@
 
  <div class="comments-switch">
 <h2 class="left-tab picked">
-<span>学员点评</span>
+<span>学员点评(<%=@product.comments.count%>)</span>
 <!-- 评论按照时间显示 -->
 <!-- <div class="drop-select" id="commentSort">
 <a class="drop-select-default" data-current-sort="latest" href="javascript:void 0;">最新<i class="icon icon-arrow-bottom"></i></a>
@@ -405,7 +405,7 @@
 
 
      <div class="comment-ft">
-     <%= comment.created_at %>
+     <%= comment.created_at.to_date %>
      </div>
 
      <div class="comment-topic-name">参与话题:
