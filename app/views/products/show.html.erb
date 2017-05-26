@@ -394,7 +394,7 @@
    <% @comments.each do |comment| %>
      <li class="comment-all">
        <div class="comment">
-
+        <%= image_tag(comment.user.selfie.thum.url) unless comment.user.selfie.blank?%>
          <div class="comment-hd">
          <%= comment.user.user_name %>
          </div>

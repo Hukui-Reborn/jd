@@ -8,6 +8,7 @@
   <div class="form-inputs">
     <%= f.input :user_name, label:"用户名", autofocus: true%>
     <%= f.input :email, label:"邮箱" ,required: true %>
+    <%= f.input :selfie, as: :file ,label:"头像"%>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
