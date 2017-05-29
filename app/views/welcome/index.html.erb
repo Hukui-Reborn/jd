@@ -10,20 +10,22 @@
     <!-- 轮播（Carousel）项目 -->
     <div class="carousel-inner" >
       <div class="item active">
-        <img src="http://ww3.sinaimg.cn/large/006tKfTcly1ffl6btzvewj31hc0zkgul.jpg" alt="First slide">
+        <img src="http://olt6cko37.bkt.clouddn.com/20170529149603969495324.jpg" alt="First slide">
       </div>
       <div class="item" >
-        <img src="http://ww1.sinaimg.cn/large/006tKfTcly1ffl6bsjt06j31hc0zk4ca.jpg" alt="Second slide">
+        <img src="http://olt6cko37.bkt.clouddn.com/20170529149603992128550.jpg" alt="Second slide">
       </div>
-        <div class="item" >
-          <img src="http://ww4.sinaimg.cn/large/006tKfTcly1ffl6btb7dhj31hc0zk7gr.jpg" alt="Third slide">
-        </div>
+      <div class="item" >
+        <img src="http://olt6cko37.bkt.clouddn.com/20170529149604040058450.jpg" alt="Third slide">
+       </div>
     </div>
-    <!-- 轮播（Carousel）导航 -->
-    <a class="carousel-control left" href="#myCarousel"
-                                     data-slide="prev"></a>
-    <a class="carousel-control right" href="#myCarousel"
-                                      data-slide="next"></a>
+    <!--
+       -[> 轮播（Carousel）导航 <]
+       -<a class="carousel-control left" href="#myCarousel"
+       -                                 data-slide="prev"></a>
+       -<a class="carousel-control right" href="#myCarousel"
+       -                                  data-slide="next"></a>
+       -->
   </section>
   <section>
     <div>
@@ -51,38 +53,38 @@
     <div class="row">
       <% @products.each do |product| %>
         <hr />
-          <div class="container mb20">
-            <div class="col-md-4">
-              <%= link_to product_path(product) do %>
-                <% if product.image.present? %>
-                  <%= image_tag(product.image.thumb.url, class:"welcome-article-small-pic") %>
-                <% else %>
-                  <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-                <% end %>
+        <div class="container mb20">
+          <div class="col-md-4">
+            <%= link_to product_path(product) do %>
+              <% if product.image.present? %>
+                <%= image_tag(product.image.thumb.url, class:"welcome-article-small-pic") %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
               <% end %>
-            </div>
-            <div class="col-md-8">
-              <p class="f20"><%= product.title %></p>
-              <p class="f16 mt150"><%= product.description %></p>
-            </div>
+            <% end %>
           </div>
-        <% end %>
-        <!--
-           -<div class="col-md-3 col-md-offset-1">
-           -  <div class="container">
-           -  <img src="http://y1.ifengimg.com/haina/2016_02/3cf5fabbbf57b51_w396_h349.jpg" width="200px" alt="临时占位" />
-           -  <p>临时占位</p>
-           -  </div>
-           -  <div class="container">
-           -  <img src="http://y1.ifengimg.com/haina/2016_02/3cf5fabbbf57b51_w396_h349.jpg" width="200px" alt="临时占位" />
-           -  <p>临时占位</p>
-           -  </div>
-           -  <div class="container">
-           -  <img src="http://y1.ifengimg.com/haina/2016_02/3cf5fabbbf57b51_w396_h349.jpg" width="200px" alt="临时占位" />
-           -  <p>临时占位</p>
-           -  </div>
-           -</div>
-           -->
+          <div class="col-md-8">
+            <p class="f20"><%= product.title %></p>
+            <p class="f16 mt150"><%= product.description %></p>
+          </div>
         </div>
-  </section>
+      <% end %>
+      <!--
+        -<div class="col-md-3 col-md-offset-1">
+        -  <div class="container">
+        -  <img src="http://y1.ifengimg.com/haina/2016_02/3cf5fabbbf57b51_w396_h349.jpg" width="200px" alt="临时占位" />
+        -  <p>临时占位</p>
+        -  </div>
+        -  <div class="container">
+        -  <img src="http://y1.ifengimg.com/haina/2016_02/3cf5fabbbf57b51_w396_h349.jpg" width="200px" alt="临时占位" />
+        -  <p>临时占位</p>
+        -  </div>
+        -  <div class="container">
+        -  <img src="http://y1.ifengimg.com/haina/2016_02/3cf5fabbbf57b51_w396_h349.jpg" width="200px" alt="临时占位" />
+        -  <p>临时占位</p>
+        -  </div>
+        -</div>
+      -->
     </div>
+  </section>
+</div>
