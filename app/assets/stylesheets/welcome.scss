@@ -27,30 +27,6 @@
 
 }
 
-/*.item.active{
-  background-image: url("http://ww3.sinaimg.cn/large/006tKfTcly1ffl6btzvewj31hc0zkgul.jpg");
-  height: 400px;
-  background-position: 50%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  cursor: pointer;
-  position: relative;
-  width: 60%;
-margin-left: 450px;
-}
-
-.item{
-  background-image: url("http://ww3.sinaimg.cn/large/006tKfTcly1ffl6btzvewj31hc0zkgul.jpg");
-  height: 400px;
-  background-position: 50%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  cursor: pointer;
-  width: 60%;
-  position: relative;
-  margin-left: 450px;
-}*/
-
 //图片和描述
 
 div.gallery {
@@ -71,5 +47,7 @@ div.gallery img {
 
 div.desc {
     padding: 15px;
-    text-align: center;
+    text-align: left;
+    font-size: 20px;
   }
+

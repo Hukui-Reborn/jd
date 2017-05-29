@@ -1,0 +1,7 @@
+<h1>修改文章</h1>
+<%= simple_form_for @article do |f| %>
+  <div class="group" ><%= f.input :title %></div>
+  <div class="group"><%= f.input :description %></div>
+  <div class="group"><%= f.input :image, as: :file %></div>
+  <div class="group"><%= f.submit "Submit",data:{disable_with:"Submiting..."}%></div>
+<% end %>

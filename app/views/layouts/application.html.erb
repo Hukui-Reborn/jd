@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>见行</title>
+    <title>全栈人生</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,13 +9,13 @@
   </head>
 
   <body>
-    <!-- <div class="row"> -->
-      <div style="margin-bottom:55px;">
-        <%= render "common/navbar" %>
+      <div class="main" id="main">
+        <div style="margin-bottom:55px;">
+          <%= render "common/navbar" %>
+        </div>
+        <%= render "common/flashes" %>
+        <%= yield %>
       </div>
-      <%= render "common/flashes" %>
-    <!-- </div> -->
-    <%= yield %>
     <%= render "common/footer" %>
   </body>
 </html>
