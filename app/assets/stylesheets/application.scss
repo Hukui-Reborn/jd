@@ -16,17 +16,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
-//主色调绿色：#49BB8C;
-//Call to action 按钮红色：#D63E4B;
-//Call to action Hover红色：#B4343F;
-//Navbar 灰色背景条：#363636;
-//更深的灰色：#252525;
+
+//灰色背景条：#FAFAFA;
+//更深的灰色备用：#252525;
 
 
 //固定整体内容宽度
 .wrapper {
   width: 1200px;
   margin: 0 auto;
+
 }
 //主要背景颜色略微浅灰
 body {
@@ -34,148 +33,92 @@ body {
 }
 
 //搜索功能相关的CSS
+
+.search-input {  /*搜索输入框文字 */
+  height: 30px;
+  color: #666;
+  padding: 2px 20px;
+  margin-left: -20px;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  font-size: 14px;
+}
+
+.fa {        /*搜索放大镜图标 */
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.search-button {    /*搜索放大镜按钮样式 */
+  width: 40px;
+  height: 32px;
+  border: none;
+  line-height: 1;
+  color: black;
+  background: none;
+  font-family: "Microsoft YaHei";
+  font-size: 16px;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+}
+
 .search-info{            /*搜索返回的说明文字，比如未搜索到相关商品 */
   font-size: 30px;
   text-align: center;
 }
-.search {
-    width: 300px;
-}
 
-.search-input {
-    height: 32px;
-    line-height: 32;
-    color: #666;
-    padding: 2px 20px;
-    margin-bottom: 4px;
-    margin-left: -20px;
-    border-width: 2px;
-    border-color: #B4343F;
-    border-style: solid;
-    outline: 0;
-    font-size: 14px;
-    font-family: "microsoft yahei";
-    border-radius: 20px;
-}
-
-.fa {
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.search-button {
-    width: 50px;
-    height: 32px;
-    border: none;
-    line-height: 1;
-    color: #B4343F;
-    background: none;
-    font-family: "Microsoft YaHei";
-    font-size: 16px;
-    cursor: pointer;
-    top: 0;
-    right: 0;
-}
 /******************************导航栏**************************/
 .navbar{
+  color: black;
+  position: fixed;
+  top: 0;
+  width: 100%;
   height: 55px;
-  margin-bottom: 0;
   padding-left: 5%;
   padding-right: 5%;
   border-radius: 0px;
-  background-color: #363636;
-  position: fixed;
-  width: 100%;
+  background-color: white;
+
   z-index: 10;
+  box-shadow: 0 5px 5px 0px rgba(0,0,0,0.2), 0 0 6px 2px rgba(0,0,0,0.15);
 }
-.container-fluid {
-    padding-left: 0px;
-    padding-right: 0px;
+.navbar-default .navbar-nav > li > a {
+  color: black;
 }
-.container-fluid .jumbotron {
-  border-radius: 0px;
-}
-.navbar-default .navbar-brand {
-
-}
-.navbar-default {
-    border-color: rgba(255,255,255,0);
-
-}
-// .navbar-default .navbar-nav > li > a:hover{
-//   color: rgb(255,0,0);
-// }
-// .navbar-default .navbar-nav > .open > a:focus{
-//   background-color: transparent;
-// }
-// .navbar-nav > li > .dropdown-menu {
-//     padding-left: 15px;
-// }
-// .dropdown-menu {
-//       min-width: 120px;
-// }
-/*.form-control {
-  background-color: #fff;
-  border: 1px solid blue;
-
-}
-.form-control:focus {
-  border: 1px solid red;
-  background-color: yellow;
-  box-shadow: 10px 10px 5px #888888;
-}*/
-.navbar-form .form-group{
-  position: relative;
-}
-.form-group .fa{
-  position: absolute;
-  top: 9px;
-  left: 10px;
-  color: rgba(255,255,255,.7);
-}
-
-  
 /************控制全局输入框样式************/
 //.form-control {
-  //background-color: rgba(255,255,255,0);
-  //border: 1px solid rgba(255,255,255,0.2);
-  //padding: 6px 30px;
+//background-color: rgba(255,255,255,0);
+//border: 1px solid rgba(255,255,255,0.2);
+//padding: 6px 30px;
 //}
-//.form-control:focus {
-  //border: 1px solid rgba(255,255,255,0.2);
-  //box-shadow: none;
-//}
+/*.form-control:focus {
+border: 1px solid red;
+background-color: yellow;
+box-shadow: 10px 10px 5px #888888;
+}*/
 //.navbar-form .form-group{
-  //position: relative;
+//position: relative;
 //}
 //.form-group .fa{
-  //position: absolute;
-  //top: 9px;
-  //left: 10px;
-  //color: rgba(255,255,255,.7);
+//position: absolute;
+//top: 9px;
+//left: 10px;
+//color: rgba(255,255,255,.7);
 //}
 
 /******************************footer**************************/
-.outsite-footer{
+.footer{
   background-color: #252525;
   height: 75px;
   color: #fff;
+  font-size: 16px;
 }
-.inside-footer{
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-}
-.footer-log{
-  margin-left: 20px;
-}
-.design, .copyright{
-  display: inline-block;
-  font-size: 14px;
-  line-height: 75px;
-  margin-left: 30%;
+.footer-text{
+  padding-top: 25px;
 }

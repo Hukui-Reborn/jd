@@ -394,7 +394,14 @@
    <% @comments.each do |comment| %>
      <li class="comment-all">
        <div class="comment">
-
+         <div class="user-selfie">
+           <% if comment.user.selfie.present? %>
+        <%= image_tag(comment.user.selfie.mini.url,style:"border-radius:50%;width:60px;height:60px;",class:"thumbnail")  %>
+          <% else %>
+          <%= image_tag("http://ww1.sinaimg.cn/large/006tNbRwgy1ffzxufbo0lj3069069t8o.jpg",class:"thumbnail",style:"width:60px;height:60px;border-radius:50%;") %>
+          <% end %>
+        
+        </div>
          <div class="comment-hd">
          <%= comment.user.user_name %>
          </div>
