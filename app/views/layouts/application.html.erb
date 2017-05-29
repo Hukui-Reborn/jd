@@ -9,13 +9,13 @@
   </head>
 
   <body>
-    <!-- <div class="row"> -->
-      <div style="margin-bottom:55px;">
-        <%= render "common/navbar" %>
+      <div class="main" id="main">
+        <div style="margin-bottom:55px;">
+          <%= render "common/navbar" %>
+        </div>
+        <%= render "common/flashes" %>
+        <%= yield %>
       </div>
-      <%= render "common/flashes" %>
-    <!-- </div> -->
-    <%= yield %>
     <%= render "common/footer" %>
   </body>
 </html>

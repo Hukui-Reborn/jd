@@ -43,7 +43,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).pemit(:title,:description,:image)
+    params.require(:article).permit(:title,:description,:image)
   end
 
 end
