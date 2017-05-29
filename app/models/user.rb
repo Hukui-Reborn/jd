@@ -8,6 +8,7 @@ class User < ApplicationRecord
    mount_uploader :selfie, SelfieUploader
 
   has_many :orders
+  has_many :article #一个user有多篇文章
 
   has_many :relationships #建立user和product之间的多对多关系
   has_many :collections, through: :relationships, source: :product #user可以它找到收藏的物品
