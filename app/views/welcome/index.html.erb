@@ -9,24 +9,15 @@
     </ol>
     <!-- 轮播（Carousel）项目 -->
     <div class="carousel-inner" >
-      <!-- <div onclick=window.open('/products') class="item active"  > -->
       <div class="item active">
-       <!-- <div class="picture" style="height:100%;"> -->
-
-       <img src="http://ww3.sinaimg.cn/large/006tKfTcly1ffl6btzvewj31hc0zkgul.jpg" alt="First slide">
-
-        <!-- </div> -->
+        <img src="http://ww3.sinaimg.cn/large/006tKfTcly1ffl6btzvewj31hc0zkgul.jpg" alt="First slide">
       </div>
       <div class="item" >
-        <!-- <div class="picture" style="width:100%;"> -->
-         <img src="http://ww1.sinaimg.cn/large/006tKfTcly1ffl6bsjt06j31hc0zk4ca.jpg" alt="Second slide">
-      <!-- </div> -->
-    </div>
-      <div class="item" >
-        <!-- <div class="picture"style="width:100%;"> -->
-         <img src="http://ww4.sinaimg.cn/large/006tKfTcly1ffl6btb7dhj31hc0zk7gr.jpg" alt="Third slide">
-      <!-- </div> -->
-    </div>
+        <img src="http://ww1.sinaimg.cn/large/006tKfTcly1ffl6bsjt06j31hc0zk4ca.jpg" alt="Second slide">
+      </div>
+        <div class="item" >
+          <img src="http://ww4.sinaimg.cn/large/006tKfTcly1ffl6btb7dhj31hc0zk7gr.jpg" alt="Third slide">
+        </div>
     </div>
     <!-- 轮播（Carousel）导航 -->
     <a class="carousel-control left" href="#myCarousel"
@@ -38,116 +29,60 @@
     <div>
       <h1>头条</h1>
     </div>
-    <div class="col-md-4 tc">
-      <div class="gallery">
-        <a target="_blank" href="/">
-          <img src="http://y1.ifengimg.com/haina/2016_02/3cf5fabbbf57b51_w396_h349.jpg" alt="Trolltunga Norway">
-        </a>
-        <div class="desc">Add a description of the image here</div>
+    <% @products.each do |product| %>
+      <div class="col-md-4 tc">
+        <div class="gallery">
+          <%= link_to product_path(product) do %>
+            <% if product.image.present? %>
+              <%= image_tag(product.image.medium.url) %>
+            <% else %>
+              <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+            <% end %>
+          <% end %>
+          <div class="desc"><%= product.title %></div>
+        </div>
       </div>
-    </div>
-    <div class="col-md-4 tc">
-      <div class="gallery">
-        <a target="_blank" href="/">
-          <img src="http://y1.ifengimg.com/haina/2016_02/3cf5fabbbf57b51_w396_h349.jpg" alt="Trolltunga Norway">
-        </a>
-        <div class="desc">Add a description of the image here</div>
-      </div>
-    </div>
-    <div class="col-md-4 tc">
-      <div class="gallery">
-        <a target="_blank" href="/">
-          <img src="http://y1.ifengimg.com/haina/2016_02/3cf5fabbbf57b51_w396_h349.jpg" alt="Trolltunga Norway">
-        </a>
-        <div class="desc">Add a description of the image here</div>
-      </div>
-    </div>
-    <div class="col-md-4 tc">
-      <div class="gallery">
-        <a target="_blank" href="/">
-          <img src="http://y1.ifengimg.com/haina/2016_02/3cf5fabbbf57b51_w396_h349.jpg" alt="Trolltunga Norway">
-        </a>
-        <div class="desc">Add a description of the image here</div>
-      </div>
-    </div>
-    <div class="col-md-4 tc">
-      <div class="gallery">
-        <a target="_blank" href="/">
-          <img src="http://y1.ifengimg.com/haina/2016_02/3cf5fabbbf57b51_w396_h349.jpg" alt="Trolltunga Norway">
-        </a>
-        <div class="desc">Add a description of the image here</div>
-      </div>
-    </div>
-    <div class="col-md-4 tc">
-      <div class="gallery">
-        <a target="_blank" href="/">
-          <img src="http://y1.ifengimg.com/haina/2016_02/3cf5fabbbf57b51_w396_h349.jpg" alt="Trolltunga Norway">
-        </a>
-        <div class="desc">Add a description of the image here</div>
-      </div>
-    </div>
+    <% end %>
   </section>
   <section>
     <div>
       <h1>精选</h1>
     </div>
     <div class="row">
-      <div class="col-md-8">
-        <!-- <div class="container"> -->
-          <div class="col-md-4 mb10">
-            <img src="http://y1.ifengimg.com/haina/2016_02/3cf5fabbbf57b51_w396_h349.jpg" width="150px" height="150px" alt="临时占位" />
+      <% @products.each do |product| %>
+        <hr />
+          <div class="container mb20">
+            <div class="col-md-4">
+              <%= link_to product_path(product) do %>
+                <% if product.image.present? %>
+                  <%= image_tag(product.image.thumb.url, class:"welcome-article-small-pic") %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                <% end %>
+              <% end %>
+            </div>
+            <div class="col-md-8">
+              <p class="f20"><%= product.title %></p>
+              <p class="f16 mt150"><%= product.description %></p>
+            </div>
           </div>
-          <div class="col-md-8">
-            <p class="f20">这个是一个测试的标题</p>
-          </div>
-        <!-- </div> -->
-        <!-- <div class="container"> -->
-          <div class="col-md-4 mb10">
-            <img src="http://y1.ifengimg.com/haina/2016_02/3cf5fabbbf57b51_w396_h349.jpg" width="150px" height="150px" alt="临时占位" />
-          </div>
-          <div class="col-md-8">
-            <p class="f20">这个是一个测试的标题</p>
-          </div>
-        <!-- </div> -->
-        <!-- <div class="container"> -->
-          <div class="col-md-4 mb10">
-            <img src="http://y1.ifengimg.com/haina/2016_02/3cf5fabbbf57b51_w396_h349.jpg" width="150px" height="150px" alt="临时占位" />
-          </div>
-          <div class="col-md-8">
-            <p class="f20">这个是一个测试的标题</p>
-          <!-- </div> -->
+        <% end %>
+        <!--
+           -<div class="col-md-3 col-md-offset-1">
+           -  <div class="container">
+           -  <img src="http://y1.ifengimg.com/haina/2016_02/3cf5fabbbf57b51_w396_h349.jpg" width="200px" alt="临时占位" />
+           -  <p>临时占位</p>
+           -  </div>
+           -  <div class="container">
+           -  <img src="http://y1.ifengimg.com/haina/2016_02/3cf5fabbbf57b51_w396_h349.jpg" width="200px" alt="临时占位" />
+           -  <p>临时占位</p>
+           -  </div>
+           -  <div class="container">
+           -  <img src="http://y1.ifengimg.com/haina/2016_02/3cf5fabbbf57b51_w396_h349.jpg" width="200px" alt="临时占位" />
+           -  <p>临时占位</p>
+           -  </div>
+           -</div>
+           -->
         </div>
-        <!-- <div class="container"> -->
-          <div class="col-md-4 mb10">
-            <img src="http://y1.ifengimg.com/haina/2016_02/3cf5fabbbf57b51_w396_h349.jpg" width="150px" height="150px" alt="临时占位" />
-          </div>
-          <div class="col-md-8">
-            <p class="f20">这个是一个测试的标题</p>
-          </div>
-        <!-- </div> -->
-        <!-- <div class="container"> -->
-          <div class="col-md-4 mb10">
-            <img src="http://y1.ifengimg.com/haina/2016_02/3cf5fabbbf57b51_w396_h349.jpg" width="150px" height="150px" alt="临时占位" />
-          </div>
-          <div class="col-md-8">
-            <p class="f20">这个是一个测试的标题</p>
-          </div>
-        <!-- </div> -->
-      </div>
-      <div class="col-md-3 col-md-offset-1">
-        <!-- <div class="container"> -->
-          <img src="http://y1.ifengimg.com/haina/2016_02/3cf5fabbbf57b51_w396_h349.jpg" width="200px" alt="临时占位" />
-          <p>临时占位</p>
-        <!-- </div> -->
-        <!-- <div class="container"> -->
-          <img src="http://y1.ifengimg.com/haina/2016_02/3cf5fabbbf57b51_w396_h349.jpg" width="200px" alt="临时占位" />
-          <p>临时占位</p>
-        <!-- </div> -->
-        <!-- <div class="container"> -->
-          <img src="http://y1.ifengimg.com/haina/2016_02/3cf5fabbbf57b51_w396_h349.jpg" width="200px" alt="临时占位" />
-          <p>临时占位</p>
-        <!-- </div> -->
-      </div>
-    </div>
   </section>
-</div>
+    </div>
