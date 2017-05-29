@@ -20,6 +20,10 @@ class SelfieUploader < CarrierWave::Uploader::Base
    process resize_to_fill: [100,100]
  end
 
+ version :mini do
+   process resize_to_fill: [50,50]
+ end
+
  # version :medium do
 #   process resize_to_fill: [400,400]
  # end
