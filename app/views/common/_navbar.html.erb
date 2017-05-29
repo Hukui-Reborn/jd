@@ -1,48 +1,43 @@
 <nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-2">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/">
-                  全栈人生
-                    <!-- <img class="footer-log" src="http://d9hhrg4mnvzow.cloudfront.net/unbouncepages.com/mint-3047/a677e9c8-logo-white-with-shadow_01m00o01m00o000000.png" alt=""> -->
-                </a>
-            </div>
-            </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">
+            全栈人生
+          </a>
+        </div>
+      </div>
 
-            <div class="collapse navbar-collapse">
-                <!-- <ul class="nav navbar-nav"> -->
-                  <ul class="nav navbar-nav navbar-right">
-                    <li>
-
-
-                  <div class="col-md-3">
-                    <div class="fl ml40 mt10">
-                        <div class="clearfix ">
-                            <%= form_tag search_products_path , :method => :get  do %>
-                            <input class="search-input fl" type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="输入关键词">
-                            <div class="input-group-btn">
-                                <button type="submit" class="search-button pa tc">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </div>
-                            <% end %>
-                        </div>
-                    </div>
-                  </div>
-                  </li>
-
-
-
-
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
           <li>
-            <%= link_to carts_path  do %>
-              购物车 <i class="fa fa-shopping-cart"> </i>(<%= current_cart.products.count %>)
-            <% end %>
+            <div class="col-md-3">
+              <div class="fl ml40 mt10">
+                <div class="clearfix ">
+                  <%= form_tag search_products_path , :method => :get  do %>
+                    <input class="search-input fl" type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="输入关键词">
+                    <div class="input-group-btn">
+                      <button type="submit" class="search-button pa tc">
+                        <i class="fa fa-search"></i>
+                      </button>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
           </li>
+          <!--
+             -<li>
+             -  <%= link_to carts_path  do %>
+             -    购物车 <i class="fa fa-shopping-cart"> </i>(<%= current_cart.products.count %>)
+             -  <% end %>
+             -</li>
+             -->
           <% if !current_user %>
-            <li><%= link_to("注册",new_user_registration_path) %></li>
-            <li><%= link_to(content_tag(:i,'登录',class:'fa fa-sign-in'),new_user_session_path) %></li>
+            <li class="f16"><%= link_to(content_tag(:i,'注册',class:'fa fa-user-circle-o'),new_user_registration_path) %></li>
+            <li style="margin-top:13px"> | </li>
+            <li class="f16"><%= link_to('登录',new_user_session_path) %></li>
           <% else %>
             <li class="dropdown">
               <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -69,8 +64,8 @@
             </li>
           <% end %>
         </ul>
+      </div>
     </div>
   </div>
-</div>
 
-    </nav>
+</nav>
