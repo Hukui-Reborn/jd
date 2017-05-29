@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     }
   root "welcome#index"
 
+  resources :articles
+
   namespace :admin do
     resources :products
     resources :orders do
@@ -55,7 +57,5 @@ Rails.application.routes.draw do
   end
 
   resources :goods_collections
-
-
 
 end
