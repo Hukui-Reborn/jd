@@ -2,9 +2,9 @@
 <!-- <div class="row"> -->
 <!-- <div class="container container-top"> -->
 
-<div class="cover">
+<!-- <div class="cover"> -->
   <!-- <div class="cover-image" ></div> -->
-</div>
+<!-- </div> -->
 
 <div class="tutor-full">
   <div class="column">
@@ -18,9 +18,9 @@
         <% end %>
       </span>
       <div class="tutor-info" data-mlink="action=view_tutor&amp;tutorId=85105378">
-        <h1 class="tutor-name" data-tutor_id="85105378"><%=@product.expertname%></h1>
+        <h1 class="tutor-name" data-tutor_id="85105378">作者: <%=@product.expertname%></h1>
         <p class="tutor-title" id="tutorTitle"><%=@product.experttitle%></p>
-        <ul class="tutor-detail tutorDetail">
+        <!-- <ul class="tutor-detail tutorDetail">
           <li class="detail">
             <span class="fa fa-clock-o"></span>
 
@@ -47,7 +47,7 @@
         <p class="tutor-title">
         <span class="city">北京</span>
         <span class="location">不限</span>
-        </p>
+         </p> -->
       </div>
     </div>
   </div>
@@ -277,13 +277,13 @@
 
                   <div class="operation-list operationList">
 
-                  <% if @product.quantity.present? && @product.quantity > 0 %>
+                  <!-- <% if @product.quantity.present? && @product.quantity > 0 %>
                  <div id="bookingBtn" style="text-decoration:none;background:#D63E4B;border: 1px solid #D63E4B;border-radius:30px;" class="btn-primary btn-hg"  data-user_id="" data-login="false" data-zhugeio_when="booking" data-analyze="Meet:Open:85105378:" data-is_same_city="false">
                  <%= link_to("加入购物车",add_to_cart_product_path(@product),method: :post,style:"text-decoration:none;color:#fff;padding:0 60px;")%>
                </div>
                <% else %>
-               <!-- 已销售一空，无法购买 -->
-                <% end %>
+               已销售一空，无法购买
+                 <% end %> -->
 
                     <% if current_user && current_user.is_collector_of?(@product)%>
                       <div class="btn-plat btn-hg follow-btn followed" id="followBtn"  data-tutor_id="85012586" style="border-radius:20px;">
@@ -303,7 +303,7 @@
 
 
           <ul class="tutor-topic-list">
-            <h2 class="tutor-list-title">相关行家</h2>
+            <h2 class="tutor-list-title">相关话题</h2>
 
 
 
