@@ -40,7 +40,7 @@ div.gallery:hover {
     border: 1px solid #777;
 }
 
-div.gallery img {
+div.welcome-article-img img{
     width: 100%;
     height: auto;
 }
@@ -51,3 +51,9 @@ div.desc {
     font-size: 20px;
   }
 
+
+img.welcome-user-image{
+  height: 30px;
+  width: 30px;
+  border-radius: 50px;
+}
