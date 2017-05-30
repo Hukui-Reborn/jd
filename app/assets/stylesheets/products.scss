@@ -6,6 +6,12 @@
 
 /*************用户头像*************/
 
+.comments .comments-list .user-selfie {
+    float: left;
+    display: block;
+    width: 48px;
+
+}
 
 /*评论区*/
 .comments-bg {
@@ -81,26 +87,50 @@
 
 }
 .comment-create .form-area{
-  padding:20px 0;
+  padding:10px 0 10px 10px;
   height: 100px;
+
 }
 
 /*用户名称*/
-.comments .comments-list .comment-hd {
-    margin-bottom: 5px;
+.comments .comments-list .comment .comment-hd {
+    margin-bottom: 0px;
     margin-top: 2px;
     overflow: hidden;
     float: left;
     margin-right: 13px;
     font-weight: 700;
+
+
+
+
 }
 
 /*留言内容*/
-.comments .comments-list .comment-bd {
+.comments .comments-list .comment .comment-bd {
     line-height: 22px;
     color: #666;
     clear: left;
 
+
+
+}
+
+.comments-bg .comments .comments-list .comment-all .comment {
+    border-bottom: none!important;
+}
+
+.comments .comments-list .comment {
+    margin-left: 70px;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 20px;
+    position: relative;
+    top:15px;
+}
+
+/*分割线*/
+.line{
+  border-bottom: 1px solid #e5e5e5!important;
 }
 
 /*参与话题*/
@@ -127,9 +157,10 @@
 
 /*点赞和踩*/
 .vote{
-  width:30%;
+  width:50%;
   display: inline-block;
-  margin-left: 15px;
+  margin-left: 120px;
+  margin-bottom: -8px;
 }
 .upvote{
   float: left;
@@ -142,6 +173,7 @@
 }
 .downvote{
   float:right;
+
 }
 
 
@@ -187,7 +219,7 @@ body,div {
 }
 
 /*cover-image*/
-.cover .cover-image {
+/*.cover .cover-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -199,14 +231,16 @@ body,div {
     background-image :url('http://ww3.sinaimg.cn/large/006tNbRwgy1ffnd9wk3raj30u00min16.jpg');
     z-index: -1;
 
-}
+}*/
 
 /*圆形肖像*/
 .tutor-full .tutor-avatar img {
     width: 130px;
     height: 130px;
-
 }
+
+
+
 
 img{
   margin: 0;
