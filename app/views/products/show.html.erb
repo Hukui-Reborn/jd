@@ -6,6 +6,7 @@
   <!-- <div class="cover-image" ></div> -->
 <!-- </div> -->
 
+
 <div class="tutor-full">
   <div class="column">
     <div class="tutor-full-main" id="tutorInfo">
@@ -247,6 +248,7 @@
         </div>
         <!-- </div> -->
     </div>
+
   </div>
 </div>
 
@@ -387,6 +389,11 @@
 </li>
 </ul>
 </div> -->
+
+<h1><%= @product.title %></h1>
+<hr />
+<p> <%= markdown(@product.post) %> </p>
+
   </h2>
   <div class="comment-create">
   <%= simple_form_for [@product,@comment] do |f|%>
