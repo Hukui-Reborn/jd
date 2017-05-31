@@ -11,16 +11,16 @@
   <div class="column">
     <div class="tutor-full-main" id="tutorInfo">
       <span class="tutor-avatar tutorAvatar">
-        <!-- <img src="http://ww1.sinaimg.cn/large/006tNbRwgy1ffnd7bd9m3j304g04gaa1.jpg" alt="任良"> -->
-        <% if @product.image.present? %>
-          <%= image_tag(@product.image.thumb.url) %>
+        <% if @product.user.selfie.present? %>
+          <%= image_tag(@product.user.selfie.thum.url) %>
         <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic",class:"thumbnail") %>
+          <%= image_tag("http://ww1.sinaimg.cn/large/006tNbRwgy1ffzxufbo0lj3069069t8o.jpg",class:"thumbnail") %>
         <% end %>
+
       </span>
       <div class="tutor-info" data-mlink="action=view_tutor&amp;tutorId=85105378">
-        <h1 class="tutor-name" data-tutor_id="85105378">作者: <%=@product.expertname%></h1>
-        <p class="tutor-title" id="tutorTitle"><%=@product.experttitle%></p>
+        <h1 class="tutor-name" style="margin-bottom:80px;"data-tutor_id="85105378">作者: <%=@product.user.user_name%></h1>
+        <!-- <p class="tutor-title" id="tutorTitle"><%=@product.user.user_name%></p> -->
         <!-- <ul class="tutor-detail tutorDetail">
           <li class="detail">
             <span class="fa fa-clock-o"></span>
@@ -61,7 +61,7 @@
 
     <div class="tutor-content">
 
-      <ul id="topicList" class="topic-list">
+      <!-- <ul id="topicList" class="topic-list">
 
         <li class="topic-item ">
 
@@ -88,7 +88,7 @@
               <div>
                 <p>
                 <%= @product.description %>
-                </p>
+                </p> -->
 
                 <!-- <ul >
                   <li>为什么我的市场观点或策略会被质疑或挑战？</li>
@@ -111,7 +111,7 @@
                     能给你带来的收获是： 用专业性的逻辑把系统化理论梳理清楚，配合大量案例，你将直接获得解决思路和方法。
                     </p> -->
 
-              </div>
+              <!-- </div>
 
               <div class="info shareTopic bdsharebuttonbox bdshare-button-style0-16" data-tag="29876932" data-bd-bind="1494927487184">
 
@@ -131,12 +131,12 @@
               <span class="meet-time">约1.5小时</span>
 
               <span class="meet-num">8人约过</span>
-            </div>
+            </div> -->
             <!-- <a href="#" class="topic-more-btn toggleBtn" data-received="话题页-话题显示更多..mID.85105378;mName.任良;tID.29876932;tName.搞定老板和下属迅速成为市场行家">
               <span class="fa fa-chevron-circle-down"></span>
               </a> -->
-          </div>
-        </li>
+          <!-- </div> -->
+        <!-- </li> -->
 
         <!-- <li class="topic-item ">
 
@@ -216,23 +216,32 @@
           </div>
           </li> -->
 
-      </ul>
+      <!-- </ul> -->
 
-      <div class="about-tutor-title">
+      <!-- <div class="about-tutor-title">
         <h2 >关于行家</h2>
-      </div>
+      </div> -->
       <div class="about-tutor-summary">
-        <div>
-          <p>
+        <div class="devider-line">
+      <h3 align="center" ><%= @product.title %></h3>
+
+      </div>
+
+       <div class="devider-line">
+      <p > <%= markdown(@product.post) %> </p>
+      </div>
+
+        <!-- <div> -->
+          <!-- <p> -->
           <!-- <img alt="" src="http://ww2.sinaimg.cn/large/006tNc79gy1ffpjfviiitj30dw099dg8.jpg" style="height:333px; width:500px"> -->
 
-          <% if @product.image.present? %>
+          <!-- <% if @product.image.present? %>
             <%= image_tag(@product.image.medium.url, class:"thumbnial") %>
           <% else %>
             <%= image_tag("http://placehold.it/200x200&text=No Pic",class:"thumbnail") %>
           <% end %>
 
-          </p>
+          <!-- </p> -->
 
           <!-- <p>任良，十三年多的可口可乐品牌推广、市场管理、危机公关等实操经验，以及五年多的创业企业总经理经验，应对了一场场既温情又动荡的市场活动和危机公关，又经历跨领域思维的磨练，造就了独特的视角，总能在工作中找到不同寻常的解决方案，收获奇效。</p>
 
@@ -244,8 +253,8 @@
 
             <p>任良先生擅长市场营销、品牌管理、企业目标制定与预算管理等话题，尤其能够站在较高的层面从全局思考，结合专业体系及方法论为您找到一个合适的解决方案。</p> -->
 
-            <%=@product.experttitle%>
-        </div>
+            <!-- <%=@product.experttitle%> -->
+        <!-- </div> -->
         <!-- </div> -->
     </div>
 
@@ -390,9 +399,7 @@
 </ul>
 </div> -->
 
-<h1><%= @product.title %></h1>
-<hr />
-<p> <%= markdown(@product.post) %> </p>
+
 
   </h2>
   <div class="comment-create">
