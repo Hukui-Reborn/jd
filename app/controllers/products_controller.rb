@@ -15,9 +15,9 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     if !current_user.is_voter_of?(@product)
       current_user.like!(@product)
-      flash[:notice]= "您已点赞了该商品"
+      flash[:notice]= "您已点赞了该篇文章"
     else
-      flash[:warning]= "您已点赞过该商品，无法重复点赞"
+      flash[:warning]= "您已点赞过该篇文章，无法重复点赞"
     end
     redirect_to :back
   end
@@ -42,7 +42,7 @@ class ProductsController < ApplicationController
       flash[:notice]= "已收藏该商品"
 
     else
-      flash[:warning]="您已收藏过该商品"
+      flash[:warning]="您已收藏过该篇文章"
     end
     redirect_to product_path(@product)
   end
@@ -51,9 +51,9 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     if current_user.is_collector_of?(@product)
       current_user.remove!(@product)
-      flash[:alert]= "已取消收藏该商品"
+      flash[:alert]= "已取消收藏该篇文章"
     else
-      flash[:warning]= "您未收藏该商品,无法取消收藏"
+      flash[:warning]= "您未收藏该篇文章,无法取消收藏"
     end
     redirect_to product_path(@product)
 

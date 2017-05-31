@@ -21,6 +21,8 @@ class User < ApplicationRecord
 
   has_many :comments #建立user和comment之间的对应关系
 
+  has_many :products #建立user和product之间的对应关系
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   def admin?

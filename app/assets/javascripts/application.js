@@ -16,7 +16,7 @@
 //= require bootstrap
 //= require local_time
 //= require_tree .
-
+//= require simplemde.min
 
 
 /*$(document).ready(function() {
