@@ -12,7 +12,7 @@
     <div class="tutor-full-main" id="tutorInfo">
       <span class="tutor-avatar tutorAvatar">
         <% if @product.user.selfie.present? %>
-          <%= image_tag(@product.user.selfie.thum.url) %>
+          <%= image_tag(@product.user.selfie.url,class:"thumbnail") %>
         <% else %>
           <%= image_tag("http://ww1.sinaimg.cn/large/006tNbRwgy1ffzxufbo0lj3069069t8o.jpg",class:"thumbnail") %>
         <% end %>
@@ -227,7 +227,15 @@
 
       </div>
 
-       <div class="devider-line">
+      <% if @product.image.present? %>
+        <br>
+        <%= image_tag(@product.image.url) %>
+        <% else %>
+        <br>
+        <%= image_tag("http://ww2.sinaimg.cn/large/006tKfTcgy1fg4mkw5fqdj30el09qt9e.jpg",class:"thumbnail")%>
+      <% end %>
+
+       <div >
       <p > <%= markdown(@product.post) %> </p>
       </div>
 
@@ -274,9 +282,12 @@
 
 
     <div class="about-jianxing">
-      <p class="about-title">只需付<span class="keynote">几百元</span>，就可以与行家</p>
-      <p class="about-title"><span class="keynote">一对一线下面谈</span></p>
-      <p class="about-tips">为您答疑解惑、出谋划策。不满意还能“无忧退款”。</p>
+
+      <p class="about-title"><span class="keynote">关注我们</span></p>
+
+     <%=image_tag("http://ww3.sinaimg.cn/large/006tKfTcgy1fg4nm37rq0j30dw0dwq2z.jpg",class:"thumbnail",style:"width:35%;")%>
+      <p class="about-title2"><span class="keytitle">全栈人生</span></p>
+      <p class="about-title2"><span class="keywords">改变由认知开始<br />成长因行动启航</span></p>
       <!-- <p class="about-tips-mobile">为您答疑解惑、出谋划策。</p> -->
       <!-- <p class="about-tips-mobile">不满意还能“无忧退款”。</p> -->
       <!-- <span class="icon icon-jianxing logo"></span> -->
@@ -361,7 +372,7 @@
 
  <div class="comments-switch">
 <h2 class="left-tab picked">
-<span><%=@product.comments.count%>条留言</span>
+<span ><%=@product.comments.count%>条留言</span>
 
 <div class="vote">
   <div class="upvote">
@@ -451,7 +462,7 @@
    </div>
    </li>
    </ul>
-   <div class="pagination">
+   <div class="comment-pagination">
    <%= will_paginate @comments, renderer: BootstrapPagination::Rails %>
    </div>
    </div>

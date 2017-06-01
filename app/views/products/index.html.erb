@@ -8,7 +8,7 @@
         <% if product.image.present? %>
           <%= image_tag(product.image.thumb.url,class:"thumbnail") %>
         <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic",class:"thumbnail") %>
+          <%= image_tag("http://ww2.sinaimg.cn/large/006tKfTcgy1fg4mkw5fqdj30el09qt9e.jpg",class:"thumbnail",style:"width:25%;")%>
         <% end %>
       <% end %>
       <%= product.title %> ￥ <%= product.price %>
