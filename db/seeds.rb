@@ -6,47 +6,36 @@
 #   movies : Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.create!(
-  user_name: "admin",
+  user_name: "胡奎",
   email: "admin@test.com",
   password: "111111",
   password_confirmation: "111111",
   is_admin: true,
+  selfie: open("http://olt6cko37.bkt.clouddn.com/20170601149628544583525.png")
 )
 puts "Admin 账号已建立"
 
-Product.create!(
-  title: "天天用英语",
-  expertname: "李笑来",
-  experttitle: "前新东方名师，终身学习者，天使投资人，比特币亿万富翁",
-  description: "英语是拿来用的，只有使用才能精进!",
-  price: 365,
-  quantity: 10,
-  reply_time: 1,
-  image: open("http://olt6cko37.bkt.clouddn.com/20170524149561848282012.jpg")
+Article.create!(
+  title: "Rails部署指南（小白篇）",
+  description: "Rails 部署指南手把手教学篇",
+  user_id: 1,
+  image: open("http://olt6cko37.bkt.clouddn.com/20170601149628690425364.png")
 )
-puts "李笑来已建立"
+puts "文章1已建立"
 
-Product.create!(
-  title: "超级行动力",
-  expertname: "吴明月",
-  experttitle: "国际品酒师、个体转型跨界专家",
-  description: "用一年，改变自己！",
-  price: 599,
-  quantity: 10,
-  reply_time: 1,
-  image: open("http://olt6cko37.bkt.clouddn.com/2017052414956209856562.jpg")
+Article.create!(
+  title: "Html基础教学",
+  description: "Html最核心的几个概念手把手教学篇",
+  user_id: 1,
+  image: open("http://olt6cko37.bkt.clouddn.com/20170601149628697578512.png")
 )
-puts "吴明月已建立"
+puts "文章2已建立"
 
-Product.create!(
-  title: "认知学习法",
-  expertname: "千古刘传",
-  experttitle: "创业者，3年营销策划，脑洞文案，齐物论者",
-  description: "从认知科学底层规律带你飞！",
-  price: 799,
-  quantity: 10,
-  reply_time: 1,
-  image: open("http://olt6cko37.bkt.clouddn.com/20170524149561855575382.png")
+
+Article.create!(
+  title: "CSS Boxing模型详解",
+  description: "五分钟带你学会CSS最核心的框模型",
+  user_id: 1,
+  image: open("http://olt6cko37.bkt.clouddn.com/20170601149628737589675.png")
 )
-puts "刘传已建立"
-
+puts "文章3已建立"
