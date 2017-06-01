@@ -28,7 +28,6 @@
 }
 
 //图片和描述
-
 div.gallery {
     margin: 5px;
     border: 1px solid #ccc;
@@ -40,7 +39,7 @@ div.gallery:hover {
     border: 1px solid #777;
 }
 
-div.gallery img {
+div.welcome-article-img img{
     width: 100%;
     height: auto;
 }
@@ -51,3 +50,31 @@ div.desc {
     font-size: 20px;
   }
 
+
+img.welcome-user-image{
+  margin-left: 15px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50px;
+}
+
+.welcome-h2-text {
+  color: black;
+  border-left: 6px;
+  border-style: solid;
+  border-color: #2794CD;
+  margin-left: 5px;
+  padding:1px 12px;
+}
+
+.btn-write-article{
+  float: right;
+    width: 100px;
+    height: 38px;
+    line-height: 24px;
+    margin: 9px 15px 0;
+    border-radius: 4px;
+    font-size: 15px;
+    color: #fff;
+    background-color: #ea6f5a;
+}

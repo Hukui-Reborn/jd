@@ -27,48 +27,50 @@
       -                                  data-slide="next"></a>
     -->
   </section>
-  <section class="mt30">
+  <section class="row">
     <div>
       <h2 class="welcome-h2-text">头 条</h2>
     </div>
     <% @articles.each do |article| %>
-      <div class="row">
-        <div class="col-md-4 pl10">
-          <div class="gallery">
-            <div class="welcome-article-img">
-              <%= link_to article_path(article) do %>
-                <% if article.image.present? %>
-                  <%= image_tag(article.image.medium.url) %>
+      <div class="col-md-4 pl10">
+        <div class="gallery">
+          <div class="welcome-article-img">
+            <%= link_to article_path(article) do %>
+              <% if article.image.present? %>
+                <%= image_tag(article.image.medium.url) %>
+              <% else %>
+                <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="desc"><%= article.title %></div>
+          <div class="col-md-7 pb20">
+            <!--
+              -<img class="welcome-user-image" src="http://olt6cko37.bkt.clouddn.com/2017052414956209856562.jpg" />
+            -->
+            <div class="welcome-user-image">
+              <%= link_to user_path(user) do %>
+                <% if article.user.selfie.present? %>
+                  <%= image_tag(article.user.selfie.medium.url) %>
                 <% else %>
                   <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
                 <% end %>
               <% end %>
             </div>
-            <div class="desc"><%= article.title %></div>
-            <div class="row">
-              <div class="col-md-7 pb20">
-                <div class="welcome-user-image">
-                  <% if article.user.selfie.present? %>
-                    <%= image_tag(article.user.selfie.mini.url,class:"welcome-user-image") %>
-                  <% else %>
-                    <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-                  <% end %>
-                  <span class="name pl10"><%= article.user.user_name %></span>
-                  <span class="time pl10"><%= article.updated_at.strftime("%Y/%m/%d")%></span>
-                </div>
-              </div>
-              <div class="col-md-4 col-md-offset-1 f16">
-                <%= link_to(content_tag(:i,"",class:'fa fa-comments-o'),"#") %> <span>3</span>
-                <%= link_to(content_tag(:i,"",class:'fa fa-heart-o ml10'),"#") %> <span>5</span>
-              </div>
-            </div>
+            <span class="name pl10">Kelly</span>
+            <span class="time pl10">2017/05/27</span>
+          </div>
+          <div class="col-md-4 col-md-offset-1 f16">
+            <%= content_tag(:i,"",class:'fa fa-comments-o col-grey') %> <span>3</span>
+            <%= link_to(content_tag(:i,"",class:'fa fa-heart-o col-grey ml10'),"#") %> <span>5</span>
           </div>
         </div>
-      <% end %>
+      </div>
+    <% end %>
   </section>
-  <section class="mt30">
+  <section class="row mt30">
     <div>
-      <h2 class="welcome-h2-text">精选</h2>
+      <h2 class="pl20">精选</h2>
     </div>
     <div class="row">
       <% @articles.each do |article| %>
@@ -107,4 +109,4 @@
       -->
     </div>
   </section>
-      </div>
+</div>

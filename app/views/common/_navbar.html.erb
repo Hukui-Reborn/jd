@@ -62,6 +62,7 @@
                 <li><%= link_to(content_tag(:i,'登出',class:'fa fa-sign-out'),destroy_user_session_path, method: :delete) %></li>
               </ul>
             </li>
+            <li class="f16"><%= link_to(content_tag(:i,' 写篇文章',class:'fa fa-pencil'),new_article_path) %></li>
           <% end %>
         </ul>
       </div>
