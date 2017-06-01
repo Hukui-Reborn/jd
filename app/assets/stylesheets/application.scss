@@ -133,3 +133,20 @@ box-shadow: 10px 10px 5px #888888;
   line-height:65px;
   overflow:hidden;
 }
+
+
+//统一首页超链接样式
+
+.welcome-link {
+  color: #000;
+  text-decoration: none;
+}
+
+.welcome-link:hover {
+  color:#000;
+  text-decoration: none;
+}
+// 去除flash信息的margin-bottom: 20px;这个默认属性
+.alert {
+  margin-bottom: 0;
+}
