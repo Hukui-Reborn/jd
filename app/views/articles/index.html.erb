@@ -15,6 +15,15 @@
       <% @articles.each do |article| %>
         <tr>
           <td>#</td>
+          <td>
+            <%= link_to article_path(article) do %>
+              <% if article.image.present? %>
+                <%= image_tag(article.image.thumb.url, class:"welcome-article-small-pic") %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+              <% end %>
+            <% end %>
+          </td>
           <td><%= link_to(article.title, article_path(article)) %></td>
           <td><%= article.description %></td>
           <td>

@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-    @products = Product.all
+    @articles = Article.all
   end
 end

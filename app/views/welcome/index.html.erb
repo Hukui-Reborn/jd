@@ -15,57 +15,59 @@
       <div class="item" >
         <img src="http://olt6cko37.bkt.clouddn.com/20170529149603992128550.jpg" alt="Second slide">
       </div>
-      <div class="item" >
-        <img src="http://olt6cko37.bkt.clouddn.com/20170529149604040058450.jpg" alt="Third slide">
-       </div>
+        <div class="item" >
+          <img src="http://olt6cko37.bkt.clouddn.com/20170529149604040058450.jpg" alt="Third slide">
+        </div>
     </div>
     <!--
-       -[> 轮播（Carousel）导航 <]
-       -<a class="carousel-control left" href="#myCarousel"
-       -                                 data-slide="prev"></a>
-       -<a class="carousel-control right" href="#myCarousel"
-       -                                  data-slide="next"></a>
-       -->
+      -[> 轮播（Carousel）导航 <]
+      -<a class="carousel-control left" href="#myCarousel"
+      -                                 data-slide="prev"></a>
+      -<a class="carousel-control right" href="#myCarousel"
+      -                                  data-slide="next"></a>
+    -->
   </section>
   <section>
     <div>
       <h1>头条</h1>
     </div>
-    <% @products.each do |product| %>
-      <div class="col-md-4 tc">
-        <div class="gallery">
-          <%= link_to product_path(product) do %>
-            <% if product.image.present? %>
-              <%= image_tag(product.image.medium.url) %>
-            <% else %>
-              <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <div class="row">
+      <% @articles.each do |article| %>
+        <div class="col-md-4 tc">
+          <div class="gallery">
+            <%= link_to article_path(article) do %>
+              <% if article.image.present? %>
+                <%= image_tag(article.image.medium.url) %>
+              <% else %>
+                <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+              <% end %>
             <% end %>
-          <% end %>
-          <div class="desc"><%= product.title %></div>
+            <div class="desc"><%= article.title %></div>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </section>
   <section>
     <div>
       <h1>精选</h1>
     </div>
     <div class="row">
-      <% @products.each do |product| %>
+      <% @articles.each do |article| %>
         <hr />
         <div class="container mb20">
           <div class="col-md-4">
-            <%= link_to product_path(product) do %>
-              <% if product.image.present? %>
-                <%= image_tag(product.image.thumb.url, class:"welcome-article-small-pic") %>
+            <%= link_to article_path(article) do %>
+              <% if article.image.present? %>
+                <%= image_tag(article.image.thumb.url, class:"welcome-article-small-pic") %>
               <% else %>
                 <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
               <% end %>
             <% end %>
           </div>
           <div class="col-md-8">
-            <p class="f20"><%= product.title %></p>
-            <p class="f16 mt150"><%= product.description %></p>
+            <p class="f20"><%= article.title %></p>
+            <p class="f16 mt150"><%= article.description %></p>
           </div>
         </div>
       <% end %>
