@@ -40,7 +40,7 @@
                 <% if article.image.present? %>
                   <%= image_tag(article.image.medium.url) %>
                 <% else %>
-                  <%= image_tag("http://img.qq745.com/uploads/allimg/160430/1-160430203151.jpg") %>
+                  <%= image_tag("http://placehold.it/400x400&text=No Pic") %>
                 <% end %>
               <% end %>
             </div>
@@ -51,7 +51,7 @@
                   <% if article.user.selfie.present? %>
                     <%= image_tag(article.user.selfie.mini.url,class:"welcome-user-image") %>
                   <% else %>
-                    <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+                    <%= image_tag("http://img.qq745.com/uploads/allimg/160430/1-160430203151.jpg") %>
                   <% end %>
                   <span class="name pl10"><%= article.user.user_name %></span>
                   <span class="time pl10"><%= article.updated_at.strftime("%Y/%m/%d")%></span>
