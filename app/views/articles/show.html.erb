@@ -1,2 +1,28 @@
-<h1><%= @article.title %></h1>
-<p><%= @article.description %></p>
+<div class="container wrapper-12">
+  <div class="row tc">
+    <% if @article.image.present? %>
+      <br>
+      <%= image_tag(@article.image.medium.url) %>
+    <% else %>
+      <br>
+      <%= image_tag("http://olt6cko37.bkt.clouddn.com/20170601149630220922552.jpg",class:"thumbnail")%>
+    <% end %>
+  </div>
+  <h1><%= @article.title %></h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <div>
+          <% if @article.user.selfie.present? %>
+            <%= image_tag(@article.user.selfie.mini.url,class:"show-user-image") %>
+          <% else %>
+            <%= image_tag("http://img.qq745.com/uploads/allimg/160430/1-160430203151.jpg", class:"show-user-image") %>
+          <% end %>
+          <span class="pl10 f20"><span class="show-author">作者</span><%= @article.user.user_name %></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <p class="f20"><%= @article.description %></p>
+</div>
