@@ -20,21 +20,21 @@
         </div>
     </div>
     <!--
-      -[> 轮播（Carousel）导航 <]
-      -<a class="carousel-control left" href="#myCarousel"
+      -[> 轮播（carousel）导航 <]
+      -<a class="carousel-control left" href="#mycarousel"
       -                                 data-slide="prev"></a>
-      -<a class="carousel-control right" href="#myCarousel"
+      -<a class="carousel-control right" href="#mycarousel"
       -                                  data-slide="next"></a>
     -->
   </section>
-  <section>
+  <section class="row">
     <div>
-      <h1>头条</h1>
+      <h2 class="welcome-h2-text">头 条</h2>
     </div>
-    <div class="row">
-      <% @articles.each do |article| %>
-        <div class="col-md-4 tc">
-          <div class="gallery">
+    <% @articles.each do |article| %>
+      <div class="col-md-4 pl10">
+        <div class="gallery">
+          <div class="welcome-article-img">
             <%= link_to article_path(article) do %>
               <% if article.image.present? %>
                 <%= image_tag(article.image.medium.url) %>
@@ -42,15 +42,24 @@
                 <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
               <% end %>
             <% end %>
-            <div class="desc"><%= article.title %></div>
+          </div>
+          <div class="desc"><%= article.title %></div>
+          <div class="col-md-7 pb20">
+            <img class="welcome-user-image" src="http://olt6cko37.bkt.clouddn.com/2017052414956209856562.jpg" />
+            <span class="name pl10">Kelly</span>
+            <span class="time pl10">2017/05/27</span>
+          </div>
+          <div class="col-md-4 col-md-offset-1 f16">
+            <%= content_tag(:i,"",class:'fa fa-comments-o col-grey') %> <span>3</span>
+            <%= link_to(content_tag(:i,"",class:'fa fa-heart-o col-grey ml10'),"#") %> <span>5</span>
           </div>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </section>
-  <section>
+  <section class="row mt30">
     <div>
-      <h1>精选</h1>
+      <h2 class="pl20">精选</h2>
     </div>
     <div class="row">
       <% @articles.each do |article| %>
@@ -66,8 +75,8 @@
             <% end %>
           </div>
           <div class="col-md-8">
-            <p class="f20"><%= article.title %></p>
-            <p class="f16 mt150"><%= article.description %></p>
+            <p class="f24"><%= article.title %></p>
+            <p class="f16 mt30"><%= article.description %></p>
           </div>
         </div>
       <% end %>
