@@ -39,7 +39,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
-    redirect_to article_path, alert:"文章已经删除！"
+    redirect_to articles_path, alert:"文章已经删除！"
   end
 
   private
