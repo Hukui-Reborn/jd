@@ -8,13 +8,19 @@ def markdown(text)
       hard_wrap:       true,
       link_attributes: { rel: 'nofollow', target: "_blank" },
       space_after_headers: true,
-      fenced_code_blocks: true
+
+      tables: true
+
+
     }
 
     extensions = {
       autolink:           true,
       superscript:        true,
+      fenced_code_blocks: true,
       disable_indented_code_blocks: true
+
+
     }
     if text.blank?
       nil

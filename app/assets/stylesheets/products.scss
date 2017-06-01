@@ -3,6 +3,30 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+/*二维码和宣传语*/
+.tutor-booking .about-jianxing .about-title2 .keytitle{
+    font-weight: 500;
+    position: relative;
+    left:50%;
+
+}
+
+.tutor-booking .about-jianxing .about-title2 .keywords{
+    position: relative;
+    left:44%;
+}
+
+.tutor-booking .about-jianxing .about-title2{
+  position: relative;
+  bottom:120px;
+}
+
+/******留言区和markdown分割线******/
+.comments-main{
+  border-top: 1px solid  #e5e5e5;
+  padding-top: 20px;
+}
+
 /******标题和markdown正文分割线******/
 .devider-line{
   border-bottom: 1px solid  #e5e5e5;
@@ -154,10 +178,15 @@
 }
 
 /*评论翻页符*/
-.pagination{
+.comment-pagination{
   margin-bottom: 100px;
   border-radius: 15px ;
+  position: relative;
+  left:34%;
+  width:50%;
 }
+
+
 
 
 
@@ -243,6 +272,7 @@ body,div {
 .tutor-full .tutor-avatar img {
     width: 130px;
     height: 130px;
+
 }
 
 
@@ -279,10 +309,8 @@ margin-right: 32px;
 
 .tutor-full .tutor-avatar {
     float: none;
-    width: 136px;
-    height: 136px;
-    margin: 30px auto 0;
-    padding: 3px;
+    width: 130px;
+    height: 130px;
     background: #fff;
     box-shadow: 0 1px 1px #ccc;
 
@@ -336,6 +364,7 @@ h1 {
     font-size: 14px;
     margin: 10px 0 0;
     color: #343434;
+
 }
 
 p{
@@ -747,14 +776,19 @@ background: 0 0;
     margin: 25px 0 0;
     padding: 25px 0 20px 20px;
     overflow: hidden;
+
 }
 
-.tutor-booking .about-jianxing .about-title {
-    font-size: 20px;
+.tutor-booking .about-jianxing .about-title{
+    margin-bottom: 40px;
+    font-size: 18px;
 }
 .tutor-booking .about-jianxing .about-title .keynote {
-    font-weight: 700;
+    font-weight: 500;
 }
+
+
+
 
 /*立即预约*/
 .operation-list a {
