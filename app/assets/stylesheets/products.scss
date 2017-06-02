@@ -309,12 +309,22 @@ margin-right: 32px;
 
 .tutor-full .tutor-avatar {
     float: none;
-    width: 130px;
-    height: 130px;
+    width: 136px;
+    height: 136px;
+    padding:3px;
     background: #fff;
     box-shadow: 0 1px 1px #ccc;
+    margin-top:30px;
 
 }
+
+.tutor-full .tutor-avatar:hover {
+
+    background: rgba(187,222,251 ,1);
+
+
+}
+
 
  .tutor-full .tutor-avatar, .tutor-full .tutor-avatar img
   {z-index: auto;

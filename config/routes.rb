@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :articles
 
+  resources :my_products
+
   namespace :admin do
     resources :products
     resources :orders do
@@ -21,6 +23,7 @@ Rails.application.routes.draw do
   resources :products do
     collection do
       get :search
+      get :title
     end
     member do
       post :add_to_cart

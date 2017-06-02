@@ -1,9 +1,5 @@
 <div>
-  <% if @query_string.blank? %>
-    <div>
-      <p class="search-info">关键词好像没填，请填写关键词搜搜索</p>
-    </div>
-  <% elsif @products.blank? %>
+  <% if @products.blank? %>
     <p class="search-info">没有找到相关的商品，请输入其他关键词</p>
   <% else %>
     <p class="search-info"> 有关"<%= @query_string %>"的产品 </p>
@@ -13,12 +9,12 @@
           <div class="row ">
             <div class="col-md-12 col-lg-9 col-lg-offset-1">
               <div class="speech">
-                <%= product.title%>
+                <%= link_to(product.title,product_path(product))%>
               </div>
               <div class="pull-right">
                 发布时间：<%= product.created_at.to_date %>
             </div>
-            <p><%= link_to(render_highlight_content(product,@query_string),product_path(product),target:"_new") %></p>
+
             </div>
           </div>
         <% end %>

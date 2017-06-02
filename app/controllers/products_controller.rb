@@ -1,8 +1,21 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, only:[:collect, :remove,:add_to_cart,:upvote, :downvote]
   before_action :validate_search_key, only:[:search]
+  before_action :validate_title_key, only:[:title]
 
+  def title
+    #if @title_string.present?
+      #title_result = User.ransack(@title_criteria).result(:distinct => true)
 
+      #@users = title_result.paginate(:page => params[:page], :per_page => 8)
+    #end
+
+    if @title_string.present?
+
+      title_result = Product.ransack(@title_criteria).result(:distinct => true)
+      @products = title_result.paginate(:page => params[:page], :per_page => 8)
+    end
+  end
 
   def search
     if @query_string.present?
@@ -81,6 +94,16 @@ class ProductsController < ApplicationController
   end
 
   protected
+
+  def validate_title_key
+    @title_string= params[:t].gsub(/\\|\'|\/|\?/, "") if params[:t].present?
+    @title_criteria = title_criteria(@title_string)
+  end
+
+  def title_criteria(title_string)
+    {:creator_cont => title_string}
+  end
+
 
   def validate_search_key
     @query_string = params[:q].gsub(/\\|\'|\/|\?/, "") if params[:q].present?
