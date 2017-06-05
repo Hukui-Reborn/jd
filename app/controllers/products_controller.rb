@@ -32,6 +32,9 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
+    if @product.user != current_user
+      redirect_to root_path,alert:"你无权修改他人文章"
+    end
   end
 
   def update
@@ -48,7 +51,7 @@ class ProductsController < ApplicationController
       title_result = Product.ransack(@title_criteria).result(:distinct => true)
       @products = title_result.paginate(:page => params[:page], :per_page => 8)
     end
-  @title_user = User.find_by_user_name(@title_string)
+    @title_user = User.find_by_user_name(@title_string)
 
   end
 
