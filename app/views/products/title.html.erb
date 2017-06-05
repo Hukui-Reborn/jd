@@ -27,7 +27,10 @@
         <hr />
 
         <div class="container mb20">
+          <% if current_user==@title_user %>
+
          <div class="pull-right mr30"><%=link_to("编辑",edit_product_path(product))%></div>
+         <% end %>
           <div class="col-md-4 welcome-product">
             <%= link_to product_path(product) do %>
               <% if product.image.present? %>
