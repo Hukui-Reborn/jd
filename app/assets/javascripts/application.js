@@ -15,9 +15,8 @@
 //= require turbolinks
 //= require bootstrap
 //= require local_time
-//= require_tree .
 //= require simplemde.min
-
+//= require_tree .
 
 /******回到顶部*******/
 $(document).on('click', '#gotop', function () {
