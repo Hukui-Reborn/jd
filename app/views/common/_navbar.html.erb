@@ -45,7 +45,7 @@
                   <% if current_user.selfie.present? %>
                     <%= image_tag(current_user.selfie.url,style:"border-radius:50%;width:30px;height:30px;margin-top:-4px;margin-right:3px;")  %>
                   <% else %>
-                    <%= image_tag("http://ww1.sinaimg.cn/large/006tNbRwgy1ffzxufbo0lj3069069t8o.jpg",style:"width:30px;height:30px;border-radius:50%;magin-left:5px;") %>
+                    <%= image_tag("http://ww1.sinaimg.cn/large/006tNbRwgy1ffzxufbo0lj3069069t8o.jpg",style:"width:30px;height:30px;border-radius:50%;margin-top:-4px;margin-right:3px;") %>
                   <% end %>
                   <%=current_user.user_name%>
                 </span>
