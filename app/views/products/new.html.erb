@@ -2,13 +2,14 @@
   <link rel="stylesheet" href="assets/simplemde.min.css">
 <script src="assets/simplemde.min.js"></script>
 </head>
-<h2>Edit product</h2>
-<%= simple_form_for [:admin, @product] do |f| %>
-  <div>  <%= f.input :title %></div>
+<div class="col-md-10 col-md-offset-1">
+<h1 align="center">新增文章</h1>
+<%= simple_form_for @product do |f| %>
+  <div class="group" ><%= f.input :title %></div>
+  <!-- <div class="group"><%= f.input :expertname %></div> -->
+  <!-- <div class="group"><%= f.input :experttitle %></div> -->
 
-  <!-- <div><%= f.input :expertname %></div> -->
-  <!-- <div><%= f.input :experttitle %></div> -->
-  <div class="group"><%= f.input :post%></div>
+   <div class="group"><%= f.input :post %></div>
   <!-- <div class="group"><%= f.input :description %></div> -->
   <!-- <div class="group"><%= f.input :quantity %></div> -->
   <!-- <div class="group"><%= f.input :price %></div> -->
@@ -21,8 +22,10 @@
     <%= image_tag("http://ww2.sinaimg.cn/large/006tKfTcgy1fg4mkw5fqdj30el09qt9e.jpg",class:"thumbnail",style:"width:25%;")%>
   <% end %>
   <div class="group">
-    <%= f.input :image, as: :file ,label: "请选择文章封面图"%>
+    <%= f.input :image, as: :file,label: "请选择文章封面图" %>
   </div>
-  <div class="group" style="margin-bottom:40px;"><%= f.submit "Submit",class:"btn btn-primary",data:{disable_with:"Submting..."} %></div>
+
+  <div class="group" style="margin-bottom:40px;"><%= f.submit "更新发布",class:"btn btn-primary",data:{disable_with:"Submiting..."}%></div>
 <% end %>
-<script> var simplemde = new SimpleMDE({spellChecker: false}); </script>
+</div>
+ <script> var simplemde = new SimpleMDE({spellChecker: false}); </script>

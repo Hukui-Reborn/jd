@@ -29,38 +29,43 @@
   </section>
   <section class="mt30">
     <div>
-      <h2 class="welcome-h2-text">头 条</h2>
+      <h2 class="welcome-h2-text">最新</h2>
     </div>
-    <% @articles.each do |article| %>
+
+    <% Product.order("created_at DESC").limit(6).each do |product| %>
       <div class="container">
         <div class="row">
           <div class="col-md-4">
             <div class="gallery">
-              <div class="welcome-article-img">
-                <%= link_to article_path(article) do %>
-                  <% if article.image.present? %>
-                    <%= image_tag(article.image.medium.url) %>
+              <div class="welcome-product-img">
+                <%= link_to product_path(product) do %>
+                  <% if product.image.present? %>
+
+                    <%= image_tag(product.image.medium.url) %>
+
+
                   <% else %>
-                    <%= image_tag("http://olt6cko37.bkt.clouddn.com/20170601149630490620653.jpg") %>
+                    <%= image_tag("http://ww2.sinaimg.cn/large/006tKfTcgy1fg4mkw5fqdj30el09qt9e.jpg")%>
+
                   <% end %>
                 <% end %>
               </div>
-              <div class="desc"><%= article.title %></div>
+              <div class="desc"><%= product.title %></div>
               <div class="row">
                 <div class="col-md-7 pb20">
                   <div>
-                    <% if article.user.selfie.present? %>
-                      <%= image_tag(article.user.selfie.mini.url,class:"welcome-user-image") %>
+                    <% if product.user.selfie.present? %>
+                      <%= image_tag(product.user.selfie.mini.url,class:"welcome-user-image") %>
                     <% else %>
                       <%= image_tag("http://img.qq745.com/uploads/allimg/160430/1-160430203151.jpg", class:"welcome-user-image") %>
                     <% end %>
-                    <span class="pl10"><%= article.user.user_name %></span>
-                    <span class="pl10"><%= article.updated_at.strftime("%Y/%m/%d")%></span>
+                    <span class="pl10"><%= product.user.user_name %></span>
+                    <span class="pl10"><%= product.updated_at.strftime("%Y/%m/%d")%></span>
                   </div>
                 </div>
                 <div class="col-md-4 col-md-offset-1 f16">
-                  <%= link_to(content_tag(:i,"",class:'fa fa-comments-o'),"#") %> <span>3</span>
-                  <%= link_to(content_tag(:i,"",class:'fa fa-heart-o ml10'),"#") %> <span>5</span>
+                  <%= link_to(content_tag(:i,"",class:'fa fa-comments-o'),"#") %> <span><%=product.comments.count%></span>
+                  <%= link_to(content_tag(:i,"",class:'fa fa-heart-o ml10'),"#") %> <span><%=product.goods_voters.count%></span>
                 </div>
               </div>
             </div>
@@ -73,21 +78,39 @@
       <h2 class="welcome-h2-text">精选</h2>
     </div>
     <div class="row">
-      <% @articles.each do |article| %>
+
+      <% @datas.each do |product|%>
         <hr />
         <div class="container mb20">
-          <div class="col-md-4">
-            <%= link_to article_path(article) do %>
-              <% if article.image.present? %>
-                <%= image_tag(article.image.thumb.url, class:"welcome-article-small-pic") %>
+          <div class="col-md-4 welcome-product">
+            <%= link_to product_path(product) do %>
+              <% if product.image.present? %>
+                <%= image_tag(product.image.thumb.url, class:"welcome-product-small-pic") %>
               <% else %>
-                <%= image_tag("http://olt6cko37.bkt.clouddn.com/20170601149630472191786.jpg") %>
+              <%= image_tag("http://ww2.sinaimg.cn/large/006tKfTcgy1fg4mkw5fqdj30el09qt9e.jpg",class:"welcome-product-small-pic") %>
+                <!-- <%#= image_tag("http://olt6cko37.bkt.clouddn.com/20170601149630472191786.jpg") %> -->
               <% end %>
             <% end %>
           </div>
           <div class="col-md-8">
-            <p class="f24"><%= link_to(article.title, article_path(article),class:"welcome-link") %></p>
-            <p class="f16 mt30"><%= article.description %></p>
+            <p class="f24"><%= link_to(product.title, product_path(product),class:"welcome-link") %></p>
+            <div class="f16 mt30 "><%= markdown(product.post.first(80)+"...")%></div>
+            <div class="col-md-6 pb20 mt30 ml-30">
+              <div>
+                <% if product.user.selfie.present? %>
+                  <%= image_tag(product.user.selfie.mini.url,class:"welcome-user-image") %>
+                <% else %>
+                  <%= image_tag("http://img.qq745.com/uploads/allimg/160430/1-160430203151.jpg", class:"welcome-user-image") %>
+                <% end %>
+                <span class="pl10"><%= product.user.user_name %></span>
+                <span class="pl10"><%= product.updated_at.strftime("%Y/%m/%d")%></span>
+              </div>
+            </div>
+            <div class="col-md-4 col-md-offset-1 f16 mt30">
+              <%= link_to(content_tag(:i,"",class:'fa fa-comments-o'),"#") %> <span><%=product.comments.count%></span>
+              <%= link_to(content_tag(:i,"",class:'fa fa-heart-o ml10'),"#") %> <span><%=product.goods_voters.count%></span>
+            </div>
+
           </div>
         </div>
       <% end %>
@@ -107,6 +130,12 @@
         -  </div>
         -</div>
       -->
+    </div>
+    <div class="row">
+    <div class="search-data" style="text-align:center;">
+
+      <%= will_paginate @datas, renderer: BootstrapPagination::Rails %>
+    </div>
     </div>
   </section>
       </div>

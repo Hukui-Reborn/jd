@@ -2,7 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+/*****精选栏中的图片大小********/
+.welcome-product-small-pic{
+  width: 300px;
+  margin-top:8px;
+}
 /*二维码和宣传语*/
 .tutor-booking .about-jianxing .about-title2 .keytitle{
     font-weight: 500;

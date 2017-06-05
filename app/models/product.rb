@@ -1,9 +1,10 @@
 class Product < ApplicationRecord
   mount_uploader :image, ImageUploader
-
+  validates :title, presence: {message: "标题不能为空"}
+  validates :post, presence: {message: "内容不能为空"}
 
   belongs_to :user
-  
+
   has_many :relationships #建立user和product之间的多对多关系
   has_many :collectors, through: :relationships, source: :user #product可以找到是哪些user收藏了它
 

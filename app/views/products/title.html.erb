@@ -1,27 +1,84 @@
-<div>
-  <% if @products.blank? %>
-    <p class="search-info">没有找到相关的商品，请输入其他关键词</p>
-  <% else %>
-    <p class="search-info"> 有关"<%= @query_string %>"的产品 </p>
-    <div>
-      <div class="table">
-        <% @products.each do |product| %>
-          <div class="row ">
-            <div class="col-md-12 col-lg-9 col-lg-offset-1">
-              <div class="speech">
-                <%= link_to(product.title,product_path(product))%>
+
+
+
+    <div class="row ">
+
+<div class="tutor-full">
+  <div class="column">
+    <div class="tutor-full-main" id="tutorInfo">
+      <a class="tutor-avatar tutorAvatar" >
+        <%@title_user.selfie%>
+        <% if @title_user.selfie.present? %>
+          <%= image_tag(@title_user.selfie.url,class:"thumbnail") %>
+        <% else %>
+          <%= image_tag("http://ww1.sinaimg.cn/large/006tNbRwgy1ffzxufbo0lj3069069t8o.jpg",class:"thumbnail") %>
+        <% end %>
+
+      </a>
+      <div class="tutor-info" data-mlink="action=view_tutor&amp;tutorId=85105378">
+        <h1 class="tutor-name" style="margin-bottom:80px;"data-tutor_id="85105378"> <%=@title_string%>的文章</h1>
+
+</div>
+</div>
+</div>
+</div>
+
+      <% @products.each do |product|%>
+        <hr />
+
+        <div class="container mb20">
+         <div class="pull-right mr30"><%=link_to("编辑",edit_product_path(product))%></div>
+          <div class="col-md-4 welcome-product">
+            <%= link_to product_path(product) do %>
+              <% if product.image.present? %>
+                <%= image_tag(product.image.thumb.url, class:"welcome-product-small-pic") %>
+              <% else %>
+                <%= image_tag("http://ww2.sinaimg.cn/large/006tKfTcgy1fg4mkw5fqdj30el09qt9e.jpg",style:"width:300px;") %>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="col-md-8">
+            <p class="f24"><%= link_to(product.title, product_path(product),class:"welcome-link") %></p>
+            <div class="f16 mt30 "><%= markdown(product.post.first(80)+"...")%></div>
+            <div class="col-md-6 pb20 mt30 ml-30">
+              <div>
+                <% if product.user.selfie.present? %>
+                  <%= image_tag(product.user.selfie.mini.url,class:"welcome-user-image") %>
+                <% else %>
+                  <%= image_tag("http://img.qq745.com/uploads/allimg/160430/1-160430203151.jpg", class:"welcome-user-image") %>
+                <% end %>
+                <span class="pl10"><%= product.user.user_name %></span>
+                <span class="pl10"><%= product.updated_at.strftime("%Y/%m/%d")%></span>
               </div>
-              <div class="pull-right">
-                发布时间：<%= product.created_at.to_date %>
+            </div>
+            <div class="col-md-4 col-md-offset-1 f16 mt30">
+              <%= link_to(content_tag(:i,"",class:'fa fa-comments-o'),"#") %> <span><%=product.comments.count%></span>
+              <%= link_to(content_tag(:i,"",class:'fa fa-heart-o ml10'),"#") %> <span><%=product.goods_voters.count%></span>
             </div>
 
-            </div>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
+      <!--
+        -<div class="col-md-3 col-md-offset-1">
+        -  <div class="container">
+        -  <img src="http://y1.ifengimg.com/haina/2016_02/3cf5fabbbf57b51_w396_h349.jpg" width="200px" alt="临时占位" />
+        -  <p>临时占位</p>
+        -  </div>
+        -  <div class="container">
+        -  <img src="http://y1.ifengimg.com/haina/2016_02/3cf5fabbbf57b51_w396_h349.jpg" width="200px" alt="临时占位" />
+        -  <p>临时占位</p>
+        -  </div>
+        -  <div class="container">
+        -  <img src="http://y1.ifengimg.com/haina/2016_02/3cf5fabbbf57b51_w396_h349.jpg" width="200px" alt="临时占位" />
+        -  <p>临时占位</p>
+        -  </div>
+        -</div>
+      -->
     </div>
-    <div class="text-center">
-      <%= will_paginate(@products, renderer: BootstrapPagination::Rails) %>
+    <div class="row">
+    <div class="search-data" style="text-align:center;">
+
+    <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
     </div>
-  <% end %>
-</div>
+    </div>

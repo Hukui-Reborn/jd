@@ -1,4 +1,7 @@
-
+<head>
+  <link rel="stylesheet" href="assets/simplemde.min.css">
+<script src="assets/simplemde.min.js"></script>
+</head>
 <!-- <div class="row"> -->
 <!-- <div class="container container-top"> -->
 
@@ -10,7 +13,7 @@
 <div class="tutor-full">
   <div class="column">
     <div class="tutor-full-main" id="tutorInfo">
-      <a class="tutor-avatar tutorAvatar" href="/products">
+      <a class="tutor-avatar tutorAvatar" >
         <% if @product.user.selfie.present? %>
           <%= image_tag(@product.user.selfie.url,class:"thumbnail") %>
         <% else %>
@@ -232,11 +235,11 @@
         <%= image_tag(@product.image.url) %>
         <% else %>
         <br>
-        <%= image_tag("http://ww2.sinaimg.cn/large/006tkftcgy1fg4mkw5fqdj30el09qt9e.jpg",class:"thumbnail")%>
+        <%= image_tag("http://ww4.sinaimg.cn/large/006tKfTcgy1fg81zms5wlj30el09qt9e.jpg",class:"thumbnail")%>
       <% end %>
 
        <div >
-      <p > <%= markdown(@product.post) %> </p>
+      <p > <%= simple_format(markdown(@product.post)) %> </p>
       </div>
 
         <!-- <div> -->
@@ -327,27 +330,44 @@
           <ul class="tutor-topic-list">
             <h2 class="tutor-list-title">相关话题</h2>
 
+            <!-- <%#Product.where("title LIKE :search OR post LIKE :search",{:search => @product.title}).order("created_at DESC").each do |product|%> -->
+           <!-- <%#Product.where("title LIKE :search OR post LIKE :search",{:search => @product.title}).order("created_at DESC").each do |product|%> -->
+             <% Product.where("title LIKE :search OR post LIKE :search",{:search =>'@product.title.first(3)%'}).each do |product|%>
 
 
             <li>
-              <a  style="text-decoration:none;"href="#" data-received="话题页-推荐、相关话题..from.85105378;fName.任良;target.85078227;tName.姚玮;type.相关">
+              <a  style="text-decoration:none;"href="#" data-received="">
                 <div class="tutor-info-left">
-                  <span class="tutor-pic" style="background-image : url('http://ww2.sinaimg.cn/large/006tNc79gy1ffqhg1rlqyj304g04gt8q.jpg')">
+                  <span class="tutor-pic" >
+                    <% if product.user.selfie.present? %>
+                      <%= image_tag(product.user.selfie.url,style:"border-radius:50%;width:60px;height:60px;",class:"thumbnail") %>
+                    <% else %>
+                      <%= image_tag("http://ww1.sinaimg.cn/large/006tNbRwgy1ffzxufbo0lj3069069t8o.jpg",style:"width:60px;height:60px;border-radius:50%;",class:"thumbnail") %>
+                    <% end %>
 
                   </span>
                 </div>
                 <div class="tutor-info-right">
                   <p class="tutor-title">
-                  <span class="tutor-name" >姚玮</span>
-                  <em>市场营销专家</em>
+                  <span class="tutor-name" ><%=product.creator%></span>
+                  <em><%=product.title%></em>
                   </p>
-                  <p class="topic-title">花了5亿元总结出的这6条市场营销经验</p>
+                  <p class="topic-title">
+                    <div class="fa fa-heart-o">
+                      <%= product.goods_voters.count%>
+                    </div>
+                  </p>
 
-                  <p class="meet-count">18人见过</p>
+                  <p class="meet-count">
+                    <div class='fa fa-comments-o'>
+                      <%=product.comments.count%>
+                    </div>
+                  </p>
 
                 </div>
               </a>
             </li>
+            <% end %>
           </ul>
 
       </div>

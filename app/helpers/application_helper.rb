@@ -8,7 +8,7 @@ def markdown(text)
       hard_wrap:       true,
       link_attributes: { rel: 'nofollow', target: "_blank" },
       space_after_headers: true,
-
+      highlight: true,
       tables: true
 
 
@@ -18,6 +18,8 @@ def markdown(text)
       autolink:           true,
       superscript:        true,
       fenced_code_blocks: true,
+      lax_spacing: true,
+
       disable_indented_code_blocks: true
 
 
