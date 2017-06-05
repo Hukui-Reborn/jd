@@ -12,10 +12,13 @@
         <% @products.each do |product| %>
           <div class="row ">
             <div class="col-md-12 col-lg-9 col-lg-offset-1">
+              <div class="speech">
+                <%= product.title%>
+              </div>
               <div class="pull-right">
                 发布时间：<%= product.created_at.to_date %>
             </div>
-            <p><%= link_to(render_highlight_content(product,@query_string),product_path(product)) %></p>
+            <p><%= link_to(render_highlight_content(product,@query_string),product_path(product),target:"_new") %></p>
             </div>
           </div>
         <% end %>

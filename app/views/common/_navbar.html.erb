@@ -41,7 +41,15 @@
           <% else %>
             <li class="dropdown">
               <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-                Hi!,<%= current_user.email%>
+                <span class="user-selfie">
+                  <% if current_user.selfie.present? %>
+               <%= image_tag(current_user.selfie.url,style:"border-radius:50%;width:30px;height:30px;")  %>
+                 <% else %>
+                 <%= image_tag("http://ww1.sinaimg.cn/large/006tNbRwgy1ffzxufbo0lj3069069t8o.jpg",style:"width:30px;height:30px;border-radius:50%;") %>
+                 <% end %>
+                <%=current_user.user_name%>
+               </span>
+
               <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
@@ -54,15 +62,16 @@
                   <%= link_to("我的收藏",goods_collections_path)%>
                 </li>
                 <li>
-                  <%= link_to("个人订单列表",account_orders_path) %>
+                  <%= link_to("我发表的文章","/my_products")%>
                 </li>
+                <!-- <li><%#= link_to("个人订单列表",account_orders_path) %></li> -->
                 <li>
                   <%= link_to("编辑个人资料",edit_user_registration_path) %>
                 </li>
                 <li><%= link_to(content_tag(:i,'登出',class:'fa fa-sign-out'),destroy_user_session_path, method: :delete) %></li>
               </ul>
             </li>
-            <li class="f16"><%= link_to(content_tag(:i,' 写篇文章',class:'fa fa-pencil'),new_article_path) %></li>
+            <li class="f16"><%= link_to(content_tag(:i,' 写文章',class:'fa fa-pencil'),new_product_path) %></li>
           <% end %>
         </ul>
       </div>

@@ -2,8 +2,9 @@
   <link rel="stylesheet" href="assets/simplemde.min.css">
 <script src="assets/simplemde.min.js"></script>
 </head>
-<h2>Edit product</h2>
-<%= simple_form_for [:admin, @product] do |f| %>
+<div class="col-md-10 col-md-offset-1">
+<h2 align="center">编辑文章</h2>
+<%= simple_form_for  @product do |f| %>
   <div>  <%= f.input :title %></div>
 
   <!-- <div><%= f.input :expertname %></div> -->
@@ -23,6 +24,7 @@
   <div class="group">
     <%= f.input :image, as: :file ,label: "请选择文章封面图"%>
   </div>
-  <div class="group" style="margin-bottom:40px;"><%= f.submit "Submit",class:"btn btn-primary",data:{disable_with:"Submting..."} %></div>
+  <div class="group" style="margin-bottom:40px;"><%= f.submit "更新发布",class:"btn btn-primary",data:{disable_with:"Submting..."} %></div>
 <% end %>
+</div>
 <script> var simplemde = new SimpleMDE({spellChecker: false}); </script>

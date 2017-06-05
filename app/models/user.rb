@@ -4,6 +4,8 @@ class User < ApplicationRecord
    validates :user_name, presence: {message:"请填入名称"}
    validates_uniqueness_of :user_name
 
+   has_many :messages
+
    #挂上selfie的uploader,用作用户上传头像
    mount_uploader :selfie, SelfieUploader
 

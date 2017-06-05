@@ -4,7 +4,7 @@ class Admin::ProductsController < ApplicationController
   layout "admin"
 
   def index
-    @products = Product.all
+    @products = Product.all.order("created_at DESC")
   end
 
   def show
@@ -31,6 +31,7 @@ class Admin::ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.user = current_user
+    @product.creator = current_user.user_name
     if @product.save
       redirect_to admin_products_path
     else
@@ -40,6 +41,6 @@ class Admin::ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:title,:description,:quantity,:price,:image,:reply_time,:expertname,:experttitle, :post)
+    params.require(:product).permit(:title,:description,:quantity,:price,:image,:reply_time,:expertname,:experttitle, :post,:user_id,:creator)
   end
 end

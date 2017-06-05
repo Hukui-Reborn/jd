@@ -1,3 +1,7 @@
+<head>
+  <link rel="stylesheet" href="assets/simplemde.min.css">
+<script src="assets/simplemde.min.js"></script>
+</head>
 <h1>Add a product</h1>
 <%= simple_form_for [:admin,@product] do |f| %>
   <div class="group" ><%= f.input :title %></div>
@@ -23,4 +27,3 @@
   <div class="group" style="margin-bottom:40px;"><%= f.submit "Submit",class:"btn btn-primary",data:{disable_with:"Submiting..."}%></div>
 <% end %>
  <script> var simplemde = new SimpleMDE({spellChecker: false}); </script>
- 

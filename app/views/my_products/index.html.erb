@@ -1,8 +1,10 @@
 <div class="row ">
-  <h2 align="center" style="margin:40px 0">我收藏的文章</h2>
+  <h2 align="center" style="margin:40px 0">我发表的文章</h2>
   <% @products.each do |product|%>
     <hr />
+
     <div class="container mb20">
+     <div class="pull-right mr30"><%=link_to("编辑",edit_product_path(product))%></div>
       <div class="col-md-4 welcome-product">
         <%= link_to product_path(product) do %>
           <% if product.image.present? %>
@@ -34,7 +36,22 @@
       </div>
     </div>
   <% end %>
-
+  <!--
+    -<div class="col-md-3 col-md-offset-1">
+    -  <div class="container">
+    -  <img src="http://y1.ifengimg.com/haina/2016_02/3cf5fabbbf57b51_w396_h349.jpg" width="200px" alt="临时占位" />
+    -  <p>临时占位</p>
+    -  </div>
+    -  <div class="container">
+    -  <img src="http://y1.ifengimg.com/haina/2016_02/3cf5fabbbf57b51_w396_h349.jpg" width="200px" alt="临时占位" />
+    -  <p>临时占位</p>
+    -  </div>
+    -  <div class="container">
+    -  <img src="http://y1.ifengimg.com/haina/2016_02/3cf5fabbbf57b51_w396_h349.jpg" width="200px" alt="临时占位" />
+    -  <p>临时占位</p>
+    -  </div>
+    -</div>
+  -->
 </div>
 <div class="row">
 <div class="search-data" style="text-align:center;">

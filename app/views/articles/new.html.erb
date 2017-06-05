@@ -1,7 +1,19 @@
-<h1>新增文章</h1>
+<div class="col-md-10 col-md-offset-1">
+<h1 align="center">新增文章</h1>
 <%= simple_form_for @article do |f| %>
   <div class="group" ><%= f.input :title %></div>
   <div class="group"><%= f.input :description %></div>
-  <div class="group"><%= f.input :image, as: :file %></div>
-  <div class="group"><%= f.submit "Submit",data:{disable_with:"Submiting..."}%></div>
+  <% if @article.image.present? %>
+    <span>当前文章封面图:</span><br>
+    <%= image_tag(@article.image.thumb.url) %>
+    <% else %>
+    <span>默认文章封面图</span><br>
+    <%= image_tag("http://ww2.sinaimg.cn/large/006tKfTcgy1fg4mkw5fqdj30el09qt9e.jpg",class:"thumbnail",style:"width:25%;")%>
+  <% end %>
+  <div class="group">
+    <%= f.input :image, as: :file,label: "请选择文章封面图" %>
+  </div>
+  <div class="group" style="margin-bottom:40px;"><%= f.submit "Submit",class:"btn btn-primary",data:{disable_with:"Submiting..."}%></div>
 <% end %>
+</div>
+<script> var simplemde = new SimpleMDE({spellChecker: false}); </script>

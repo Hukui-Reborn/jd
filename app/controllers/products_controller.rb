@@ -1,13 +1,61 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, only:[:collect, :remove,:add_to_cart,:upvote, :downvote]
+  before_action :authenticate_user!, only:[:collect, :remove,:add_to_cart,:upvote, :downvote,:new, :edit,:update]
   before_action :validate_search_key, only:[:search]
+  before_action :validate_title_key, only:[:title]
 
 
+  def index
+    @products = Product.all
+  end
+
+  def new
+    @product = Product.new
+  end
+
+  def create
+    @product = Product.new(product_params)
+    @product.user = current_user
+    @product.creator = current_user.user_name
+    if @product.save
+      redirect_to product_path(@product)
+    else
+      render :new
+    end
+
+  end
+
+  def show
+    @product = Product.find(params[:id])
+    @comments =@product.comments.recent.paginate(:page => params[:page], :per_page => 5)
+    @comment = Comment.new
+  end
+
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    if @product.update(product_params)
+      redirect_to product_path(@product)
+    else
+      render :edit
+    end
+  end
+
+  def title
+    if @title_string.present?
+      title_result = Product.ransack(@title_criteria).result(:distinct => true)
+      @products = title_result.paginate(:page => params[:page], :per_page => 8)
+    end
+  @title_user = User.find_by_user_name(@title_string)
+
+  end
 
   def search
     if @query_string.present?
       search_result = Product.ransack(@search_criteria).result(:distinct => true)
-      @products = search_result.paginate(:page => params[:page], :per_page => 5)
+      @products = search_result.paginate(:page => params[:page], :per_page => 8)
     end
   end
 
@@ -59,15 +107,6 @@ class ProductsController < ApplicationController
 
   end
 
-  def index
-    @products = Product.all
-  end
-
-  def show
-    @product = Product.find(params[:id])
-    @comments =@product.comments.recent.paginate(:page => params[:page], :per_page => 5)
-    @comment = Comment.new
-  end
 
   def add_to_cart
     @product = Product.find(params[:id])
@@ -80,7 +119,23 @@ class ProductsController < ApplicationController
     redirect_to :back
   end
 
+
+  private
+  def product_params
+    params.require(:product).permit(:title,:description,:quantity,:price,:image,:reply_time,:expertname,:experttitle, :post,:user_id,:creator)
+  end
+
   protected
+
+  def validate_title_key
+    @title_string= params[:t].gsub(/\\|\'|\/|\?/, "") if params[:t].present?
+    @title_criteria = title_criteria(@title_string)
+  end
+
+  def title_criteria(title_string)
+    {:creator_cont => title_string}
+  end
+
 
   def validate_search_key
     @query_string = params[:q].gsub(/\\|\'|\/|\?/, "") if params[:q].present?

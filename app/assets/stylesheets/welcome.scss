@@ -26,6 +26,36 @@
   //position: relative;
 }
 
+/*****为精选栏的图片添加动画效果******/
+.welcome-product{
+  width:300px;
+  height: 220px;
+  overflow: hidden;
+  margin: 0 auto;/*水平居中*/
+
+
+  position: relative;/*相对定位*/
+}
+
+.welcome-product img{
+  width:300px;
+
+  transition: all 0.4s; /*这句代码的意思是，当这个元素的某个属性发现变化时，不是立刻完成，而是慢慢地在400ms内完成，这样就实现了动画的效果*/
+  -webkit-transition: all 0.4s;
+  -webkit-transition:all 0.4s ease-in-out; /*让「谷歌浏览器」支持这个属性*/
+  -moz-transition:all 0.4s ease-in-out; /*让「火狐浏览器」支持这个属性*/
+  -o-transition:all 0.4s ease-in-out; /*让「safari」支持属性*/
+  -ms-transition:all 0.4s ease-in-out; /*让「IE浏览器」支持这个属性*/
+}
+
+.welcome-product:hover img {
+  transform: scale(1.1); /*在400ms内，图片的尺寸从 1倍 放大到 1.1倍*/
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+}
+
 //图片和描述
 div.gallery {
   margin: 5px;
@@ -38,10 +68,38 @@ div.gallery:hover {
   border: 1px solid #777;
 }
 
-div.welcome-article-img img{
+div.welcome-product-img img{
   width: 100%;
-  height: auto;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -webkit-transition:all 0.4s ease-in-out; /*让「谷歌浏览器」支持这个属性*/
+  -moz-transition:all 0.4s ease-in-out; /*让「火狐浏览器」支持这个属性*/
+  -o-transition:all 0.4s ease-in-out; /*让「safari」支持属性*/
+  -ms-transition:all 0.4s ease-in-out; /*让「IE浏览器」支持这个属性*/
+
 }
+
+.welcome-product-img:hover img{
+
+  transform: scale(1.1); /*在400ms内，图片的尺寸从 1倍 放大到 1.1倍*/
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+}
+
+
+.welcome-product-img{
+  height: 220px;
+  overflow: hidden;
+  background-size:cover;
+  background-position: center;
+  margin: 0 auto;
+  position: relative;
+}
+
+
+
 
 div.desc {
   padding: 15px;

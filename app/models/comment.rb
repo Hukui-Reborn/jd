@@ -3,6 +3,9 @@ class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :product
 
+  has_many :messages
+  
+
 
   scope :recent, -> { order("created_at DESC")}
 end
