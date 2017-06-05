@@ -32,7 +32,7 @@
       <h2 class="welcome-h2-text">精 选</h2>
     </div>
 
-    <% Product.order("created_at DESC").limit(6).each do |product| %>
+    <% @datas.order("created_at DESC").limit(6).each do |product| %>
       <div class="container">
         <div class="row">
           <div class="col-md-4">
