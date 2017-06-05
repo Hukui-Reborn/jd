@@ -105,10 +105,12 @@
                 <span class="pl10"><%= product.updated_at.strftime("%Y/%m/%d")%></span>
               </div>
             </div>
-            <div class="col-md-4 col-md-offset-1 f16 mt30">
-              <%= link_to(content_tag(:i,"",class:'fa fa-comments-o'),"#") %> <span><%=product.comments.count%></span>
-              <%= link_to(content_tag(:i,"",class:'fa fa-heart-o ml10'),"#") %> <span><%=product.goods_voters.count%></span>
-            </div>
+            <!--
+               -<div class="col-md-4 col-md-offset-1 f16 mt30">
+               -  <%= link_to(content_tag(:i,"",class:'fa fa-comments-o'),"#") %> <span><%=product.comments.count%></span>
+               -  <%= link_to(content_tag(:i,"",class:'fa fa-heart-o ml10'),"#") %> <span><%=product.goods_voters.count%></span>
+               -</div>
+               -->
 
           </div>
         </div>
