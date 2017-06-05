@@ -11,7 +11,6 @@ User.create!(
   password: "111111",
   password_confirmation: "111111",
   is_admin: true,
-  selfie: open("http://olt6cko37.bkt.clouddn.com/20170601149628544583525.png")
 )
 puts "Admin 账号已建立"
 
