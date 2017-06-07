@@ -1,0 +1,2 @@
+class Frelationship < ApplicationRecord
+end
