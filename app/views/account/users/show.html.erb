@@ -1,0 +1,10 @@
+<div class="mt100">
+  <h2>关注我的用户</h2>
+  <% current_user.followed_users.each do |f| %>
+    <%= f.user_name %>
+  <% end %>
+  <h2>我关注的用户</h2>
+  <% current_user.followers.each do |f| %>
+    <%= f.user_name %>
+    <% end %>
+</div>
