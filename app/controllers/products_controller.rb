@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, only:[:collect, :remove,:add_to_cart,:upvote, :downvote,:new, :edit,:update]
+  before_action :authenticate_user!, only:[:collect, :remove,:add_to_cart,:upvote, :downvote,:new, :edit,:update, :follow, :unfollow]
   before_action :validate_search_key, only:[:search]
   before_action :validate_title_key, only:[:title]
 
@@ -28,6 +28,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @comments =@product.comments.recent.paginate(:page => params[:page], :per_page => 5)
     @comment = Comment.new
+    @user = @product.user
   end
 
   def edit
@@ -122,6 +123,29 @@ class ProductsController < ApplicationController
     redirect_to :back
   end
 
+  def follow
+    @product = Product.find(params[:id])
+    @user = @product.user
+    if !@user.has_follower?(current_user)
+      @user.follow!(current_user)
+      flash[:notice] = "感谢关注"
+    else
+      flash[:warning] = "你已经关注过该作者！"
+    end
+    redirect_to :back
+  end
+
+  def unfollow
+    @product = Product.find(params[:id])
+    @user = @product.user
+    if @user.has_follower?(current_user)
+      @user.unfollow!(current_user)
+      flash[:notice] = "取消关注成功"
+    else
+      flash[:warning] = "你尚未关注该作者！"
+    end
+    redirect_to :back
+  end
 
   private
   def product_params

@@ -68,7 +68,9 @@
                 <li>
                   <%= link_to("我发表的文章","/my_products")%>
                 </li>
-                <!-- <li><%#= link_to("个人订单列表",account_orders_path) %></li> -->
+                <li>
+                  <%= link_to("我的关注",account_user_path(current_user))%>
+                </li>
                 <li>
                   <%= link_to("编辑个人资料",edit_user_registration_path) %>
                 </li>

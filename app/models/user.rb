@@ -1,13 +1,13 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-   validates :user_name, presence: {message:"请填入名称"}
-   validates_uniqueness_of :user_name
+  validates :user_name, presence: {message:"请填入名称"}
+  validates_uniqueness_of :user_name
 
-   has_many :messages
+  has_many :messages
 
-   #挂上selfie的uploader,用作用户上传头像
-   mount_uploader :selfie, SelfieUploader
+  #挂上selfie的uploader,用作用户上传头像
+  mount_uploader :selfie, SelfieUploader
 
   has_many :orders
   has_many :article #一个user有多篇文章
@@ -25,8 +25,32 @@ class User < ApplicationRecord
 
   has_many :products #建立user和product之间的对应关系
 
+  has_many :user_relationships, foreign_key: "follower_id", dependent: :destroy
+  has_many :followed_users, through: :user_relationships, source: :followed
+  has_many :reverse_user_relationships, foreign_key: "followed_id",
+    class_name: "UserRelationship",
+    dependent: :destroy
+  has_many :followers, through: :reverse_user_relationships,source: :follower
+
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+    :recoverable, :rememberable, :trackable, :validatable
+
+  def has_follower?(user)
+    followed_users.include?(user)
+  end
+
+  def is_followed?
+    follower.all
+  end
+
+  def follow!(user)
+    followed_users << user
+  end
+
+  def unfollow!(user)
+    followed_users.delete(user)
+  end
+
   def admin?
     is_admin
   end
@@ -36,12 +60,12 @@ class User < ApplicationRecord
     collections.include?(product)
   end
 
- #将选中的product加入收藏列表中
+  #将选中的product加入收藏列表中
   def collect!(product)
     collections << product
   end
 
- #将选中的product从收藏列表中删除
+  #将选中的product从收藏列表中删除
   def  remove!(product)
     collections.delete(product)
   end
@@ -61,7 +85,7 @@ class User < ApplicationRecord
     dislike_goods.include?(product)
   end
 
- #将选中的product加入到被踩列表中
+  #将选中的product加入到被踩列表中
   def dislike!(product)
     dislike_goods << product
   end
