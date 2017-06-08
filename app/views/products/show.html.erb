@@ -19,10 +19,18 @@
         <% else %>
           <%= image_tag("http://ww1.sinaimg.cn/large/006tNbRwgy1ffzxufbo0lj3069069t8o.jpg",class:"thumbnail") %>
         <% end %>
-
       </a>
       <div class="tutor-info" data-mlink="action=view_tutor&amp;tutorId=85105378">
         <h1 class="tutor-name" style="margin-bottom:80px;"data-tutor_id="85105378">作者: <%=link_to(@product.user.user_name,title_products_path(t:@product.user.user_name))%></h1>
+        <span class="pull-right">
+  <% if current_user && @user.has_follower?(current_user) %>
+    <label class="label label-success"> 群组成员 </label>
+     <%= link_to("unfollow", unfollow_product_path(@product), method: :post, class: "btn btn-default") %>
+  <% else %>
+    <label class="label label-warning"> 不是群组成员 </label>
+     <%= link_to("follow", follow_product_path(@product), method: :post, class: "btn btn-default") %>
+  <% end %>
+</span>
         <!-- <p class="tutor-title" id="tutorTitle"><%=@product.user.user_name%></p> -->
         <!-- <ul class="tutor-detail tutorDetail">
           <li class="detail">

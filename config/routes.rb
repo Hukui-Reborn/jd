@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     }
   root "welcome#index"
 
+
   resources :articles
 
   resources :my_products
@@ -31,6 +32,8 @@ Rails.application.routes.draw do
       post :remove
       post :upvote
       post :downvote
+      post :follow
+      post :unfollow
     end
 
     resources :comments
