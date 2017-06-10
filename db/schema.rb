@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20170607023401) do
 
+
   create_table "articles", force: :cascade do |t|
     t.string   "title"
     t.text     "description"

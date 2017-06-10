@@ -13,7 +13,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li>
             <div class="col-md-3">
-              <div class="fl ml40 mt10">
+              <div class="fl ml40" style="margin-top:14px">
                 <div class="clearfix ">
                   <%= form_tag search_products_path , :method => :get  do %>
                     <input class="search-input fl" type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="输入关键词">
@@ -28,29 +28,33 @@
             </div>
           </li>
           <!--
-             -<li>
-             -  <%= link_to carts_path  do %>
-             -    购物车 <i class="fa fa-shopping-cart"> </i>(<%= current_cart.products.count %>)
-             -  <% end %>
-             -</li>
-             -->
+            -<li>
+            -  <%= link_to carts_path  do %>
+            -    购物车 <i class="fa fa-shopping-cart"> </i>(<%= current_cart.products.count %>)
+            -  <% end %>
+        -</li>
+          -->
           <% if !current_user %>
-            <li class="f16"><%= link_to(content_tag(:i,'注册',class:'fa fa-user-circle-o'),new_user_registration_path) %></li>
-            <li style="margin-top:13px"> | </li>
-            <li class="f16"><%= link_to('登录',new_user_session_path) %></li>
+
+            <li><a href="#" class="f18" data-toggle="modal" data-target="#signup-modal"><i class="fa fa-user-circle-o" aria-hidden="true"></i>注册</a></li>
+            <li><a href="#" class="f18" data-toggle="modal" data-target="#login-modal">登入</a></li>
+            <!--
+              -<li class="f16"><%= link_to(content_tag(:i,'注册',class:'fa fa-user-circle-o'),new_user_registration_path) %></li>
+              -<li style="margin-top:17px"> | </li>
+              -<li class="f16"><%= link_to('登录',new_user_session_path) %></li>
+            -->
           <% else %>
             <li class="dropdown">
               <a class="dropdown-toggle" href="#" data-toggle="dropdown">
                 <span class="user-selfie">
                   <% if current_user.selfie.present? %>
-               <%= image_tag(current_user.selfie.url,style:"border-radius:50%;width:30px;height:30px;")  %>
-                 <% else %>
-                 <%= image_tag("http://ww1.sinaimg.cn/large/006tNbRwgy1ffzxufbo0lj3069069t8o.jpg",style:"width:30px;height:30px;border-radius:50%;") %>
-                 <% end %>
-                <%=current_user.user_name%>
-               </span>
-
-              <b class="caret"></b>
+                    <%= image_tag(current_user.selfie.url,style:"border-radius:50%;width:30px;height:30px;margin-top:-4px;margin-right:3px;")  %>
+                  <% else %>
+                    <%= image_tag("http://ww1.sinaimg.cn/large/006tNbRwgy1ffzxufbo0lj3069069t8o.jpg",style:"width:30px;height:30px;border-radius:50%;margin-top:-4px;margin-right:3px;") %>
+                  <% end %>
+                  <%=current_user.user_name%>
+                </span>
+                <b class="caret"></b>
               </a>
               <ul class="menu">
                 <% if current_user.admin? %>
@@ -67,7 +71,9 @@
                 <li>
                   <%= link_to("我发表的文章","/my_products")%>
                 </li>
-                <!-- <li><%#= link_to("个人订单列表",account_orders_path) %></li> -->
+                <li>
+                  <%= link_to("我的关注",account_user_path(current_user))%>
+                </li>
                 <li>
                   <%= link_to("编辑个人资料",edit_user_registration_path) %>
                 </li>
@@ -82,3 +88,40 @@
   </div>
 
 </nav>
+<!-- 以下代码添加在最后 -->
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog" role="document">
+    <div class="loginmodal-container">
+      <h2>Log in</h2>
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :email, required: false, autofocus: true %>
+          <%= f.input :password, required: false %>
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Log in" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="loginmodal-container">
+      <h2>Sign up</h2>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
+        <div class="form-inputs">
+          <%= f.input :email, required: true, autofocus: true %>
+          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+          <%= f.input :password_confirmation, required: true %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Sign up" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

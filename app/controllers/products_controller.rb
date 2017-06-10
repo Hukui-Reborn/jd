@@ -65,6 +65,9 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
+    if @product.user != current_user
+      redirect_to root_path,alert:"你无权修改他人文章"
+    end
   end
 
   def update
@@ -81,7 +84,7 @@ class ProductsController < ApplicationController
       title_result = Product.ransack(@title_criteria).result(:distinct => true)
       @products = title_result.paginate(:page => params[:page], :per_page => 8)
     end
-  @title_user = User.find_by_user_name(@title_string)
+    @title_user = User.find_by_user_name(@title_string)
 
   end
 
@@ -152,6 +155,29 @@ class ProductsController < ApplicationController
     redirect_to :back
   end
 
+  def follow
+    @product = Product.find(params[:id])
+    @user = @product.user
+    if !@user.has_follower?(current_user)
+      @user.follow!(current_user)
+      flash[:notice] = "感谢关注"
+    else
+      flash[:warning] = "你已经关注过该作者！"
+    end
+    redirect_to :back
+  end
+
+  def unfollow
+    @product = Product.find(params[:id])
+    @user = @product.user
+    if @user.has_follower?(current_user)
+      @user.unfollow!(current_user)
+      flash[:notice] = "取消关注成功"
+    else
+      flash[:warning] = "你尚未关注该作者！"
+    end
+    redirect_to :back
+  end
 
   private
   def product_params
