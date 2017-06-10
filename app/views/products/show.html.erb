@@ -1,14 +1,7 @@
 <head>
   <link rel="stylesheet" href="assets/simplemde.min.css">
-<script src="assets/simplemde.min.js"></script>
+  <script src="assets/simplemde.min.js"></script>
 </head>
-<!-- <div class="row"> -->
-<!-- <div class="container container-top"> -->
-
-<!-- <div class="cover"> -->
-  <!-- <div class="cover-image" ></div> -->
-<!-- </div> -->
-
 
 <div class="tutor-full">
   <div class="column">
@@ -25,46 +18,46 @@
       <div class="tutor-info" data-mlink="action=view_tutor&amp;tutorId=85105378">
         <h1 class="tutor-name" style="margin-bottom:30px;"data-tutor_id="85105378">
           作者: <%=link_to(@product.user.user_name,title_products_path(t:@product.user.user_name))%>
-        </h1>
-        <!-- <p class="tutor-title" id="tutorTitle"><%=@product.user.user_name%></p> -->
-        <!-- <ul class="tutor-detail tutorDetail">
-          <li class="detail">
-            <span class="fa fa-clock-o"></span>
+      </h1>
+      <!-- <p class="tutor-title" id="tutorTitle"><%=@product.user.user_name%></p> -->
+      <!-- <ul class="tutor-detail tutorDetail">
+        <li class="detail">
+        <span class="fa fa-clock-o"></span>
 
-            <span class="highlight"><%=@product.reply_time%></span>回应
+        <span class="highlight"><%=@product.reply_time%></span>回应
 
-          </li>
-          <li class="detail"><span class="fa fa-coffee"></span>
-            <span class="highlight">16</span>人见过
-          </li>
+        </li>
+        <li class="detail"><span class="fa fa-coffee"></span>
+        <span class="highlight">16</span>人见过
+        </li>
 
-          <li class="detail detail-more"><span class="fa fa-heart fa-lg"></span>
-
-
-            <span class="highlight">126</span>人想见
-
-          </li>
+        <li class="detail detail-more"><span class="fa fa-heart fa-lg"></span>
 
 
-          <li class="detail detail-more " ><span class="highlight">高</span>接受率</li>
+        <span class="highlight">126</span>人想见
 
-          <li><span class="icon icon-go btn-folding foldingBtn"></span></li>
+        </li>
+
+
+        <li class="detail detail-more " ><span class="highlight">高</span>接受率</li>
+
+        <li><span class="icon icon-go btn-folding foldingBtn"></span></li>
 
         </ul>
         <p class="tutor-title">
         <span class="city">北京</span>
         <span class="location">不限</span>
-         </p> -->
-         <% if current_user==@product.user%>
-         <% else %>
-         <% if current_user&& @product.user!=current_user&&@product.user.has_follower?(current_user)%>
-         <label class="label label-success">已关注</label>
-         <%= link_to("取消关注", unfollow_product_path(@product), method: :post, class: "btn btn-default") %>
-         <% else %>
-         <label class="label label-warning">未关注</label>
-         <%= link_to("加入关注", follow_product_path(@product), method: :post, class: "btn btn-default") %>
-         <% end %>
-         <% end %>
+        </p> -->
+        <% if current_user==@product.user%>
+        <% else %>
+          <% if current_user&& @product.user!=current_user&&@product.user.has_follower?(current_user)%>
+            <label class="label label-success">已关注</label>
+            <%= link_to("取消关注", unfollow_product_path(@product), method: :post, class: "btn btn-default") %>
+          <% else %>
+            <label class="label label-warning">未关注</label>
+            <%= link_to("加入关注", follow_product_path(@product), method: :post, class: "btn btn-default") %>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -81,205 +74,205 @@
 
         <li class="topic-item ">
 
-          <div class="topic-info">
+        <div class="topic-info">
 
-            <div class="rating withRatingTip">
+        <div class="rating withRatingTip">
 
-              9.4<span class="unit">分</span>
+        9.4<span class="unit">分</span>
 
-              <span class="icon icon-tip"></span>
-            </div>
-            <div class="topic-price">
-              <span class="yuan">￥</span>
-              <span class="price"><%= @product.price%></span>
-              <span class="time">/次</span>
-            </div>
+        <span class="icon icon-tip"></span>
+        </div>
+        <div class="topic-price">
+        <span class="yuan">￥</span>
+        <span class="price"><%= @product.price%></span>
+        <span class="time">/次</span>
+        </div>
 
-          </div>
-          <h2 class="topicTitle" data-topic_id="29876932" data-topic_price="500" data-topic_duration="1.5" data-is_meeting="false" data-topic_type="general" data-is_fixture="False">
+        </div>
+        <h2 class="topicTitle" data-topic_id="29876932" data-topic_price="500" data-topic_duration="1.5" data-is_meeting="false" data-topic_type="general" data-is_fixture="False">
 
-          </h2>
-          <div class="topic-content-fold topicFold">
-            <div class="topic-introduction topicIntroduction">
-              <div>
-                <p>
-                <%= @product.description %>
-                </p> -->
+        </h2>
+        <div class="topic-content-fold topicFold">
+        <div class="topic-introduction topicIntroduction">
+        <div>
+        <p>
+        <%= @product.description %>
+        </p> -->
 
-                <!-- <ul >
-                  <li>为什么我的市场观点或策略会被质疑或挑战？</li>
-                  <li>为什么我的市场方案被老板打回重写？</li>
-                  <li>作为市场部经理为什么下属提的想法觉得有道理但总觉得不对劲可又说不上来哪里不对？</li>
-                  <li>不是学市场专业的，怎么才能快速成为市场行家？</li>
-                  <li>虽然学市场专业，但是做起事来老觉得理论跟实际联系不上？ ……</li>
-                  </ul> -->
-                  <!-- </br>
-                    <p>轻松“五”步，搞定老板和下属，迅速成为市场行家</p>
-                    <ul>
-                    <li>产品定位：了解如何成功塑造品牌的独特卖点，如何把卖点做到极致。</li>
-                    <li>品牌识别：如何利用LOGO、SLOGAN、包装、品牌个性等提升产品形象。</li>
-                    <li>市场传播：了牌传播有哪些制胜的手段，成功的公关活动如何提升品牌形象化解危机；诉诸情感的广告如何深入人心；互联网时代的社交媒体如何做好内容营销。</li>
-                    <li>渠道销售：如何通过渠道客群、价格、展示及促销分析提升销售。</li>
-                    <li>系统管理：如何根据企业战略制定市场策略，如行有效地进行组织架构、市场计划、活动执行、费用控制等管理。</li>
-                    </ul>
-                    <br />
-                    <p>
-                    能给你带来的收获是： 用专业性的逻辑把系统化理论梳理清楚，配合大量案例，你将直接获得解决思路和方法。
-                    </p> -->
+        <!-- <ul >
+          <li>为什么我的市场观点或策略会被质疑或挑战？</li>
+          <li>为什么我的市场方案被老板打回重写？</li>
+          <li>作为市场部经理为什么下属提的想法觉得有道理但总觉得不对劲可又说不上来哪里不对？</li>
+          <li>不是学市场专业的，怎么才能快速成为市场行家？</li>
+          <li>虽然学市场专业，但是做起事来老觉得理论跟实际联系不上？ ……</li>
+          </ul> -->
+          <!-- </br>
+            <p>轻松“五”步，搞定老板和下属，迅速成为市场行家</p>
+            <ul>
+            <li>产品定位：了解如何成功塑造品牌的独特卖点，如何把卖点做到极致。</li>
+            <li>品牌识别：如何利用LOGO、SLOGAN、包装、品牌个性等提升产品形象。</li>
+            <li>市场传播：了牌传播有哪些制胜的手段，成功的公关活动如何提升品牌形象化解危机；诉诸情感的广告如何深入人心；互联网时代的社交媒体如何做好内容营销。</li>
+            <li>渠道销售：如何通过渠道客群、价格、展示及促销分析提升销售。</li>
+            <li>系统管理：如何根据企业战略制定市场策略，如行有效地进行组织架构、市场计划、活动执行、费用控制等管理。</li>
+            </ul>
+            <br />
+            <p>
+            能给你带来的收获是： 用专业性的逻辑把系统化理论梳理清楚，配合大量案例，你将直接获得解决思路和方法。
+            </p> -->
 
-              <!-- </div>
+            <!-- </div>
 
               <div class="info shareTopic bdsharebuttonbox bdshare-button-style0-16" data-tag="29876932" data-bd-bind="1494927487184">
 
 
-                <p><strong>分享话题：</strong>
+              <p><strong>分享话题：</strong>
 
-                <a href="http://www.weibo.com/airbnb" target="_blank" class="fa fa-weibo " title="分享到新浪微博" style="text-decoration:none;"></a>
-                <a href="https://wx.qq.com" target="_new" class=" fa fa-weixin" title="分享到微信" style="text-decoration:none;"></a>
-                </p>
+              <a href="http://www.weibo.com/airbnb" target="_blank" class="fa fa-weibo " title="分享到新浪微博" style="text-decoration:none;"></a>
+              <a href="https://wx.qq.com" target="_new" class=" fa fa-weixin" title="分享到微信" style="text-decoration:none;"></a>
+              </p>
               </div>
-            </div>
-            <div class="fold"></div>
-          </div>
-          <div class="topic-ft">
-            <div class="topic-info">
+              </div>
+              <div class="fold"></div>
+              </div>
+              <div class="topic-ft">
+              <div class="topic-info">
 
               <span class="meet-time">约1.5小时</span>
 
               <span class="meet-num">8人约过</span>
-            </div> -->
-            <!-- <a href="#" class="topic-more-btn toggleBtn" data-received="话题页-话题显示更多..mID.85105378;mName.任良;tID.29876932;tName.搞定老板和下属迅速成为市场行家">
-              <span class="fa fa-chevron-circle-down"></span>
-              </a> -->
-          <!-- </div> -->
-        <!-- </li> -->
+              </div> -->
+              <!-- <a href="#" class="topic-more-btn toggleBtn" data-received="话题页-话题显示更多..mID.85105378;mName.任良;tID.29876932;tName.搞定老板和下属迅速成为市场行家">
+                <span class="fa fa-chevron-circle-down"></span>
+                </a> -->
+                <!-- </div> -->
+                <!-- </li> -->
 
-        <!-- <li class="topic-item ">
+                <!-- <li class="topic-item ">
 
-          <div class="topic-info">
+                  <div class="topic-info">
 
-          <div class="rating withRatingTip">
+                  <div class="rating withRatingTip">
 
-          9.1<span class="unit">分</span>
+                  9.1<span class="unit">分</span>
 
-          <span class="icon icon-tip"></span>
-          </div>
-          <div class="topic-price">
-          <span class="yuan">￥</span>
-          <span class="price">500</span>
-          <span class="time">/次</span>
-          </div>
+                  <span class="icon icon-tip"></span>
+                  </div>
+                  <div class="topic-price">
+                  <span class="yuan">￥</span>
+                  <span class="price">500</span>
+                  <span class="time">/次</span>
+                  </div>
 
-          </div>
-          <h2 class="topicTitle" data-topic_id="29876994" data-topic_price="500" data-topic_duration="2" data-is_meeting="false" data-topic_type="general" data-is_fixture="False">如何制定以业绩为导向的年度计划及预算</h2>
-          <div class="topic-content-fold topicFold">
-          <div class="topic-introduction topicIntroduction">
-          <div><p>对于发展中的中小企业，如何快速有序的提高企业的管理水平？</p>
+                  </div>
+                  <h2 class="topicTitle" data-topic_id="29876994" data-topic_price="500" data-topic_duration="2" data-is_meeting="false" data-topic_type="general" data-is_fixture="False">如何制定以业绩为导向的年度计划及预算</h2>
+                  <div class="topic-content-fold topicFold">
+                  <div class="topic-introduction topicIntroduction">
+                  <div><p>对于发展中的中小企业，如何快速有序的提高企业的管理水平？</p>
 
-          <p>如何快速提升业绩、规范内部管理、提高团队绩效、实现战略目标？</p>
+                  <p>如何快速提升业绩、规范内部管理、提高团队绩效、实现战略目标？</p>
 
-          <p>老板和员工经常头疼的事情：</p>
+                  <p>老板和员工经常头疼的事情：</p>
 
-          <ul>
-          <li>公司整体比较忙乱，总觉得跟正规化大公司比有差距，不知道人家是怎么做的；</li>
-          <li>随着公司规模的扩大，发现人员的管理、业绩的实现、财务的控制都觉得力不从心；</li>
-          <li>公司应该设定什么目标，这些目标怎么才能跟各部门及员工挂起钩来？</li>
-          <li>看起来部门健全、员工很忙，但是好像又不出业绩； &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</li>
-          <li>每个部门明年的年度计划怎么写？</li>
-          <li>预算应该只是财务部的事情吗？</li>
-          <li>虽然现在有了不少业务，但是成本也很难控制；</li>
-          </ul>
-          <br />
+                  <ul>
+                  <li>公司整体比较忙乱，总觉得跟正规化大公司比有差距，不知道人家是怎么做的；</li>
+                  <li>随着公司规模的扩大，发现人员的管理、业绩的实现、财务的控制都觉得力不从心；</li>
+                  <li>公司应该设定什么目标，这些目标怎么才能跟各部门及员工挂起钩来？</li>
+                  <li>看起来部门健全、员工很忙，但是好像又不出业绩； &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</li>
+                  <li>每个部门明年的年度计划怎么写？</li>
+                  <li>预算应该只是财务部的事情吗？</li>
+                  <li>虽然现在有了不少业务，但是成本也很难控制；</li>
+                  </ul>
+                  <br />
 
-          <p>做好以业绩为导向的年度计划与预算是非常关键的一步。很多大型或成熟的企业都在使用这套方法，以确保企业内部所有员工所有部门所有工作都围绕目标主线来进行，以使达成目标万无一失。其背后的逻辑就是全面预算管理。</p>
+                  <p>做好以业绩为导向的年度计划与预算是非常关键的一步。很多大型或成熟的企业都在使用这套方法，以确保企业内部所有员工所有部门所有工作都围绕目标主线来进行，以使达成目标万无一失。其背后的逻辑就是全面预算管理。</p>
 
-          <p>1、从战略到策略：了解如何用战略地图和平衡积分卡梳理企业的长期和短期战略目标。围绕战略目标导出年度策略，包括营销策略、生产服务或运营策略、人力资源策略等。各职能部门将策略进行分解，制定出本部门或业务单元的分解策略。</p>
+                  <p>1、从战略到策略：了解如何用战略地图和平衡积分卡梳理企业的长期和短期战略目标。围绕战略目标导出年度策略，包括营销策略、生产服务或运营策略、人力资源策略等。各职能部门将策略进行分解，制定出本部门或业务单元的分解策略。</p>
 
-          <p>2、从策略到计划：各部门或业务单元如何围绕分解的策略制定具体的执行计划。这些计划可能包括销量计划（分月/分产品/分区域/分渠道/分客户）、生产/运营计划、市场计划、渠道计划、招聘/培训计划等等。</p>
+                  <p>2、从策略到计划：各部门或业务单元如何围绕分解的策略制定具体的执行计划。这些计划可能包括销量计划（分月/分产品/分区域/分渠道/分客户）、生产/运营计划、市场计划、渠道计划、招聘/培训计划等等。</p>
 
-          <p>3、从计划到预算：围绕具体的计划如何编制预算，这些预算包括跟财务有关的收入预算、成本预算、营业费用预算（人工费、市场费用、运营管理费）、公司费用预算（房租、物业、水电、保险、折旧、装修、无形资产摊销）、固定资产预算等；也包括跟业务有关的销量预算（分月/分产品/分区域/分渠道/分客户）、原材料采购预算、设备采购及维修预算、重点客户预算等；还包括跟人员有关的人员增减预算、人力培养与培训预算等。</p>
+                  <p>3、从计划到预算：围绕具体的计划如何编制预算，这些预算包括跟财务有关的收入预算、成本预算、营业费用预算（人工费、市场费用、运营管理费）、公司费用预算（房租、物业、水电、保险、折旧、装修、无形资产摊销）、固定资产预算等；也包括跟业务有关的销量预算（分月/分产品/分区域/分渠道/分客户）、原材料采购预算、设备采购及维修预算、重点客户预算等；还包括跟人员有关的人员增减预算、人力培养与培训预算等。</p>
 
-          <p>4、从目标到执行：如何围绕计划控制时间进度、成本及人员分工，确保执行到位。</p>
+                  <p>4、从目标到执行：如何围绕计划控制时间进度、成本及人员分工，确保执行到位。</p>
 
-          <p>5、从绩效到考核：如何让每个员工的工作内容和业绩目标都围绕企业计划来进行。让员工拧成一股绳共同实现企业目标。</p>
-          <br />
-          <p>能给你带来的收获是：<br>
-          学会以业绩为导向，围绕企业战略目标，制定策略和计划、编制预算、控制执行、链接绩效考核的具体逻辑和方法。让企业管理迈上新台阶。<br>
-          &nbsp;</p>
-          </div>
+                  <p>5、从绩效到考核：如何让每个员工的工作内容和业绩目标都围绕企业计划来进行。让员工拧成一股绳共同实现企业目标。</p>
+                  <br />
+                  <p>能给你带来的收获是：<br>
+                  学会以业绩为导向，围绕企业战略目标，制定策略和计划、编制预算、控制执行、链接绩效考核的具体逻辑和方法。让企业管理迈上新台阶。<br>
+                  &nbsp;</p>
+                  </div>
 
-          <div class="info shareTopic bdsharebuttonbox bdshare-button-style0-16" data-tag="29876994" data-bd-bind="1494927487185">
+                  <div class="info shareTopic bdsharebuttonbox bdshare-button-style0-16" data-tag="29876994" data-bd-bind="1494927487185">
 
 
-          <p><strong>分享话题：</strong>
-          <a data-cmd="tsina" href="http://www.weibo.com/airbnb" style="text-decoration:none;" target="_blank" class="fa fa-weibo" title="分享到新浪微博"></a>
-          <a data-cmd="weixin" href="https://wx.qq.com" style="text-decoration:none;" target="_blank" class="fa fa fa-weixin" title="分享到微信"></a>
-          </p>
-          </div>
-          </div>
-          <div class="fold"></div>
-          </div>
-          <div class="topic-ft">
-          <div class="topic-info">
+                  <p><strong>分享话题：</strong>
+                  <a data-cmd="tsina" href="http://www.weibo.com/airbnb" style="text-decoration:none;" target="_blank" class="fa fa-weibo" title="分享到新浪微博"></a>
+                  <a data-cmd="weixin" href="https://wx.qq.com" style="text-decoration:none;" target="_blank" class="fa fa fa-weixin" title="分享到微信"></a>
+                  </p>
+                  </div>
+                  </div>
+                  <div class="fold"></div>
+                  </div>
+                  <div class="topic-ft">
+                  <div class="topic-info">
 
-          <span class="meet-time">约2小时</span>
+                  <span class="meet-time">约2小时</span>
 
-          <span class="meet-num">8人约过</span>
-          </div>
-          <a href="#" class="topic-more-btn toggleBtn" data-received="话题页-话题显示更多..mID.85105378;mName.任良;tID.29876994;tName.如何制定以业绩为导向的年度计划及预算">
-          <span class="fa fa-chevron-circle-down"></span>
-          </a>
-          </div>
-          </li> -->
+                  <span class="meet-num">8人约过</span>
+                  </div>
+                  <a href="#" class="topic-more-btn toggleBtn" data-received="话题页-话题显示更多..mID.85105378;mName.任良;tID.29876994;tName.如何制定以业绩为导向的年度计划及预算">
+                  <span class="fa fa-chevron-circle-down"></span>
+                  </a>
+                  </div>
+                  </li> -->
 
-      <!-- </ul> -->
+                  <!-- </ul> -->
 
-      <!-- <div class="about-tutor-title">
-        <h2 >关于行家</h2>
-      </div> -->
-      <div class="about-tutor-summary">
-        <div class="devider-line">
-      <h3 align="center" ><%= @product.title %></h3>
+                  <!-- <div class="about-tutor-title">
+                    <h2 >关于行家</h2>
+                    </div> -->
+                    <div class="about-tutor-summary">
+                      <div class="devider-line">
+                        <h3 align="center" ><%= @product.title %></h3>
 
-      </div>
+                      </div>
 
-      <% if @product.image.present? %>
-        <br>
-        <%= image_tag(@product.image.url) %>
-        <% else %>
-        <br>
-        <%= image_tag("http://ww4.sinaimg.cn/large/006tKfTcgy1fg81zms5wlj30el09qt9e.jpg",class:"thumbnail")%>
-      <% end %>
+                      <% if @product.image.present? %>
+                        <br>
+                        <%= image_tag(@product.image.url) %>
+                      <% else %>
+                        <br>
+                        <%= image_tag("http://ww4.sinaimg.cn/large/006tKfTcgy1fg81zms5wlj30el09qt9e.jpg",class:"thumbnail")%>
+                      <% end %>
 
-       <div >
-      <p > <%= simple_format(markdown(@product.post)) %> </p>
-      </div>
+                      <div >
+                        <p > <%= simple_format(markdown(@product.post)) %> </p>
+                      </div>
 
-        <!-- <div> -->
-          <!-- <p> -->
-          <!-- <img alt="" src="http://ww2.sinaimg.cn/large/006tNc79gy1ffpjfviiitj30dw099dg8.jpg" style="height:333px; width:500px"> -->
+                      <!-- <div> -->
+                      <!-- <p> -->
+                      <!-- <img alt="" src="http://ww2.sinaimg.cn/large/006tNc79gy1ffpjfviiitj30dw099dg8.jpg" style="height:333px; width:500px"> -->
 
-          <!-- <% if @product.image.present? %>
-            <%= image_tag(@product.image.medium.url, class:"thumbnial") %>
-          <% else %>
-            <%= image_tag("http://placehold.it/200x200&text=No Pic",class:"thumbnail") %>
-          <% end %>
+                      <!-- <% if @product.image.present? %>
+                        <%= image_tag(@product.image.medium.url, class:"thumbnial") %>
+                      <% else %>
+                        <%= image_tag("http://placehold.it/200x200&text=No Pic",class:"thumbnail") %>
+                      <% end %>
 
-          <!-- </p> -->
+                      <!-- </p> -->
 
-          <!-- <p>任良，十三年多的可口可乐品牌推广、市场管理、危机公关等实操经验，以及五年多的创业企业总经理经验，应对了一场场既温情又动荡的市场活动和危机公关，又经历跨领域思维的磨练，造就了独特的视角，总能在工作中找到不同寻常的解决方案，收获奇效。</p>
+                      <!-- <p>任良，十三年多的可口可乐品牌推广、市场管理、危机公关等实操经验，以及五年多的创业企业总经理经验，应对了一场场既温情又动荡的市场活动和危机公关，又经历跨领域思维的磨练，造就了独特的视角，总能在工作中找到不同寻常的解决方案，收获奇效。</p>
 
-            <p>作为奥运TOP赞助商，参与了三届奥运会，也成为了职业生涯中最为难忘的一段经历。</p>
+                        <p>作为奥运TOP赞助商，参与了三届奥运会，也成为了职业生涯中最为难忘的一段经历。</p>
 
-            <p>北京奥运会从申办期间独树一帜的品牌市场宣传到奥运期间中心区所有场馆的产品服务工作，无论是从任务的难度还是任务工程量来看，都是前所未有的。</p>
+                        <p>北京奥运会从申办期间独树一帜的品牌市场宣传到奥运期间中心区所有场馆的产品服务工作，无论是从任务的难度还是任务工程量来看，都是前所未有的。</p>
 
-            <p>你可能想成为一语惊人的市场销售专业人员，也可能是想在创业的路上马到成功，或者想如何带领企业突破瓶颈，任良先生能够通过自己多年的从业经验为您提供专业的梳理、建议和引导，更能得到大量案例分享。</p>
+                        <p>你可能想成为一语惊人的市场销售专业人员，也可能是想在创业的路上马到成功，或者想如何带领企业突破瓶颈，任良先生能够通过自己多年的从业经验为您提供专业的梳理、建议和引导，更能得到大量案例分享。</p>
 
-            <p>任良先生擅长市场营销、品牌管理、企业目标制定与预算管理等话题，尤其能够站在较高的层面从全局思考，结合专业体系及方法论为您找到一个合适的解决方案。</p> -->
+                        <p>任良先生擅长市场营销、品牌管理、企业目标制定与预算管理等话题，尤其能够站在较高的层面从全局思考，结合专业体系及方法论为您找到一个合适的解决方案。</p> -->
 
-            <!-- <%=@product.experttitle%> -->
-        <!-- </div> -->
-        <!-- </div> -->
+                        <!-- <%=@product.experttitle%> -->
+                        <!-- </div> -->
+                        <!-- </div> -->
     </div>
 
   </div>
@@ -301,7 +294,7 @@
 
       <p class="about-title"><span class="keynote">关注我们</span></p>
 
-     <%=image_tag("http://ww3.sinaimg.cn/large/006tKfTcgy1fg4nm37rq0j30dw0dwq2z.jpg",class:"thumbnail",style:"width:35%;")%>
+      <%=image_tag("http://ww3.sinaimg.cn/large/006tKfTcgy1fg4nm37rq0j30dw0dwq2z.jpg",class:"thumbnail",style:"width:35%;")%>
       <p class="about-title2"><span class="keytitle">全栈人生</span></p>
       <p class="about-title2"><span class="keywords">改变由认知开始<br />成长因行动启航</span></p>
       <!-- <p class="about-tips-mobile">为您答疑解惑、出谋划策。</p> -->
@@ -313,84 +306,78 @@
 
 
 
-                  <div class="operation-list operationList">
+    <div class="operation-list operationList">
 
-                  <!-- <% if @product.quantity.present? && @product.quantity > 0 %>
-                 <div id="bookingBtn" style="text-decoration:none;background:#D63E4B;border: 1px solid #D63E4B;border-radius:30px;" class="btn-primary btn-hg"  data-user_id="" data-login="false" data-zhugeio_when="booking" data-analyze="Meet:Open:85105378:" data-is_same_city="false">
-                 <%= link_to("加入购物车",add_to_cart_product_path(@product),method: :post,style:"text-decoration:none;color:#fff;padding:0 60px;")%>
-               </div>
-               <% else %>
-               已销售一空，无法购买
-                 <% end %> -->
+      <!-- <% if @product.quantity.present? && @product.quantity > 0 %>
+        <div id="bookingBtn" style="text-decoration:none;background:#D63E4B;border: 1px solid #D63E4B;border-radius:30px;" class="btn-primary btn-hg"  data-user_id="" data-login="false" data-zhugeio_when="booking" data-analyze="Meet:Open:85105378:" data-is_same_city="false">
+        <%= link_to("加入购物车",add_to_cart_product_path(@product),method: :post,style:"text-decoration:none;color:#fff;padding:0 60px;")%>
+        </div>
+      <% else %>
+        已销售一空，无法购买
+      <% end %> -->
 
-                    <% if current_user && current_user.is_collector_of?(@product)%>
-                      <div class="btn-plat btn-hg follow-btn followed" id="followBtn"  data-tutor_id="85012586" style="border-radius:20px;">
-                      <%= link_to("取消收藏",remove_product_path(@product),method: :post,style:"text-decoration:none;color:#343434;")%>
-                    </div>
+      <% if current_user && current_user.is_collector_of?(@product)%>
+        <div class="btn-plat btn-hg follow-btn followed" id="followBtn"  data-tutor_id="85012586" style="border-radius:20px;">
+          <%= link_to("取消收藏",remove_product_path(@product),method: :post,style:"text-decoration:none;color:#343434;")%>
+        </div>
+      <% else %>
+        <span >
+          <div class="btn-plat btn-hg follow-btn followed" id="followBtn"  data-tutor_id="85012586" style="border-radius:20px;">
+            <i class="fa fa-heart" style="color:#D63E4B;margin-right:-60px;margin-left:40px;"></i>
+            <%= link_to("加入收藏单",collect_product_path(@product),method: :post,style:"text-decoration:none;color:#D63E4B;padding: 0 60px;")%>
+
+          </div>
+        <% end %>
+        </span>
+
+    </div>
+
+
+    <ul class="tutor-topic-list">
+      <h2 class="tutor-list-title">相关话题</h2>
+
+      <!-- <%#Product.where("title LIKE :search OR post LIKE :search",{:search => @product.title}).order("created_at DESC").each do |product|%> -->
+        <!-- <%#Product.where("title LIKE :search OR post LIKE :search",{:search => @product.title}).order("created_at DESC").each do |product|%> -->
+
+          <!-- SELECT "products".* FROM "products" WHERE ("products"."title" LIKE '%hello world%') -->
+          <!--  推荐算法区域-->
+          <% @relavants1.each do |product|%>
+            <!-- <%# Product.where("title LIKE :search OR post LIKE :search",{:search =>'hello world too'}).each do |product|%> -->
+
+
+              <li>
+                <a  style="text-decoration:none;"href="<%=product_path(product)%>" data-received="">
+                  <div class="tutor-info-left">
+                    <span class="tutor-pic" >
+                      <% if product.user.selfie.present? %>
+                        <%= image_tag(product.user.selfie.url,style:"border-radius:50%;width:60px;height:60px;",class:"thumbnail") %>
                       <% else %>
-                      <span >
-                        <div class="btn-plat btn-hg follow-btn followed" id="followBtn"  data-tutor_id="85012586" style="border-radius:20px;">
-                        <i class="fa fa-heart" style="color:#D63E4B;margin-right:-60px;margin-left:40px;"></i>
-                      <%= link_to("加入收藏单",collect_product_path(@product),method: :post,style:"text-decoration:none;color:#D63E4B;padding: 0 60px;")%>
-
-                    </div>
+                        <%= image_tag("http://ww1.sinaimg.cn/large/006tNbRwgy1ffzxufbo0lj3069069t8o.jpg",style:"width:60px;height:60px;border-radius:50%;",class:"thumbnail") %>
                       <% end %>
                     </span>
-
-                </div>
-
-
-          <ul class="tutor-topic-list">
-            <h2 class="tutor-list-title">相关话题</h2>
-
-            <!-- <%#Product.where("title LIKE :search OR post LIKE :search",{:search => @product.title}).order("created_at DESC").each do |product|%> -->
-           <!-- <%#Product.where("title LIKE :search OR post LIKE :search",{:search => @product.title}).order("created_at DESC").each do |product|%> -->
-
-            <!-- SELECT "products".* FROM "products" WHERE ("products"."title" LIKE '%hello world%') -->
-           <!--  推荐算法区域-->
-            <% @relavants1.each do |product|%>
-             <!-- <%# Product.where("title LIKE :search OR post LIKE :search",{:search =>'hello world too'}).each do |product|%> -->
-
-
-            <li>
-              <a  style="text-decoration:none;"href="<%=product_path(product)%>" data-received="">
-                <div class="tutor-info-left">
-                  <span class="tutor-pic" >
-                    <% if product.user.selfie.present? %>
-                      <%= image_tag(product.user.selfie.url,style:"border-radius:50%;width:60px;height:60px;",class:"thumbnail") %>
-                    <% else %>
-                      <%= image_tag("http://ww1.sinaimg.cn/large/006tNbRwgy1ffzxufbo0lj3069069t8o.jpg",style:"width:60px;height:60px;border-radius:50%;",class:"thumbnail") %>
-                    <% end %>
-
-                  </span>
-                </div>
-                <div class="tutor-info-right">
-                  <p class="tutor-title">
-                  <span class="tutor-name" ><%=product.creator%></span>
-                  <em><%=product.title%></em>
-                  </p>
-                  <p class="topic-title">
+                  </div>
+                  <div class="tutor-info-right" style="margin-left:100px;">
+                    <span class="tutor-name" ><%=product.creator%></span>
+                    <em><%=product.title%></em>
+                    <p>
                     <div class="fa fa-heart-o">
                       <%= product.goods_voters.count%>
                     </div>
-                  </p>
-
-                  <p class="meet-count">
                     <div class='fa fa-comments-o'>
                       <%=product.comments.count%>
                     </div>
-                  </p>
+                    </p>
 
-                </div>
-              </a>
-            </li>
+                  </div>
+                </a>
+              </li>
             <% end %>
-          </ul>
-          <div class="relavant-pagination">
-          <%= will_paginate @relavants1, renderer: BootstrapPagination::Rails %>
-          </div>
+    </ul>
+    <div class="relavant-pagination">
+      <%= will_paginate @relavants1, renderer: BootstrapPagination::Rails %>
+    </div>
 
-      </div>
+  </div>
 
 
 
@@ -405,112 +392,112 @@
 
 <div class="comments-bg">
 
-<div class="column-comments">
+  <div class="column-comments">
 
 
- <div class="comments-main">
+    <div class="comments-main">
 
- <div class="comments-switch">
-<h2 class="left-tab picked">
-<span ><%=@product.comments.count%>条留言</span>
+      <div class="comments-switch">
+        <h2 class="left-tab picked">
+          <span ><%=@product.comments.count%>条留言</span>
 
-<div class="vote">
-  <div class="upvote">
-    <%= link_to upvote_product_path(@product), style:"text-decoration:none;",method: :post do %>
-      <div class="pi-thumbs-up">
-        喜欢: <i class="fa fa-thumbs-up fa-lg" , style="color:#D63E4B;position:relative;top:-4px;"></i>
+          <div class="vote">
+            <div class="upvote">
+              <%= link_to upvote_product_path(@product), style:"text-decoration:none;",method: :post do %>
+                <div class="pi-thumbs-up">
+                  喜欢: <i class="fa fa-thumbs-up fa-lg" , style="color:#D63E4B;position:relative;top:-4px;"></i>
 
-        <%= @product.goods_voters.count %>
-      </div>
-    <% end %>
-  </div>
-  <div class="downvote">
-    <%= link_to downvote_product_path(@product), style:"text-decoration:none;",method: :post do %>
-      <div class="pi-thumbs-down">
-        不喜欢: <i class="fa fa-thumbs-down fa-lg" , style="color:#D63E4B;position:relative;top:-4px;"></i>
-        <%= @product.goods_antis.count %>
+                  <%= @product.goods_voters.count %>
+                </div>
+              <% end %>
+            </div>
+            <div class="downvote">
+              <%= link_to downvote_product_path(@product), style:"text-decoration:none;",method: :post do %>
+                <div class="pi-thumbs-down">
+                  不喜欢: <i class="fa fa-thumbs-down fa-lg" , style="color:#D63E4B;position:relative;top:-4px;"></i>
+                  <%= @product.goods_antis.count %>
 
-      </div>
-    <% end %>
-  </div>
+                </div>
+              <% end %>
+            </div>
 
-</div>
+          </div>
 
-<!-- 评论按照时间显示 -->
-<!-- <div class="drop-select" id="commentSort">
-<a class="drop-select-default" data-current-sort="latest" href="javascript:void 0;">最新<i class="icon icon-arrow-bottom"></i></a>
-<ul class="drop-select-options hidden">
-<li>
-    <a href="javascript:void 0;" class="reviewsSortBy" data-sort-by="likings_count">热门</a>
-</li>
+          <!-- 评论按照时间显示 -->
+          <!-- <div class="drop-select" id="commentSort">
+            <a class="drop-select-default" data-current-sort="latest" href="javascript:void 0;">最新<i class="icon icon-arrow-bottom"></i></a>
+            <ul class="drop-select-options hidden">
+            <li>
+            <a href="javascript:void 0;" class="reviewsSortBy" data-sort-by="likings_count">热门</a>
+            </li>
 
-<li>
-    <a href="javascript:void 0;" class="reviewsSortBy" data-sort-by="latest">最新</a>
-</li>
-</ul>
-</div> -->
+            <li>
+            <a href="javascript:void 0;" class="reviewsSortBy" data-sort-by="latest">最新</a>
+            </li>
+            </ul>
+            </div> -->
 
 
 
-  </h2>
-  <div class="comment-create">
-  <%= simple_form_for [@product,@comment] do |f|%>
-    <%= f.input :content,label: "添加评论",input_html: { class: "form-area" },placeholder:"请写下你的评论"%>
-    <%= f.submit "发表",disable_with: "Submiting...", class: "btn btn-default"%>
-  <% end %>
-
-  </div>
-  <br />
-  <div class="line">
-
-  </div>
-   </div>
- <div class="comments " >
-  <ul class="comments-list">
-   <% @comments.each do |comment| %>
-     <li class="comment-all">
-
-         <span class="user-selfie">
-           <% if comment.user.selfie.present? %>
-        <%= image_tag(comment.user.selfie.url,style:"border-radius:50%;width:60px;height:60px;",class:"thumbnail")  %>
-          <% else %>
-          <%= image_tag("http://ww1.sinaimg.cn/large/006tNbRwgy1ffzxufbo0lj3069069t8o.jpg",class:"thumbnail",style:"width:60px;height:60px;border-radius:50%;") %>
+        </h2>
+        <div class="comment-create">
+          <%= simple_form_for [@product,@comment] do |f|%>
+            <%= f.input :content,label: "添加评论",input_html: { class: "form-area" },placeholder:"请写下你的评论"%>
+            <%= f.submit "发表",disable_with: "Submiting...", class: "btn btn-default"%>
           <% end %>
 
-        </span>
-        <div class="comment">
-         <div class="comment-hd">
-         <%= comment.user.user_name %>
-         </div>
+        </div>
+        <br />
+        <div class="line">
 
-         <div class="comment-bd">
-         <%=simple_format(comment.content) %>
-         </div>
+        </div>
+      </div>
+      <div class="comments " >
+        <ul class="comments-list">
+          <% @comments.each do |comment| %>
+          <li class="comment-all">
 
+            <span class="user-selfie">
+              <% if comment.user.selfie.present? %>
+                <%= image_tag(comment.user.selfie.url,style:"border-radius:50%;width:60px;height:60px;",class:"thumbnail")  %>
+              <% else %>
+                <%= image_tag("http://ww1.sinaimg.cn/large/006tNbRwgy1ffzxufbo0lj3069069t8o.jpg",class:"thumbnail",style:"width:60px;height:60px;border-radius:50%;") %>
+              <% end %>
 
-     <div class="comment-ft">
-     <%= comment.created_at.to_date %>
-     </div>
+            </span>
+            <div class="comment">
+              <div class="comment-hd">
+                <%= comment.user.user_name %>
+              </div>
 
-     <div class="comment-topic-name">参与话题:
-       <%= @product.title %>
-     </div>
-
-
-
-   <% end %>
-   </div>
-   </li>
-   </ul>
-   <div class="comment-pagination">
-   <%= will_paginate @comments, renderer: BootstrapPagination::Rails %>
-   </div>
-   </div>
-   </div>
- </div>
+              <div class="comment-bd">
+                <%=simple_format(comment.content) %>
+              </div>
 
 
-   </div>
+              <div class="comment-ft">
+                <%= comment.created_at.to_date %>
+              </div>
+
+              <div class="comment-topic-name">参与话题:
+                <%= @product.title %>
+              </div>
+
+
+
+            <% end %>
+            </div>
+          </li>
+        </ul>
+        <div class="comment-pagination">
+          <%= will_paginate @comments, renderer: BootstrapPagination::Rails %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
 <!-- </div> -->
 
 
