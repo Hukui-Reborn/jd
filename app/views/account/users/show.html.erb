@@ -44,6 +44,7 @@
       </div>
     </div>
        </li>
+       <% end %>
 
  </ul>
  </div>
@@ -79,24 +80,8 @@
 
 
 
-    <!-- <div class="followers">
-      <span class="follower-selfie">
-    <a class="user-selfie" href="<%=title_products_path(t:g.user_name)%>">
-      <% if g.selfie.present? %>
-   <%= image_tag(g.selfie.url,style:"border-radius:50%;width:60px;height:60px;",class:"thumbnail")  %>
-     <% else %>
-     <%= image_tag("http://ww1.sinaimg.cn/large/006tNbRwgy1ffzxufbo0lj3069069t8o.jpg",class:"thumbnail",style:"width:60px;height:60px;border-radius:50%;") %>
-     <% end %>
-   </a>
- </span>
-   <span class="follower-name">
-   <%=link_to(g.user_name,title_products_path(t:g.user_name))%>
- </span>
-   </div>
 
 
-<!-- </div> -->
-<% end %>
 
 <!-- 左侧用户名称和头像展示区结束 -->
 
@@ -118,6 +103,8 @@
         <div class="tutor-info" data-mlink="action=view_tutor&amp;tutorId=85105378">
           <h1 class="tutor-name" style="margin-bottom:80px;"data-tutor_id="85105378">作者: <%=link_to(@users2.first.user_name,title_products_path(t:@users2.first.user_name))%>
           </h1>
+
+
           <div class="devide-line"></div>
 </div>
 </div>

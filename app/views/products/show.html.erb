@@ -21,16 +21,12 @@
         <% end %>
 
       </a>
-      <% if current_user&& @product.user.has_follower?(current_user)%>
-      <label class="label label-success">已关注</label>
-      <%= link_to("取消关注", unfollow_product_path(@product), method: :post, class: "btn btn-default") %>
-      <% else %>
-      <label class="label label-warning">未关注</label>
-      <%= link_to("加入关注", follow_product_path(@product), method: :post, class: "btn btn-default") %>
-      <% end %>
+
 
       <div class="tutor-info" data-mlink="action=view_tutor&amp;tutorId=85105378">
-        <h1 class="tutor-name" style="margin-bottom:80px;"data-tutor_id="85105378">作者: <%=link_to(@product.user.user_name,title_products_path(t:@product.user.user_name))%></h1>
+        <h1 class="tutor-name" style="margin-bottom:30px;"data-tutor_id="85105378">
+          作者: <%=link_to(@product.user.user_name,title_products_path(t:@product.user.user_name))%>
+        </h1>
         <!-- <p class="tutor-title" id="tutorTitle"><%=@product.user.user_name%></p> -->
         <!-- <ul class="tutor-detail tutorDetail">
           <li class="detail">
@@ -60,6 +56,16 @@
         <span class="city">北京</span>
         <span class="location">不限</span>
          </p> -->
+         <% if current_user==@product.user%>
+         <% else %>
+         <% if current_user&& @product.user!=current_user&&@product.user.has_follower?(current_user)%>
+         <label class="label label-success">已关注</label>
+         <%= link_to("取消关注", unfollow_product_path(@product), method: :post, class: "btn btn-default") %>
+         <% else %>
+         <label class="label label-warning">未关注</label>
+         <%= link_to("加入关注", follow_product_path(@product), method: :post, class: "btn btn-default") %>
+         <% end %>
+         <% end %>
       </div>
     </div>
   </div>
@@ -342,11 +348,13 @@
            <!-- <%#Product.where("title LIKE :search OR post LIKE :search",{:search => @product.title}).order("created_at DESC").each do |product|%> -->
 
             <!-- SELECT "products".* FROM "products" WHERE ("products"."title" LIKE '%hello world%') -->
-             <% Product.where("title LIKE :search OR post LIKE :search",{:search =>'hello world too'}).each do |product|%>
+           <!--  推荐算法区域-->
+            <% @relavants1.each do |product|%>
+             <!-- <%# Product.where("title LIKE :search OR post LIKE :search",{:search =>'hello world too'}).each do |product|%> -->
 
 
             <li>
-              <a  style="text-decoration:none;"href="#" data-received="">
+              <a  style="text-decoration:none;"href="<%=product_path(product)%>" data-received="">
                 <div class="tutor-info-left">
                   <span class="tutor-pic" >
                     <% if product.user.selfie.present? %>
@@ -379,6 +387,9 @@
             </li>
             <% end %>
           </ul>
+          <div class="relavant-pagination">
+          <%= will_paginate @relavants1, renderer: BootstrapPagination::Rails %>
+          </div>
 
       </div>
 

@@ -59,6 +59,8 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @comments =@product.comments.recent.paginate(:page => params[:page], :per_page => 5)
     @comment = Comment.new
+    @relavants=(Product.ransack(title_or_post_cont: @product.title.first(4)).result-Product.ransack(title_eq:@product.title).result)
+    @relavants1= @relavants.paginate(page:params[:page],per_page:5)
   end
 
   def edit
