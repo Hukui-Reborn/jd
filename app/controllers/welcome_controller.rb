@@ -1,5 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-     @datas = Product.all.paginate(:page => params[:page], :per_page => 8)
-  end
+     result1 = Product.limit((Product.count-6))
+     @datas = result1.reverse.paginate(:page => params[:page], :per_page => 8)
+ end
 end

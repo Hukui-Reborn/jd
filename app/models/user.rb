@@ -4,7 +4,19 @@ class User < ApplicationRecord
   validates :user_name, presence: {message:"请填入名称"}
   validates_uniqueness_of :user_name
 
-  has_many :messages
+   has_many :user_relationships, foreign_key: "follower_id",dependent: :destroy
+
+   has_many :followed_users, through: :user_relationships, source: :followed
+
+   has_many :reverse_user_relationships, foreign_key: "followed_id", class_name: "UserRelationship", dependent: :destroy
+
+   has_many :followers, through: :reverse_user_relationships, source: :follower
+
+
+
+
+   has_many :messages
+
 
   #挂上selfie的uploader,用作用户上传头像
   mount_uploader :selfie, SelfieUploader
@@ -55,6 +67,17 @@ class User < ApplicationRecord
     is_admin
   end
 
+  def has_follower?(user)
+    followed_users.include?(user)
+  end
+
+  def follow!(user)
+    followed_users << user
+  end
+
+  def unfollow!(user)
+    followed_users.delete(user)
+  end
   #判断选中的product是否已经在收藏列表中
   def is_collector_of?(product)
     collections.include?(product)
