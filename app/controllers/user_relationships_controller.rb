@@ -1,0 +1,4 @@
+class UserRelationshipsController < ApplicationController
+
+
+end

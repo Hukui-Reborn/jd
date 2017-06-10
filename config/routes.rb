@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   resources :articles
 
+
+
   resources :my_products
 
   namespace :admin do
@@ -64,5 +66,10 @@ Rails.application.routes.draw do
   end
 
   resources :goods_collections
+
+ 
+
+
+
 
 end

@@ -13,24 +13,19 @@
 <div class="tutor-full">
   <div class="column">
     <div class="tutor-full-main" id="tutorInfo">
-      <a class="tutor-avatar tutorAvatar" >
+      <a class="tutor-avatar tutorAvatar" href="<%=title_products_path(t:@product.user.user_name)%>">
         <% if @product.user.selfie.present? %>
           <%= image_tag(@product.user.selfie.url,class:"thumbnail") %>
         <% else %>
           <%= image_tag("http://ww1.sinaimg.cn/large/006tNbRwgy1ffzxufbo0lj3069069t8o.jpg",class:"thumbnail") %>
         <% end %>
       </a>
+
+
       <div class="tutor-info" data-mlink="action=view_tutor&amp;tutorId=85105378">
-        <h1 class="tutor-name" style="margin-bottom:80px;"data-tutor_id="85105378">作者: <%=link_to(@product.user.user_name,title_products_path(t:@product.user.user_name))%></h1>
-        <span class="pull-right">
-  <% if current_user && @user.has_follower?(current_user) %>
-    <label class="label label-success"> 群组成员 </label>
-     <%= link_to("unfollow", unfollow_product_path(@product), method: :post, class: "btn btn-default") %>
-  <% else %>
-    <label class="label label-warning"> 不是群组成员 </label>
-     <%= link_to("follow", follow_product_path(@product), method: :post, class: "btn btn-default") %>
-  <% end %>
-</span>
+        <h1 class="tutor-name" style="margin-bottom:30px;"data-tutor_id="85105378">
+          作者: <%=link_to(@product.user.user_name,title_products_path(t:@product.user.user_name))%>
+        </h1>
         <!-- <p class="tutor-title" id="tutorTitle"><%=@product.user.user_name%></p> -->
         <!-- <ul class="tutor-detail tutorDetail">
           <li class="detail">
@@ -60,6 +55,16 @@
         <span class="city">北京</span>
         <span class="location">不限</span>
          </p> -->
+         <% if current_user==@product.user%>
+         <% else %>
+         <% if current_user&& @product.user!=current_user&&@product.user.has_follower?(current_user)%>
+         <label class="label label-success">已关注</label>
+         <%= link_to("取消关注", unfollow_product_path(@product), method: :post, class: "btn btn-default") %>
+         <% else %>
+         <label class="label label-warning">未关注</label>
+         <%= link_to("加入关注", follow_product_path(@product), method: :post, class: "btn btn-default") %>
+         <% end %>
+         <% end %>
       </div>
     </div>
   </div>
@@ -340,11 +345,15 @@
 
             <!-- <%#Product.where("title LIKE :search OR post LIKE :search",{:search => @product.title}).order("created_at DESC").each do |product|%> -->
            <!-- <%#Product.where("title LIKE :search OR post LIKE :search",{:search => @product.title}).order("created_at DESC").each do |product|%> -->
-             <% Product.where("title LIKE :search OR post LIKE :search",{:search =>'@product.title.first(3)%'}).each do |product|%>
+
+            <!-- SELECT "products".* FROM "products" WHERE ("products"."title" LIKE '%hello world%') -->
+           <!--  推荐算法区域-->
+            <% @relavants1.each do |product|%>
+             <!-- <%# Product.where("title LIKE :search OR post LIKE :search",{:search =>'hello world too'}).each do |product|%> -->
 
 
             <li>
-              <a  style="text-decoration:none;"href="#" data-received="">
+              <a  style="text-decoration:none;"href="<%=product_path(product)%>" data-received="">
                 <div class="tutor-info-left">
                   <span class="tutor-pic" >
                     <% if product.user.selfie.present? %>
@@ -377,6 +386,9 @@
             </li>
             <% end %>
           </ul>
+          <div class="relavant-pagination">
+          <%= will_paginate @relavants1, renderer: BootstrapPagination::Rails %>
+          </div>
 
       </div>
 
