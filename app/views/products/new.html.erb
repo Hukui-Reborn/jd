@@ -5,11 +5,11 @@
 <div class="col-md-10 col-md-offset-1">
 <h1 align="center">新增文章</h1>
 <%= simple_form_for @product do |f| %>
-  <div class="group" ><%= f.input :title %></div>
+  <div class="group" ><%= f.input :title,label:"标题" %></div>
   <!-- <div class="group"><%= f.input :expertname %></div> -->
   <!-- <div class="group"><%= f.input :experttitle %></div> -->
 
-   <div class="group"><%= f.input :post %></div>
+   <div class="group"><%= f.input :post,label:"正文" %></div>
   <!-- <div class="group"><%= f.input :description %></div> -->
   <!-- <div class="group"><%= f.input :quantity %></div> -->
   <!-- <div class="group"><%= f.input :price %></div> -->

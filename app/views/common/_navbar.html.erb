@@ -52,7 +52,7 @@
 
               <b class="caret"></b>
               </a>
-              <ul class="dropdown-menu">
+              <ul class="menu">
                 <% if current_user.admin? %>
                   <li>
                     <%= link_to("Admin 选单",admin_products_path) %>
@@ -60,6 +60,9 @@
                 <% end %>
                 <li>
                   <%= link_to("我的收藏",goods_collections_path)%>
+                </li>
+                <li>
+                  <%=link_to("我的关注",account_user_path(current_user))%>
                 </li>
                 <li>
                   <%= link_to("我发表的文章","/my_products")%>

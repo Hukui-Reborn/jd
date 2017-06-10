@@ -22,6 +22,35 @@
 //更深的灰色备用：#252525;
 
 
+/*****鼠标悬停在用户名上,可以自动显示下拉菜单*******/
+
+.menu{
+  width:120px;
+}
+.dropdown ul li {
+   display: none;
+ }
+ .dropdown:hover ul li{
+   display: block;
+   background-color:white;
+   padding: 5px 0 5px 15px;
+
+ }
+
+ .dropdown ul li:hover{
+   background-color: rgba(187,222,251 ,0.3)
+ }
+
+.menu a{
+  text-decoration: none;
+  color:black;
+}
+
+
+
+
+
+
 
 /*****回到顶部****/
 #gotop {

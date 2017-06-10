@@ -1,0 +1,51 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.button-list{
+  margin: 20px 0 0 10px;
+}
+
+.tab-button{
+  float:left;
+  clear: left;
+  list-style-type:none;
+
+  margin-bottom: 5px;
+  height: 80px;
+}
+
+.tab-button:hover{
+  background-color: rgba(187,222,251 ,0.3);
+
+}
+/****我的关注列表*****/
+.follower_users{
+  width:200px;
+
+}
+
+
+/****关注用户的头像*****/
+.follower-selfie{
+display: inline-block;
+float: left;
+margin-top: 10px;
+
+margin-left: 10px;
+}
+/******关注用户的名称******/
+.follower-name{
+  display: inline-block;
+ margin-right: 80px;
+ margin-top: 30px;
+ float:right;
+
+}
+
+
+
+/*****用户文章展示区******/
+
+.display-area{
+  display: none;
+}

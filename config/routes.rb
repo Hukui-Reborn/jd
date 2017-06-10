@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :articles
 
+
+
   resources :my_products
 
   namespace :admin do
@@ -31,6 +33,8 @@ Rails.application.routes.draw do
       post :remove
       post :upvote
       post :downvote
+      post :follow
+      post :unfollow
     end
 
     resources :comments
@@ -57,8 +61,13 @@ Rails.application.routes.draw do
 
   namespace :account do
     resources :orders
+    resources :users
   end
 
   resources :goods_collections
+
+
+
+
 
 end
